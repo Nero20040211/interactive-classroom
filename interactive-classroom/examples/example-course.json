@@ -1,0 +1,4222 @@
+{
+  "meta": {
+    "id": "textbook-ch10-probability-v43",
+    "title": "第十章·概率：从随机试验到频率稳定",
+    "subtitle": "从随机结果、事件关系到频率稳定性的互动学习",
+    "language": "zh-CN",
+    "depthProfile": "learn-deep",
+    "disciplinePack": "mathematics",
+    "secondaryPacks": [],
+    "discipline": {
+      "primary": "formal-quantitative",
+      "secondary": [
+        "empirical-data"
+      ]
+    },
+    "sourcePolicy": "grounded",
+    "autoNumbering": true,
+    "experimentPolicy": "adjustable-when-applicable",
+    "learnerSurfacePolicy": {
+      "hideEngineering": true
+    },
+    "animationPolicy": {
+      "mode": "process-first",
+      "requireProcessAnimation": true,
+      "requireSpecificSteps": true,
+      "preventVisualOverlap": true,
+      "minSafeMargin": 20,
+      "minActorGap": 10
+    },
+    "practicePolicy": {
+      "mode": "mastery-loop",
+      "minWorkedExamplesPerCore": 3,
+      "minPracticeItemsPerCore": 4,
+      "requireDiagnostic": true,
+      "requireExplainBack": true,
+      "requireCumulativeRetrieval": true,
+      "requireTwoNovelTransfers": true,
+      "requireExampleContrast": true,
+      "requirePracticeProgression": true
+    },
+    "learnerQualityPolicy": {
+      "mode": "three-indicator",
+      "targetLearner": "高中数学必修第二册学习者",
+      "requireDiagnosticGapTags": true
+    },
+    "visualQualityPolicy": {
+      "mode": "reader-first-accessible",
+      "minTextContrast": 4.5,
+      "minNonTextContrast": 3.0,
+      "animationLabelMinPx": 15,
+      "avoidColorOnlyEncoding": true,
+      "mobileAnimationStrategy": "scroll-inside"
+    },
+    "animationContentPolicy": {
+      "mode": "content-fit",
+      "requireSemantics": true,
+      "requireDomainPrimitiveWhenAvailable": true,
+      "requireStepWhy": true,
+      "requireMisleadingBoundary": true,
+      "requireKeyStep": true,
+      "animateOnlyWhenMechanismBenefits": true
+    }
+  },
+  "sources": [
+    {
+      "id": "src-textbook",
+      "title": "普通高中教科书 数学 必修 第二册（人教A版）",
+      "author": "人民教育出版社课程教材研究所等",
+      "year": "2019",
+      "locator": "第十章 概率"
+    }
+  ],
+  "sourceCoverage": {
+    "status": "complete",
+    "covered": [
+      "10.1.1 有限样本空间与随机事件",
+      "10.1.2 事件的关系和运算",
+      "10.1.3 古典概型",
+      "10.1.4 概率的基本性质",
+      "10.2 事件的相互独立性",
+      "10.3.1 频率的稳定性",
+      "10.3.2 随机模拟"
+    ],
+    "omissions": []
+  },
+  "objectives": [
+    {
+      "id": "O1",
+      "label": "能为有限随机试验写出样本空间，并用集合表示随机事件"
+    },
+    {
+      "id": "O2",
+      "label": "能用集合语言理解事件的包含、互斥、对立、并、交与补"
+    },
+    {
+      "id": "O3",
+      "label": "能识别古典概型并用等可能样本点计数计算概率"
+    },
+    {
+      "id": "O4",
+      "label": "能利用概率基本性质处理和事件、互斥事件与对立事件"
+    },
+    {
+      "id": "O5",
+      "label": "能判断简单事件是否相互独立并应用独立事件乘法关系"
+    },
+    {
+      "id": "O6",
+      "label": "能通过重复试验与随机模拟解释频率的稳定性及其与概率的关系"
+    }
+  ],
+  "contentInventory": [
+    {
+      "id": "I1011",
+      "label": "10.1.1 有限样本空间与随机事件",
+      "importance": "core",
+      "sourceLocator": "§10.1.1",
+      "sceneIds": [
+        "C1011",
+        "A1011"
+      ],
+      "exampleRefs": [
+        "ex11a",
+        "ex11b",
+        "ex11c"
+      ],
+      "practiceRefs": [
+        "q11g",
+        "q11i",
+        "q11t",
+        "q11r"
+      ],
+      "explainBackRefs": [
+        "E1011"
+      ]
+    },
+    {
+      "id": "I1012",
+      "label": "10.1.2 事件的关系和运算",
+      "importance": "core",
+      "sourceLocator": "§10.1.2",
+      "sceneIds": [
+        "C1012"
+      ],
+      "exampleRefs": [
+        "ex12a",
+        "ex12b",
+        "ex12c"
+      ],
+      "practiceRefs": [
+        "q12g",
+        "q12i",
+        "q12t",
+        "q12r"
+      ],
+      "explainBackRefs": [
+        "E1012"
+      ]
+    },
+    {
+      "id": "I1013",
+      "label": "10.1.3 古典概型",
+      "importance": "core",
+      "sourceLocator": "§10.1.3",
+      "sceneIds": [
+        "C1013"
+      ],
+      "exampleRefs": [
+        "ex13a",
+        "ex13b",
+        "ex13c"
+      ],
+      "practiceRefs": [
+        "q13g",
+        "q13i",
+        "q13t",
+        "q13r"
+      ],
+      "explainBackRefs": [
+        "E1013"
+      ]
+    },
+    {
+      "id": "I1014",
+      "label": "10.1.4 概率的基本性质",
+      "importance": "core",
+      "sourceLocator": "§10.1.4",
+      "sceneIds": [
+        "C1014"
+      ],
+      "exampleRefs": [
+        "ex14a",
+        "ex14b",
+        "ex14c"
+      ],
+      "practiceRefs": [
+        "q14g",
+        "q14i",
+        "q14t",
+        "q14r"
+      ],
+      "explainBackRefs": [
+        "E1014"
+      ]
+    },
+    {
+      "id": "I102",
+      "label": "10.2 事件的相互独立性",
+      "importance": "core",
+      "sourceLocator": "§10.2",
+      "sceneIds": [
+        "C102",
+        "A102"
+      ],
+      "exampleRefs": [
+        "ex15a",
+        "ex15b",
+        "ex15c"
+      ],
+      "practiceRefs": [
+        "q15g",
+        "q15i",
+        "q15t",
+        "q15r"
+      ],
+      "explainBackRefs": [
+        "E102"
+      ]
+    },
+    {
+      "id": "I103",
+      "label": "10.3 频率的稳定性与随机模拟",
+      "importance": "core",
+      "sourceLocator": "§10.3",
+      "sceneIds": [
+        "C103",
+        "L103"
+      ],
+      "exampleRefs": [
+        "ex16a",
+        "ex16b",
+        "ex16c"
+      ],
+      "practiceRefs": [
+        "q16g",
+        "q16i",
+        "q16t",
+        "q16r"
+      ],
+      "explainBackRefs": [
+        "E103"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "teacher",
+      "name": "周老师",
+      "avatar": "师",
+      "function": "把概率语言连接到具体随机试验"
+    },
+    {
+      "id": "skeptic",
+      "name": "质疑同学",
+      "avatar": "疑",
+      "function": "专门寻找“看似随机/独立”的误判"
+    },
+    {
+      "id": "examiner",
+      "name": "验收官",
+      "avatar": "验",
+      "function": "用新情境检查迁移"
+    }
+  ],
+  "stages": [
+    {
+      "id": "S0",
+      "title": "学习导览",
+      "roster": [
+        "teacher",
+        "skeptic"
+      ]
+    },
+    {
+      "id": "S101",
+      "title": "10.1 随机事件与概率",
+      "roster": [
+        "teacher",
+        "skeptic"
+      ]
+    },
+    {
+      "id": "S102",
+      "title": "10.2 相互独立性",
+      "roster": [
+        "teacher",
+        "skeptic"
+      ]
+    },
+    {
+      "id": "S103",
+      "title": "10.3 频率与概率",
+      "roster": [
+        "teacher",
+        "examiner"
+      ]
+    },
+    {
+      "id": "SF",
+      "title": "综合检测",
+      "roster": [
+        "teacher",
+        "examiner"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ORIENT",
+      "stageId": "S0",
+      "type": "orientation",
+      "title": "先建立概率学习路线",
+      "objectiveIds": [
+        "O1",
+        "O2",
+        "O3",
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "knowledge": {
+        "title": "第十章要解决的不是“背概率公式”，而是先说清楚随机世界里我们在研究什么",
+        "summary": "概率问题的第一步不是立刻相除，而是把随机试验描述完整：一次试验有哪些可能结果？我们关心的事件由哪些结果组成？这些事件之间有什么集合关系？只有当有限样本点满足等可能等条件时，才能直接用古典概型计数。进一步研究概率的性质和事件独立性后，我们还要回到真实重复试验：有限次试验的频率会波动，但随着试验次数增加，累计频率往往在某个稳定水平附近摆动。第十章因此形成一条完整链条——对象定义、集合运算、概率计算、关系判断、经验验证。学习时要不断在自然语言、集合表示、数值计算与实验结果之间翻译；任何一步若跳过条件检查，都可能得到形式上会算、实际上模型错误的答案。",
+        "mentalModel": "把一次随机试验想成一台“结果生成器”。样本空间是所有可能结果的清单；事件是从清单中挑出的一个子集；概率是给事件分配的可能性大小。事件关系决定概率怎样组合，而相互独立描述的是一个事件是否改变另一个事件发生的概率。最后，频率把理论概率和大量重复观察连接起来。",
+        "sections": [
+          {
+            "title": "学习顺序",
+            "body": "先把结果列全，再把事件写成集合；先检查模型条件，再计算概率；先分清互斥、对立和独立，再使用相应公式；最后通过重复模拟观察频率波动，而不是把一次模拟结果当成概率本身。"
+          }
+        ],
+        "workedExamples": [],
+        "pitfalls": [
+          "把“随机”理解成所有结果一定等可能",
+          "样本空间漏结果或重复计数",
+          "把互斥事件和独立事件混为一谈",
+          "看到频率接近某个数就认为之后不会再波动"
+        ],
+        "connections": [
+          "集合运算为事件运算提供语言；计数方法为古典概型提供分子和分母；统计图表帮助观察频率稳定趋势。"
+        ],
+        "checkYourself": [
+          "为什么概率题第一步常常是写样本空间，而不是套公式？",
+          "互斥和独立分别在描述什么？"
+        ],
+        "citations": [
+          {
+            "sourceId": "src-textbook",
+            "locator": "第十章导语与10.1–10.3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "DIAG",
+      "stageId": "S0",
+      "type": "quiz",
+      "title": "课前诊断",
+      "objectiveIds": [
+        "O1",
+        "O2",
+        "O3",
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "content": {
+        "diagnostic": true,
+        "practiceLevel": "diagnostic",
+        "practiceNote": "只用于发现起点，不计入最终掌握结果。",
+        "items": [
+          {
+            "id": "d1",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "diagnostic",
+            "kind": "single",
+            "prompt": "抛一枚硬币两次，最完整的样本空间应包含多少个有顺序的结果？",
+            "options": [
+              {
+                "id": "A",
+                "text": "2"
+              },
+              {
+                "id": "B",
+                "text": "3"
+              },
+              {
+                "id": "C",
+                "text": "4"
+              },
+              {
+                "id": "D",
+                "text": "6"
+              }
+            ],
+            "answer": [
+              "C"
+            ],
+            "feedback": {
+              "correct": "两次结果有顺序，共有4个样本点。",
+              "incorrect": "把两次试验的先后顺序一起记录。"
+            },
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "d2",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "diagnostic",
+            "kind": "single",
+            "prompt": "若事件A与B不可能同时发生，它们称为什么？",
+            "options": [
+              {
+                "id": "A",
+                "text": "互斥事件"
+              },
+              {
+                "id": "B",
+                "text": "独立事件"
+              },
+              {
+                "id": "C",
+                "text": "必然事件"
+              },
+              {
+                "id": "D",
+                "text": "等可能事件"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "不能同时发生就是互斥。",
+              "incorrect": "互斥描述“能否同时发生”。"
+            },
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "d3",
+            "objectiveIds": [
+              "O3"
+            ],
+            "practiceLevel": "diagnostic",
+            "kind": "single",
+            "prompt": "掷一枚质地均匀骰子，点数大于4的概率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "1/6"
+              },
+              {
+                "id": "B",
+                "text": "1/3"
+              },
+              {
+                "id": "C",
+                "text": "1/2"
+              },
+              {
+                "id": "D",
+                "text": "2/3"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "有利样本点2个，总样本点6个。",
+              "incorrect": "先数有利结果和全部等可能结果。"
+            },
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "d4",
+            "objectiveIds": [
+              "O4"
+            ],
+            "practiceLevel": "diagnostic",
+            "kind": "single",
+            "prompt": "事件A与其对立事件的概率之和是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "0"
+              },
+              {
+                "id": "B",
+                "text": "1/2"
+              },
+              {
+                "id": "C",
+                "text": "1"
+              },
+              {
+                "id": "D",
+                "text": "2"
+              }
+            ],
+            "answer": [
+              "C"
+            ],
+            "feedback": {
+              "correct": "事件和其补事件恰好覆盖样本空间。",
+              "incorrect": "对立事件一发生一不发生。"
+            },
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "d5",
+            "objectiveIds": [
+              "O5"
+            ],
+            "practiceLevel": "diagnostic",
+            "kind": "single",
+            "prompt": "连续抛两枚独立硬币，第一枚正面是否改变第二枚正面的概率？",
+            "options": [
+              {
+                "id": "A",
+                "text": "会"
+              },
+              {
+                "id": "B",
+                "text": "不会"
+              },
+              {
+                "id": "C",
+                "text": "只有第一次会"
+              },
+              {
+                "id": "D",
+                "text": "无法讨论"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "两枚独立硬币的结果互不改变对方概率。",
+              "incorrect": "独立描述概率是否被另一事件改变。"
+            },
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "d6",
+            "objectiveIds": [
+              "O6"
+            ],
+            "practiceLevel": "diagnostic",
+            "kind": "single",
+            "prompt": "重复抛硬币1000次，正面频率必须恰好等于0.5吗？",
+            "options": [
+              {
+                "id": "A",
+                "text": "必须"
+              },
+              {
+                "id": "B",
+                "text": "不必须，但通常会在0.5附近波动"
+              },
+              {
+                "id": "C",
+                "text": "一定大于0.5"
+              },
+              {
+                "id": "D",
+                "text": "一定小于0.5"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "有限次频率仍会波动。",
+              "incorrect": "稳定是趋势，不是每次恰好相等。"
+            },
+            "gapTags": [
+              "representation"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "C1011",
+      "stageId": "S101",
+      "type": "concept",
+      "title": "10.1.1 样本空间与随机事件",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "10.1.1 有限样本空间与随机事件：先把所有可能结果列完整",
+        "summary": "教材把对随机现象的实现和观察称为随机试验。我们关注的试验需要能在相同条件下重复，所有可能结果事先明确且不止一个，但每次具体出现哪个结果事先不能确定。每一个基本结果叫样本点，所有样本点组成样本空间；在有限样本空间中，随机事件就是样本空间的子集。这个语言非常重要，因为后面的事件运算、概率计算和独立性判断都依赖“事件到底包含哪些样本点”。",
+        "prerequisites": [
+          "集合与基本运算",
+          "分数与比例",
+          "能够读简单表格与图形"
+        ],
+        "mentalModel": "把样本空间想成一个完整盒子，盒子里的每张卡片代表一个可能结果。一个事件不是另一个神秘对象，而是从盒子里圈出若干卡片。例如掷骰子时，样本空间包含1到6；“点数为偶数”就是把2、4、6这三张卡片圈起来。",
+        "mechanism": "解决题目时按四步走：明确一次试验记录什么；决定结果是否要保留顺序；列出所有互不重复的样本点；再把事件翻译成这些样本点的集合。若试验记录方式不同，样本空间也会不同，例如“射击3次记录每次中脱靶”与“只记录命中次数”对应不同的样本点。",
+        "sections": [
+          {
+            "title": "随机试验的三个特征",
+            "body": "可重复、所有可能结果明确、每次实际出现哪个结果事先不能确定。这里的“随机”不等于“结果等可能”；等可能是古典概型的额外条件。"
+          },
+          {
+            "title": "事件就是子集",
+            "body": "必然事件对应整个样本空间，不可能事件对应空集。一般随机事件介于两者之间。用集合语言后，后面可以直接使用并、交、补等运算。"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex11a",
+            "title": "例1：抛一枚硬币两次",
+            "text": "若记录先后顺序，样本点为正正、正反、反正、反反；“恰好一次正面”包含正反和反正。",
+            "variantType": "standard"
+          },
+          {
+            "id": "ex11b",
+            "title": "例2：射击三次只记录命中次数",
+            "text": "如果只记录命中次数，样本空间可以写成0、1、2、3；这与记录每一次是否命中是不同的试验结果编码。",
+            "variantType": "contrast"
+          },
+          {
+            "id": "ex11c",
+            "title": "例3：摸球只记录颜色",
+            "text": "若袋中多个球只有颜色有意义，同色球不需要因为编号不同而拆成不同样本点；样本点必须与实际观察量一致。",
+            "variantType": "boundary"
+          }
+        ],
+        "pitfalls": [
+          "漏掉有顺序的结果",
+          "把随机试验误认为结果必须等可能",
+          "事件写成文字却没有对应到样本点"
+        ],
+        "connections": [
+          "本章把集合、计数、比例和数据观察连接起来：先定义随机试验中的对象，再给概率建立可计算模型，最后用重复试验理解概率的经验意义。"
+        ],
+        "checkYourself": [
+          "一次试验的“观察量”改变时，样本空间为什么可能改变？",
+          "为什么事件可以直接看成样本空间的子集？"
+        ],
+        "pedagogicalFigures": [
+          {
+            "id": "fig1011",
+            "figureKind": "concept",
+            "title": "样本空间与事件",
+            "learningPurpose": "把“所有可能结果”和“我们关心的结果”分开",
+            "caption": "样本空间是全集，事件是其中的子集。",
+            "template": "generic-flow",
+            "after": "mentalModel",
+            "nodes": [
+              {
+                "id": "a",
+                "label": "随机试验 E",
+                "x": 105,
+                "y": 130
+              },
+              {
+                "id": "b",
+                "label": "样本空间 Ω",
+                "x": 320,
+                "y": 130
+              },
+              {
+                "id": "c",
+                "label": "事件 A ⊆ Ω",
+                "x": 535,
+                "y": 130
+              }
+            ],
+            "edges": [
+              {
+                "from": "a",
+                "to": "b"
+              },
+              {
+                "from": "b",
+                "to": "c"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "sourceId": "src-textbook",
+            "locator": "10.1.1 有限样本空间与随机事件"
+          }
+        ]
+      }
+    },
+    {
+      "id": "A1011",
+      "stageId": "S101",
+      "type": "interactive",
+      "title": "过程动画：从一次掷骰子到样本空间",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "过程动画：一次随机试验怎样变成“样本点—样本空间—事件”",
+        "summary": "下面的动画不是关系图逐项出现，而是让一个骰子真正经历“抛出—停止—所有可能结果展开—事件重新归类”的过程。观察时不要只看最终集合，重点看对象怎样变化：骰子代表一次实际试验；六个结果标记从骰子附近展开，表示我们事先列出的所有可能结果；最后偶数样本点移动到事件区域，表示事件只是样本空间中的一部分。",
+        "prerequisites": [
+          "集合与基本运算",
+          "分数与比例",
+          "能够读简单表格与图形"
+        ],
+        "mentalModel": "把样本空间想成一个完整盒子，盒子里的每张卡片代表一个可能结果。一个事件不是另一个神秘对象，而是从盒子里圈出若干卡片。例如掷骰子时，样本空间包含1到6；“点数为偶数”就是把2、4、6这三张卡片圈起来。",
+        "mechanism": "动画分四个状态。第一步骰子处于准备位置；第二步骰子移动并旋转，表示一次具体试验正在发生，但此时还不知道最终点数；第三步六个可能结果从中心展开，强调样本空间描述“所有可能”而不是某一次已发生的结果；第四步2、4、6移动到事件A区域，展示事件是样本点集合。这个过程把“实际随机过程”和“数学建模对象”区分开。",
+        "sections": [
+          {
+            "title": "看动画时问什么",
+            "body": "实际试验只会出现一个样本点，但数学建模必须先知道全部可能样本点；事件则根据条件从样本空间中选择一部分。不要把“本次掷出4”与“样本空间只有4”混在一起。"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex11a",
+            "title": "例1：抛一枚硬币两次",
+            "text": "若记录先后顺序，样本点为正正、正反、反正、反反；“恰好一次正面”包含正反和反正。",
+            "variantType": "standard"
+          },
+          {
+            "id": "ex11b",
+            "title": "例2：射击三次只记录命中次数",
+            "text": "如果只记录命中次数，样本空间可以写成0、1、2、3；这与记录每一次是否命中是不同的试验结果编码。",
+            "variantType": "contrast"
+          },
+          {
+            "id": "ex11c",
+            "title": "例3：摸球只记录颜色",
+            "text": "若袋中多个球只有颜色有意义，同色球不需要因为编号不同而拆成不同样本点；样本点必须与实际观察量一致。",
+            "variantType": "boundary"
+          }
+        ],
+        "pitfalls": [
+          "漏掉有顺序的结果",
+          "把随机试验误认为结果必须等可能",
+          "事件写成文字却没有对应到样本点"
+        ],
+        "connections": [
+          "本章把集合、计数、比例和数据观察连接起来：先定义随机试验中的对象，再给概率建立可计算模型，最后用重复试验理解概率的经验意义。"
+        ],
+        "checkYourself": [
+          "动画中哪一步表示实际试验，哪一步表示数学上事先列出的全部可能？",
+          "为什么2、4、6移动到事件区域并没有从样本空间中“消失”？"
+        ],
+        "pedagogicalFigures": [],
+        "citations": [
+          {
+            "sourceId": "src-textbook",
+            "locator": "10.1.1 有限样本空间与随机事件"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "随机试验 → 样本空间 → 事件",
+          "principle": "通过对象真实移动与归类，区分一次实际结果、全部可能结果和事件子集。",
+          "actors": [
+            {
+              "id": "die",
+              "type": "die",
+              "w": 72,
+              "h": 72,
+              "label": "骰子",
+              "role": "primary",
+              "showName": false,
+              "semanticRole": "random-device"
+            },
+            {
+              "id": "event",
+              "type": "zone",
+              "w": 220,
+              "h": 150,
+              "label": "事件 A：偶数",
+              "role": "container",
+              "labelPlacement": "top-outside",
+              "contains": [
+                "o2",
+                "o4",
+                "o6"
+              ],
+              "semanticRole": "event-set"
+            },
+            {
+              "id": "o1",
+              "type": "sample-point",
+              "r": 22,
+              "label": "1",
+              "role": "secondary",
+              "semanticRole": "sample-outcome"
+            },
+            {
+              "id": "o2",
+              "type": "sample-point",
+              "r": 22,
+              "label": "2",
+              "role": "secondary",
+              "semanticRole": "sample-outcome"
+            },
+            {
+              "id": "o3",
+              "type": "sample-point",
+              "r": 22,
+              "label": "3",
+              "role": "secondary",
+              "semanticRole": "sample-outcome"
+            },
+            {
+              "id": "o4",
+              "type": "sample-point",
+              "r": 22,
+              "label": "4",
+              "role": "secondary",
+              "semanticRole": "sample-outcome"
+            },
+            {
+              "id": "o5",
+              "type": "sample-point",
+              "r": 22,
+              "label": "5",
+              "role": "secondary",
+              "semanticRole": "sample-outcome"
+            },
+            {
+              "id": "o6",
+              "type": "sample-point",
+              "r": 22,
+              "label": "6",
+              "role": "secondary",
+              "semanticRole": "sample-outcome"
+            }
+          ],
+          "steps": [
+            {
+              "id": "s1",
+              "title": "准备随机试验",
+              "caption": "骰子还没有掷出；我们只知道可能会出现1到6。",
+              "states": {
+                "die": {
+                  "x": 120,
+                  "y": 185,
+                  "face": 1
+                },
+                "event": {
+                  "x": 625,
+                  "y": 190,
+                  "opacity": 0
+                },
+                "o1": {
+                  "x": 120,
+                  "y": 185,
+                  "opacity": 0
+                },
+                "o2": {
+                  "x": 120,
+                  "y": 185,
+                  "opacity": 0
+                },
+                "o3": {
+                  "x": 120,
+                  "y": 185,
+                  "opacity": 0
+                },
+                "o4": {
+                  "x": 120,
+                  "y": 185,
+                  "opacity": 0
+                },
+                "o5": {
+                  "x": 120,
+                  "y": 185,
+                  "opacity": 0
+                },
+                "o6": {
+                  "x": 120,
+                  "y": 185,
+                  "opacity": 0
+                }
+              },
+              "focus": "此时只有试验装置，没有任何一次结果已经发生。",
+              "changeSummary": "建立起点，不提前透露结果。",
+              "semanticAction": "state-transition-1",
+              "whyItMatters": "此时只有试验装置，没有任何一次结果已经发生。",
+              "emphasis": "setup",
+              "motionMs": 680
+            },
+            {
+              "id": "s2",
+              "title": "骰子运动",
+              "caption": "骰子移动并旋转：这一步代表真实试验过程，结果尚未确定。",
+              "states": {
+                "die": {
+                  "x": 330,
+                  "y": 95,
+                  "rotation": 720,
+                  "face": 5
+                },
+                "event": {
+                  "x": 625,
+                  "y": 190,
+                  "opacity": 0
+                },
+                "o1": {
+                  "x": 330,
+                  "y": 95,
+                  "opacity": 0
+                },
+                "o2": {
+                  "x": 330,
+                  "y": 95,
+                  "opacity": 0
+                },
+                "o3": {
+                  "x": 330,
+                  "y": 95,
+                  "opacity": 0
+                },
+                "o4": {
+                  "x": 330,
+                  "y": 95,
+                  "opacity": 0
+                },
+                "o5": {
+                  "x": 330,
+                  "y": 95,
+                  "opacity": 0
+                },
+                "o6": {
+                  "x": 330,
+                  "y": 95,
+                  "opacity": 0
+                }
+              },
+              "focus": "骰子正在运动，所以“本次结果”仍未确定；随机性发生在具体试验过程中。",
+              "changeSummary": "骰子从左侧移动到中央并连续旋转。",
+              "semanticAction": "state-transition-2",
+              "whyItMatters": "骰子正在运动，所以“本次结果”仍未确定；随机性发生在具体试验过程中。",
+              "emphasis": "key",
+              "motionMs": 1050
+            },
+            {
+              "id": "s3",
+              "title": "列出全部可能结果",
+              "caption": "六个样本点展开，组成样本空间；这不是说一次试验会同时出现六个结果。",
+              "states": {
+                "die": {
+                  "x": 72,
+                  "y": 304,
+                  "rotation": 900,
+                  "opacity": 0.18,
+                  "face": 4
+                },
+                "event": {
+                  "x": 625,
+                  "y": 190,
+                  "opacity": 0
+                },
+                "o1": {
+                  "x": 135,
+                  "y": 225,
+                  "opacity": 1
+                },
+                "o2": {
+                  "x": 225,
+                  "y": 115,
+                  "opacity": 1
+                },
+                "o3": {
+                  "x": 315,
+                  "y": 225,
+                  "opacity": 1
+                },
+                "o4": {
+                  "x": 405,
+                  "y": 115,
+                  "opacity": 1
+                },
+                "o5": {
+                  "x": 495,
+                  "y": 225,
+                  "opacity": 1
+                },
+                "o6": {
+                  "x": 585,
+                  "y": 115,
+                  "opacity": 1
+                }
+              },
+              "focus": "一次试验只会落在一个结果上，但建模必须先列出全部六个可能结果。",
+              "changeSummary": "骰子退到下方，1—6 六个样本点在互不遮挡的位置展开。",
+              "semanticAction": "state-transition-3",
+              "whyItMatters": "一次试验只会落在一个结果上，但建模必须先列出全部六个可能结果。",
+              "emphasis": "consolidate",
+              "motionMs": 680
+            },
+            {
+              "id": "s4",
+              "title": "按条件形成事件",
+              "caption": "事件A要求“点数为偶数”，于是2、4、6进入事件区域；事件仍是样本空间的子集。",
+              "states": {
+                "die": {
+                  "x": 72,
+                  "y": 304,
+                  "rotation": 900,
+                  "opacity": 0.12,
+                  "face": 4
+                },
+                "event": {
+                  "x": 640,
+                  "y": 205,
+                  "opacity": 1
+                },
+                "o1": {
+                  "x": 135,
+                  "y": 225,
+                  "opacity": 0.28
+                },
+                "o2": {
+                  "x": 575,
+                  "y": 175,
+                  "opacity": 1
+                },
+                "o3": {
+                  "x": 315,
+                  "y": 225,
+                  "opacity": 0.28
+                },
+                "o4": {
+                  "x": 640,
+                  "y": 225,
+                  "opacity": 1
+                },
+                "o5": {
+                  "x": 455,
+                  "y": 225,
+                  "opacity": 0.28
+                },
+                "o6": {
+                  "x": 705,
+                  "y": 175,
+                  "opacity": 1
+                }
+              },
+              "focus": "事件 A 不是新的随机结果；它只是从样本空间中挑出满足“偶数”的样本点。",
+              "changeSummary": "2、4、6 向右移动进入事件区域，1、3、5 留在原位并变淡。",
+              "semanticAction": "state-transition-4",
+              "whyItMatters": "事件 A 不是新的随机结果；它只是从样本空间中挑出满足“偶数”的样本点。",
+              "emphasis": "consolidate",
+              "motionMs": 680
+            }
+          ],
+          "canvas": {
+            "width": 780,
+            "height": 380
+          },
+          "stepDuration": 1200,
+          "layoutPolicy": {
+            "safeMargin": 24,
+            "minGap": 12,
+            "preventOverlap": true
+          },
+          "principleCheck": {
+            "prompt": "动画中的对象为什么要这样移动或改变？请用本页概率原理解释。",
+            "expectedIdeas": [
+              "通过对象真实移动与归类，区分一次实际结果、全部可能结果和事件子集。"
+            ]
+          },
+          "animationSemantics": {
+            "profile": "mathematics-probability",
+            "knowledgeType": "mechanism-process",
+            "teachingGoal": "区分本次实际结果、完整样本空间和事件子集。",
+            "corePrinciple": "通过对象真实移动与归类，区分一次实际结果、全部可能结果和事件子集。",
+            "entities": [
+              {
+                "id": "device",
+                "concept": "掷骰子的随机装置",
+                "actorIds": [
+                  "die"
+                ]
+              },
+              {
+                "id": "outcomes",
+                "concept": "六个可能样本点",
+                "actorIds": [
+                  "o1",
+                  "o2",
+                  "o3",
+                  "o4",
+                  "o5",
+                  "o6"
+                ]
+              },
+              {
+                "id": "event",
+                "concept": "偶数事件子集",
+                "actorIds": [
+                  "event"
+                ]
+              }
+            ],
+            "stateVariables": [
+              "die-face",
+              "sample-space",
+              "event-membership"
+            ],
+            "stepLogic": [
+              "prepare",
+              "realize-one",
+              "enumerate-all",
+              "classify-event"
+            ],
+            "mustNotMislead": [
+              "样本点依次出现只是讲解顺序，不表示真实骰子按1到6发生。",
+              "移动进入事件区表示集合隶属，不表示因果运动。"
+            ],
+            "motionRationale": "运动帮助把“发生了一个结果”和“建模列出全部可能结果”分开。",
+            "contentFitAudit": {
+              "entitySpecificity": "high",
+              "motionNaturalness": "high",
+              "misleadingRisk": "low",
+              "visualStory": "先发生一次结果，再展开全部可能结果，最后把满足条件的样本点归入事件。"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "Q1011",
+      "stageId": "S101",
+      "type": "quiz",
+      "title": "10.1.1 分层练习",
+      "objectiveIds": [
+        "O1"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "q11g",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "guided",
+            "kind": "single",
+            "prompt": "抛两枚硬币并记录先后结果，下列哪个集合完整表示样本空间？",
+            "options": [
+              {
+                "id": "A",
+                "text": "{正,反}"
+              },
+              {
+                "id": "B",
+                "text": "{正正,正反,反正,反反}"
+              },
+              {
+                "id": "C",
+                "text": "{0,1,2}"
+              },
+              {
+                "id": "D",
+                "text": "{两正,一正,零正}"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "四个有顺序结果缺一不可。",
+              "incorrect": "先固定“记录先后结果”的观察方式。"
+            },
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "q11i",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "independent",
+            "kind": "single",
+            "prompt": "射击3次只记录命中次数，样本空间中有几个样本点？",
+            "options": [
+              {
+                "id": "A",
+                "text": "3"
+              },
+              {
+                "id": "B",
+                "text": "4"
+              },
+              {
+                "id": "C",
+                "text": "6"
+              },
+              {
+                "id": "D",
+                "text": "8"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "命中次数可以是0、1、2、3。",
+              "incorrect": "只记录次数，不记录每次顺序。"
+            },
+            "gapTags": [
+              "mechanism"
+            ]
+          },
+          {
+            "id": "q11t",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "从1到9随机摸一个编号球，事件“编号小于5”包含几个样本点？",
+            "options": [
+              {
+                "id": "A",
+                "text": "3"
+              },
+              {
+                "id": "B",
+                "text": "4"
+              },
+              {
+                "id": "C",
+                "text": "5"
+              },
+              {
+                "id": "D",
+                "text": "9"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "1、2、3、4共四个样本点。",
+              "incorrect": "把文字条件翻译成具体编号。"
+            },
+            "gapTags": [
+              "boundary"
+            ]
+          },
+          {
+            "id": "q11r",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "下列关于随机试验的说法哪项最准确？",
+            "options": [
+              {
+                "id": "A",
+                "text": "每个结果必须等可能"
+              },
+              {
+                "id": "B",
+                "text": "所有可能结果应事先明确，但具体出现哪个事先不能确定"
+              },
+              {
+                "id": "C",
+                "text": "一次试验会同时出现所有样本点"
+              },
+              {
+                "id": "D",
+                "text": "样本空间只能用数字表示"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "这正是随机试验的核心条件之一。",
+              "incorrect": "随机与等可能不是同义词。"
+            },
+            "gapTags": [
+              "calculation"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "E1011",
+      "stageId": "S101",
+      "type": "explain-back",
+      "title": "复述自检：样本空间到底是什么",
+      "objectiveIds": [
+        "O1"
+      ],
+      "content": {
+        "conceptIds": [
+          "I1011"
+        ],
+        "prompt": "请用一个自己熟悉的随机试验解释：什么是样本点、样本空间和事件？",
+        "requiredIdeas": [
+          {
+            "id": "i1",
+            "label": "观察量",
+            "check": "先说明一次试验到底记录什么。"
+          },
+          {
+            "id": "i2",
+            "label": "全部可能",
+            "check": "样本空间应覆盖所有互不重复的基本结果。"
+          },
+          {
+            "id": "i3",
+            "label": "事件子集",
+            "check": "事件由满足条件的样本点组成。"
+          }
+        ],
+        "commonGaps": [
+          {
+            "id": "chain",
+            "label": "推理链少了一步",
+            "description": "有结论但缺少关键依据。",
+            "repairQuestion": "关于“有限样本空间”，请只补充最关键的一句“因为……所以……”。"
+          },
+          {
+            "id": "definition",
+            "label": "概念说得太模糊",
+            "description": "用了术语，却没有给出可判断的条件。",
+            "repairQuestion": "不用“有限样本空间”这个名称，怎样用条件描述它？"
+          },
+          {
+            "id": "boundary",
+            "label": "边界条件漏了",
+            "description": "没有说明什么时候不能使用这个规则。",
+            "repairQuestion": "给出一个看起来相似、但该规则不能直接使用的情形。"
+          },
+          {
+            "id": "example",
+            "label": "缺少具体例子",
+            "description": "只有抽象说法，没有把它落到随机试验。",
+            "repairQuestion": "请用掷骰子、摸球或抛硬币中的一个例子重述。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C1012",
+      "stageId": "S101",
+      "type": "concept",
+      "title": "10.1.2 事件关系与运算",
+      "objectiveIds": [
+        "O2"
+      ],
+      "knowledge": {
+        "title": "10.1.2 事件的关系和运算：用集合结构表达“同时、至少一个、相反”",
+        "summary": "随机事件是样本空间的子集，因此事件之间的关系可以直接使用集合语言。事件A包含事件B，表示B发生必然导致A发生；A与B的交表示两者同时发生；并表示至少一个发生；补事件表示A不发生。互斥事件的交为空，说明它们不能同时发生；对立事件比互斥更强——它们不仅不能同时发生，而且两者必有一个发生，也就是并集覆盖整个样本空间。",
+        "prerequisites": [
+          "集合与基本运算",
+          "分数与比例",
+          "能够读简单表格与图形"
+        ],
+        "mentalModel": "把事件想成样本空间中的区域。交集是区域重叠部分，并集是两个区域合在一起，补集是盒子中除A之外的全部区域。互斥是两个区域不重叠；对立则像把整个盒子刚好切成A与“非A”两块，没有缝隙也没有重叠。",
+        "mechanism": "每道事件运算题先把事件写成样本点集合，再做集合运算。特别要区分“互斥”和“独立”：互斥说的是两个事件能否同时发生，独立说的是一个事件发生后是否改变另一个事件的概率。除了极端零概率情形，非空互斥事件通常不会独立。",
+        "sections": [
+          {
+            "title": "交与并",
+            "body": "交事件对应“同时满足A和B”；并事件对应“满足A或B中的至少一个”。自然语言中的“或”通常是包含两者同时发生的。"
+          },
+          {
+            "title": "互斥与对立",
+            "body": "互斥只要求没有共同样本点；对立还要求二者合起来就是整个样本空间。因此“对立 ⇒ 互斥”，反向一般不成立。"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex12a",
+            "title": "例1：骰子中的并与交",
+            "text": "A为偶数，B为大于3。交事件包含4、6；并事件包含2、4、5、6。",
+            "variantType": "standard"
+          },
+          {
+            "id": "ex12b",
+            "title": "例2：互斥但不对立",
+            "text": "掷骰子时“点数1”和“点数2”互斥，但两者并没有覆盖3、4、5、6，因此并非对立。",
+            "variantType": "contrast"
+          },
+          {
+            "id": "ex12c",
+            "title": "例3：对立事件",
+            "text": "“点数为偶数”和“点数为奇数”不能同时发生，并且每次必有一个发生，因此互为对立事件。",
+            "variantType": "boundary"
+          }
+        ],
+        "pitfalls": [
+          "把“或”理解成只能二选一",
+          "互斥就误认为对立",
+          "把独立和互斥当同义词"
+        ],
+        "connections": [
+          "本章把集合、计数、比例和数据观察连接起来：先定义随机试验中的对象，再给概率建立可计算模型，最后用重复试验理解概率的经验意义。"
+        ],
+        "checkYourself": [
+          "为什么对立事件一定互斥，但互斥事件不一定对立？",
+          "“A或B发生”为什么包括A、B同时发生的情况？"
+        ],
+        "pedagogicalFigures": [
+          {
+            "id": "fig1012",
+            "figureKind": "compare",
+            "title": "互斥、对立和一般重叠事件",
+            "learningPurpose": "避免把三个不同关系混成一句“不能一起发生”",
+            "caption": "对立事件一定互斥且并为全集；互斥事件不一定覆盖全集。",
+            "template": "generic-flow",
+            "after": "pitfalls",
+            "nodes": [
+              {
+                "id": "a",
+                "label": "互斥：交为空",
+                "x": 130,
+                "y": 100
+              },
+              {
+                "id": "b",
+                "label": "对立：互斥且并为Ω",
+                "x": 340,
+                "y": 100
+              },
+              {
+                "id": "c",
+                "label": "独立：概率不受影响",
+                "x": 550,
+                "y": 100
+              }
+            ],
+            "edges": [
+              {
+                "from": "b",
+                "to": "a"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "sourceId": "src-textbook",
+            "locator": "10.1.2 事件的关系和运算"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q1012",
+      "stageId": "S101",
+      "type": "quiz",
+      "title": "10.1.2 分层练习",
+      "objectiveIds": [
+        "O2"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "q12g",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "guided",
+            "kind": "single",
+            "prompt": "骰子中事件A含样本点2、4、6，事件B含样本点4、5、6。A与B同时发生对应哪个集合？",
+            "options": [
+              {
+                "id": "A",
+                "text": "{2,4,5,6}"
+              },
+              {
+                "id": "B",
+                "text": "{4,6}"
+              },
+              {
+                "id": "C",
+                "text": "{2}"
+              },
+              {
+                "id": "D",
+                "text": "{5}"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "交集是共同属于两个事件的样本点4和6。",
+              "incorrect": "找两个集合共同拥有的元素。"
+            },
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "q12i",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "independent",
+            "kind": "single",
+            "prompt": "“点数为1”和“点数为6”是什么关系？",
+            "options": [
+              {
+                "id": "A",
+                "text": "对立"
+              },
+              {
+                "id": "B",
+                "text": "互斥但不对立"
+              },
+              {
+                "id": "C",
+                "text": "独立且对立"
+              },
+              {
+                "id": "D",
+                "text": "必然同时发生"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "两者不能同时发生，但还有其他点数。",
+              "incorrect": "检查并集是否覆盖整个样本空间。"
+            },
+            "gapTags": [
+              "mechanism"
+            ]
+          },
+          {
+            "id": "q12t",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "抽一张编号1到10的卡，A为“偶数”，A的对立事件是什么？",
+            "options": [
+              {
+                "id": "A",
+                "text": "奇数"
+              },
+              {
+                "id": "B",
+                "text": "大于5"
+              },
+              {
+                "id": "C",
+                "text": "小于5"
+              },
+              {
+                "id": "D",
+                "text": "质数"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "不是偶数即奇数。",
+              "incorrect": "对立事件必须与A无交且并为全集。"
+            },
+            "gapTags": [
+              "boundary"
+            ]
+          },
+          {
+            "id": "q12r",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "若A与B互为对立事件，下列哪项一定成立？",
+            "options": [
+              {
+                "id": "A",
+                "text": "A与B可以同时发生"
+              },
+              {
+                "id": "B",
+                "text": "A∩B为空且A∪B为Ω"
+              },
+              {
+                "id": "C",
+                "text": "A与B相同"
+              },
+              {
+                "id": "D",
+                "text": "A与B的概率相等"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "对立同时满足互斥与完备。",
+              "incorrect": "对立关系包含两个条件。"
+            },
+            "gapTags": [
+              "calculation"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "E1012",
+      "stageId": "S101",
+      "type": "explain-back",
+      "title": "复述自检：事件运算不是符号游戏",
+      "objectiveIds": [
+        "O2"
+      ],
+      "content": {
+        "conceptIds": [
+          "I1012"
+        ],
+        "prompt": "请用一个骰子例子解释并、交、互斥和对立，并指出独立与互斥为什么不是同一个概念。",
+        "requiredIdeas": [
+          {
+            "id": "i1",
+            "label": "并与交",
+            "check": "分别对应至少一个发生和同时发生。"
+          },
+          {
+            "id": "i2",
+            "label": "互斥/对立边界",
+            "check": "对立还要求并为整个样本空间。"
+          },
+          {
+            "id": "i3",
+            "label": "独立不同",
+            "check": "独立描述概率是否受影响。"
+          }
+        ],
+        "commonGaps": [
+          {
+            "id": "chain",
+            "label": "推理链少了一步",
+            "description": "有结论但缺少关键依据。",
+            "repairQuestion": "关于“事件关系和运算”，请只补充最关键的一句“因为……所以……”。"
+          },
+          {
+            "id": "definition",
+            "label": "概念说得太模糊",
+            "description": "用了术语，却没有给出可判断的条件。",
+            "repairQuestion": "不用“事件关系和运算”这个名称，怎样用条件描述它？"
+          },
+          {
+            "id": "boundary",
+            "label": "边界条件漏了",
+            "description": "没有说明什么时候不能使用这个规则。",
+            "repairQuestion": "给出一个看起来相似、但该规则不能直接使用的情形。"
+          },
+          {
+            "id": "example",
+            "label": "缺少具体例子",
+            "description": "只有抽象说法，没有把它落到随机试验。",
+            "repairQuestion": "请用掷骰子、摸球或抛硬币中的一个例子重述。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C1013",
+      "stageId": "S101",
+      "type": "concept",
+      "title": "10.1.3 古典概型",
+      "objectiveIds": [
+        "O3"
+      ],
+      "knowledge": {
+        "title": "10.1.3 古典概型：计数公式成立之前，先证明“有限且等可能”",
+        "summary": "古典概型把概率计算转化为样本点计数，但它有明确前提：样本空间只有有限个样本点，并且每个样本点发生的可能性相等。在这些条件成立时，事件A的概率等于A包含的样本点数与全部样本点数之比。公式本身很短，真正容易出错的是模型判断和计数方式：结果是否等可能？样本点是否定义一致？有序与无序是否混淆？是否重复计数？",
+        "prerequisites": [
+          "集合与基本运算",
+          "分数与比例",
+          "能够读简单表格与图形"
+        ],
+        "mentalModel": "把古典概型想成一张“等权重卡片表”。如果每张样本点卡片权重相同，那么事件概率只需要数卡片；若卡片权重不同，单纯数张数就会失真。因此遇到转盘面积不同、骰子不均匀、抽签机制有偏等情形，不能因为样本空间有限就直接使用等可能计数。",
+        "mechanism": "先检查有限性和等可能性，再确定样本点粒度，最后数有利结果与全部结果。组合计数时尤其要统一“有序/无序”口径。公式是最后一步，而不是第一步。",
+        "sections": [
+          {
+            "title": "古典概型公式",
+            "body": "在有限且等可能的样本空间中，可用样本点个数之比计算事件概率。",
+            "formula": {
+              "tex": "P(A)=\\frac{|A|}{|\\Omega|}",
+              "mathml": "<math display=\"block\"><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mo>|</mo><mi>A</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>Ω</mi><mo>|</mo></mrow></mfrac></math>",
+              "spoken": "事件A的概率等于A包含的样本点数除以样本空间样本点数",
+              "id": "eq-classical"
+            }
+          },
+          {
+            "title": "模型判断比计算更重要",
+            "body": "“有限”不足以推出“等可能”。若一个转盘不同区域面积不同，则各颜色结果概率通常与面积有关，而不是颜色种类数。"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex13a",
+            "title": "例1：均匀骰子",
+            "text": "掷一枚质地均匀骰子，事件“大于4”有2个有利样本点，总样本点6个，概率为三分之一。",
+            "variantType": "standard"
+          },
+          {
+            "id": "ex13b",
+            "title": "例2：不同面积转盘",
+            "text": "转盘只有红蓝两种颜色，但红区面积远大于蓝区时，不能用“2种颜色所以各二分之一”。",
+            "variantType": "misconception"
+          },
+          {
+            "id": "ex13c",
+            "title": "例3：两枚硬币的有序结果",
+            "text": "两枚独立均匀硬币产生4个等可能有序样本点。“恰好一个正面”占其中2个。",
+            "variantType": "contrast"
+          }
+        ],
+        "pitfalls": [
+          "只看到有限结果就套古典概型",
+          "分子按有序计数、分母按无序计数",
+          "把现实中“不均匀”对象当等可能"
+        ],
+        "connections": [
+          "本章把集合、计数、比例和数据观察连接起来：先定义随机试验中的对象，再给概率建立可计算模型，最后用重复试验理解概率的经验意义。"
+        ],
+        "checkYourself": [
+          "古典概型需要哪两个核心条件？",
+          "为什么“有两种颜色”不代表每种颜色概率都是二分之一？"
+        ],
+        "pedagogicalFigures": [],
+        "citations": [
+          {
+            "sourceId": "src-textbook",
+            "locator": "10.1.3 古典概型"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q1013",
+      "stageId": "S101",
+      "type": "quiz",
+      "title": "10.1.3 分层练习",
+      "objectiveIds": [
+        "O3"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "q13g",
+            "objectiveIds": [
+              "O3"
+            ],
+            "practiceLevel": "guided",
+            "kind": "single",
+            "prompt": "均匀骰子中事件“点数不小于5”的概率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "1/6"
+              },
+              {
+                "id": "B",
+                "text": "1/3"
+              },
+              {
+                "id": "C",
+                "text": "1/2"
+              },
+              {
+                "id": "D",
+                "text": "2/3"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "有利结果5、6共2个，2/6=1/3。",
+              "incorrect": "先数有利样本点。"
+            },
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "q13i",
+            "objectiveIds": [
+              "O3"
+            ],
+            "practiceLevel": "independent",
+            "kind": "single",
+            "prompt": "从编号1到10的相同卡片中随机抽一张，抽到质数的概率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "1/5"
+              },
+              {
+                "id": "B",
+                "text": "2/5"
+              },
+              {
+                "id": "C",
+                "text": "1/2"
+              },
+              {
+                "id": "D",
+                "text": "3/5"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "质数2、3、5、7共4个，4/10=2/5。",
+              "incorrect": "卡片等可能，数质数。"
+            },
+            "gapTags": [
+              "mechanism"
+            ]
+          },
+          {
+            "id": "q13t",
+            "objectiveIds": [
+              "O3"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "一个转盘红区占四分之三、蓝区占四分之一且指针均匀落在面积上。用“2种颜色所以红蓝各二分之一”是否合理？",
+            "options": [
+              {
+                "id": "A",
+                "text": "合理"
+              },
+              {
+                "id": "B",
+                "text": "不合理，样本点并非按颜色种类等可能"
+              },
+              {
+                "id": "C",
+                "text": "只有蓝色合理"
+              },
+              {
+                "id": "D",
+                "text": "无法定义概率"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "颜色种类不是等可能样本点。",
+              "incorrect": "先问结果是否等可能。"
+            },
+            "gapTags": [
+              "boundary"
+            ]
+          },
+          {
+            "id": "q13r",
+            "objectiveIds": [
+              "O3"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "古典概型中若事件A含3个样本点、样本空间含12个等可能样本点，概率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "1/4"
+              },
+              {
+                "id": "B",
+                "text": "1/3"
+              },
+              {
+                "id": "C",
+                "text": "1/2"
+              },
+              {
+                "id": "D",
+                "text": "3/4"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "3/12=1/4。",
+              "incorrect": "统一样本点口径后再相除。"
+            },
+            "gapTags": [
+              "calculation"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "E1013",
+      "stageId": "S101",
+      "type": "explain-back",
+      "title": "复述自检：为什么古典概型先检查模型",
+      "objectiveIds": [
+        "O3"
+      ],
+      "content": {
+        "conceptIds": [
+          "I1013"
+        ],
+        "prompt": "请说明古典概型的两个条件，并举一个“结果有限但不能直接等数量相除”的反例。",
+        "requiredIdeas": [
+          {
+            "id": "i1",
+            "label": "有限性",
+            "check": "样本点个数有限。"
+          },
+          {
+            "id": "i2",
+            "label": "等可能性",
+            "check": "每个样本点概率相同。"
+          },
+          {
+            "id": "i3",
+            "label": "统一计数",
+            "check": "分子分母使用相同样本点口径。"
+          }
+        ],
+        "commonGaps": [
+          {
+            "id": "chain",
+            "label": "推理链少了一步",
+            "description": "有结论但缺少关键依据。",
+            "repairQuestion": "关于“古典概型”，请只补充最关键的一句“因为……所以……”。"
+          },
+          {
+            "id": "definition",
+            "label": "概念说得太模糊",
+            "description": "用了术语，却没有给出可判断的条件。",
+            "repairQuestion": "不用“古典概型”这个名称，怎样用条件描述它？"
+          },
+          {
+            "id": "boundary",
+            "label": "边界条件漏了",
+            "description": "没有说明什么时候不能使用这个规则。",
+            "repairQuestion": "给出一个看起来相似、但该规则不能直接使用的情形。"
+          },
+          {
+            "id": "example",
+            "label": "缺少具体例子",
+            "description": "只有抽象说法，没有把它落到随机试验。",
+            "repairQuestion": "请用掷骰子、摸球或抛硬币中的一个例子重述。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C1014",
+      "stageId": "S101",
+      "type": "concept",
+      "title": "10.1.4 概率的基本性质",
+      "objectiveIds": [
+        "O4"
+      ],
+      "knowledge": {
+        "title": "10.1.4 概率的基本性质：集合关系决定概率怎样组合",
+        "summary": "概率首先满足非负性，必然事件概率为1，不可能事件概率为0。更有用的是事件关系带来的计算规则：一般和事件需要避免把交集重复计算，因此两个事件概率相加后要减去交事件概率；若A与B互斥，交事件为空，公式就简化为直接相加；A与其对立事件恰好把样本空间分成两部分，因此二者概率之和为1。理解这些关系比孤立记公式更稳固。",
+        "prerequisites": [
+          "集合与基本运算",
+          "分数与比例",
+          "能够读简单表格与图形"
+        ],
+        "mentalModel": "把概率看成给样本空间不同区域分配“面积”。两个有重叠的区域相加时，重叠区被数了两次，所以要减一次；互斥区域没有重叠，可以直接相加；A和非A刚好拼成整个样本空间，因此补事件概率可以用1减去A的概率。",
+        "mechanism": "每次使用加法前先判断交集：有重叠就用一般加法公式，互斥则简化。求“至少一次”“不超过”“不是”等事件时，常常先考虑对立事件是否更容易。对立事件技巧的本质不是一个特殊公式，而是把复杂事件换成更容易计数的补集。",
+        "sections": [
+          {
+            "title": "一般和事件公式",
+            "body": "两个事件可能重叠，直接相加会重复计算交集。",
+            "formula": {
+              "tex": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)",
+              "mathml": "<math display=\"block\"><mi>P</mi><mo>(</mo><mi>A</mi><mo>∪</mo><mi>B</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>+</mo><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo><mo>−</mo><mi>P</mi><mo>(</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>)</mo></math>",
+              "spoken": "A并B的概率等于A概率加B概率减去A交B概率",
+              "id": "eq-add"
+            }
+          },
+          {
+            "title": "对立事件",
+            "body": "A与非A互斥且并为整个样本空间。",
+            "formula": {
+              "tex": "P(A^c)=1-P(A)",
+              "mathml": "<math display=\"block\"><mi>P</mi><mo>(</mo><msup><mi>A</mi><mi>c</mi></msup><mo>)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo></math>",
+              "spoken": "A的补事件概率等于一减A的概率",
+              "id": "eq-comp"
+            }
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex14a",
+            "title": "例1：互斥事件直接相加",
+            "text": "骰子事件“点数1”和“点数6”互斥，至少出现其中之一的概率等于两者概率之和。",
+            "variantType": "standard"
+          },
+          {
+            "id": "ex14b",
+            "title": "例2：重叠事件要减交集",
+            "text": "A为偶数、B为大于3，4和6同时属于两者；若直接相加就重复计数。",
+            "variantType": "contrast"
+          },
+          {
+            "id": "ex14c",
+            "title": "例3：至少一次用补事件",
+            "text": "多次试验中“至少一次成功”常用1减去“一次都不成功”的概率，前提是后者更容易计算。",
+            "variantType": "reverse"
+          }
+        ],
+        "pitfalls": [
+          "互斥事件也减交集造成重复处理",
+          "一般和事件直接相加忘记重叠",
+          "看到“至少”就盲目逐项分类而忽略补事件"
+        ],
+        "connections": [
+          "本章把集合、计数、比例和数据观察连接起来：先定义随机试验中的对象，再给概率建立可计算模型，最后用重复试验理解概率的经验意义。"
+        ],
+        "checkYourself": [
+          "为什么一般加法公式要减交事件概率？",
+          "什么时候使用补事件会明显简化计算？"
+        ],
+        "pedagogicalFigures": [],
+        "citations": [
+          {
+            "sourceId": "src-textbook",
+            "locator": "10.1.4 概率的基本性质"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q1014",
+      "stageId": "S101",
+      "type": "quiz",
+      "title": "10.1.4 分层练习",
+      "objectiveIds": [
+        "O4"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "q14g",
+            "objectiveIds": [
+              "O4"
+            ],
+            "practiceLevel": "guided",
+            "kind": "single",
+            "prompt": "若A、B互斥，事件A的概率为0.3，事件B的概率为0.2，则两者至少一个发生的概率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "0.1"
+              },
+              {
+                "id": "B",
+                "text": "0.5"
+              },
+              {
+                "id": "C",
+                "text": "0.6"
+              },
+              {
+                "id": "D",
+                "text": "1"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "互斥时交事件概率为0，直接相加。",
+              "incorrect": "互斥意味着没有重叠。"
+            },
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "q14i",
+            "objectiveIds": [
+              "O4"
+            ],
+            "practiceLevel": "independent",
+            "kind": "single",
+            "prompt": "若事件A的概率为0.65，则A的对立事件概率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "0.25"
+              },
+              {
+                "id": "B",
+                "text": "0.35"
+              },
+              {
+                "id": "C",
+                "text": "0.65"
+              },
+              {
+                "id": "D",
+                "text": "1.65"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "1-0.65=0.35。",
+              "incorrect": "对立事件概率和为1。"
+            },
+            "gapTags": [
+              "mechanism"
+            ]
+          },
+          {
+            "id": "q14t",
+            "objectiveIds": [
+              "O4"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "若事件A的概率为0.6，事件B的概率为0.5，两者同时发生的概率为0.2，则至少一个发生的概率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "0.7"
+              },
+              {
+                "id": "B",
+                "text": "0.9"
+              },
+              {
+                "id": "C",
+                "text": "1.1"
+              },
+              {
+                "id": "D",
+                "text": "0.3"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "0.6+0.5-0.2=0.9。",
+              "incorrect": "重叠部分要减一次。"
+            },
+            "gapTags": [
+              "boundary"
+            ]
+          },
+          {
+            "id": "q14r",
+            "objectiveIds": [
+              "O4"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "“至少一次成功”常通过哪个事件的概率求得？",
+            "options": [
+              {
+                "id": "A",
+                "text": "一次都不成功的对立事件"
+              },
+              {
+                "id": "B",
+                "text": "第一次成功"
+              },
+              {
+                "id": "C",
+                "text": "最后一次成功"
+              },
+              {
+                "id": "D",
+                "text": "成功次数恰好一半"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "至少一次的补事件就是零次成功。",
+              "incorrect": "先找最简单的对立事件。"
+            },
+            "gapTags": [
+              "calculation"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "E1014",
+      "stageId": "S101",
+      "type": "explain-back",
+      "title": "复述自检：概率加法为什么要看事件关系",
+      "objectiveIds": [
+        "O4"
+      ],
+      "content": {
+        "conceptIds": [
+          "I1014"
+        ],
+        "prompt": "请用“区域重叠”的语言解释一般加法公式、互斥事件的简化，以及补事件公式。",
+        "requiredIdeas": [
+          {
+            "id": "i1",
+            "label": "重叠去重",
+            "check": "交事件被两次相加，需要减一次。"
+          },
+          {
+            "id": "i2",
+            "label": "互斥简化",
+            "check": "交为空时无需扣除。"
+          },
+          {
+            "id": "i3",
+            "label": "补事件",
+            "check": "A与非A拼成整个样本空间。"
+          }
+        ],
+        "commonGaps": [
+          {
+            "id": "chain",
+            "label": "推理链少了一步",
+            "description": "有结论但缺少关键依据。",
+            "repairQuestion": "关于“概率基本性质”，请只补充最关键的一句“因为……所以……”。"
+          },
+          {
+            "id": "definition",
+            "label": "概念说得太模糊",
+            "description": "用了术语，却没有给出可判断的条件。",
+            "repairQuestion": "不用“概率基本性质”这个名称，怎样用条件描述它？"
+          },
+          {
+            "id": "boundary",
+            "label": "边界条件漏了",
+            "description": "没有说明什么时候不能使用这个规则。",
+            "repairQuestion": "给出一个看起来相似、但该规则不能直接使用的情形。"
+          },
+          {
+            "id": "example",
+            "label": "缺少具体例子",
+            "description": "只有抽象说法，没有把它落到随机试验。",
+            "repairQuestion": "请用掷骰子、摸球或抛硬币中的一个例子重述。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "R101",
+      "stageId": "S101",
+      "type": "quiz",
+      "title": "10.1 累积复习：从样本点到概率性质",
+      "objectiveIds": [
+        "O1",
+        "O2",
+        "O3",
+        "O4"
+      ],
+      "content": {
+        "cumulative": true,
+        "practiceLevel": "retrieval",
+        "items": [
+          {
+            "id": "r101a",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "若只记录掷两枚骰子的点数之和，样本空间与记录有序点对相比会怎样？",
+            "options": [
+              {
+                "id": "A",
+                "text": "完全相同"
+              },
+              {
+                "id": "B",
+                "text": "样本点更少，因为多个点对可对应同一个和"
+              },
+              {
+                "id": "C",
+                "text": "样本点更多"
+              },
+              {
+                "id": "D",
+                "text": "无法建立样本空间"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "观察量改变会改变样本点定义。",
+              "incorrect": "比较“记录什么”。"
+            },
+            "gapTags": [
+              "transfer"
+            ]
+          },
+          {
+            "id": "r101b",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "对立事件与互斥事件相比，多出的条件是什么？",
+            "options": [
+              {
+                "id": "A",
+                "text": "概率相等"
+              },
+              {
+                "id": "B",
+                "text": "并集为整个样本空间"
+              },
+              {
+                "id": "C",
+                "text": "各有一个样本点"
+              },
+              {
+                "id": "D",
+                "text": "必须独立"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "对立还要求二者覆盖全集。",
+              "incorrect": "互斥只说明交集为空。"
+            },
+            "gapTags": [
+              "transfer"
+            ]
+          },
+          {
+            "id": "r101c",
+            "objectiveIds": [
+              "O3"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "使用古典概型前最先应检查什么？",
+            "options": [
+              {
+                "id": "A",
+                "text": "有限且等可能"
+              },
+              {
+                "id": "B",
+                "text": "事件一定互斥"
+              },
+              {
+                "id": "C",
+                "text": "概率一定大于1"
+              },
+              {
+                "id": "D",
+                "text": "频率已经稳定"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "模型条件先于计数。",
+              "incorrect": "不要只看到结果数量有限。"
+            },
+            "gapTags": [
+              "transfer"
+            ]
+          },
+          {
+            "id": "r101d",
+            "objectiveIds": [
+              "O4"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "两个事件有重叠时，和事件概率为什么不能简单相加？",
+            "options": [
+              {
+                "id": "A",
+                "text": "会重复计算交集"
+              },
+              {
+                "id": "B",
+                "text": "概率不能相加"
+              },
+              {
+                "id": "C",
+                "text": "事件一定独立"
+              },
+              {
+                "id": "D",
+                "text": "样本空间无限"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "交集被计数两次。",
+              "incorrect": "想象两个重叠区域。"
+            },
+            "gapTags": [
+              "transfer"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "C102",
+      "stageId": "S102",
+      "type": "concept",
+      "title": "10.2 事件的相互独立性",
+      "objectiveIds": [
+        "O5"
+      ],
+      "knowledge": {
+        "title": "10.2 事件的相互独立性：判断“一个事件是否改变另一个事件的概率”",
+        "summary": "独立性不是“两个事件不能同时发生”，恰恰相反，独立事件通常可以同时发生。它描述的是概率上的不影响：知道事件A已经发生，并不会改变事件B发生的可能性。对两个事件，如果同时发生的概率等于各自概率的乘积，就可以用这个关系判断或计算独立性。教材通过分别抛两枚硬币、以及有放回摸球等试验展示了“一个阶段的结果不改变另一个阶段机制”的直觉。",
+        "prerequisites": [
+          "集合与基本运算",
+          "分数与比例",
+          "能够读简单表格与图形"
+        ],
+        "mentalModel": "把独立试验想成两台互不联动的结果机器。第一台出现什么，不会修改第二台内部的规则。相反，不放回摸球会改变袋中组成，因此第二次概率通常受第一次影响。这个对比比死记乘法公式更能帮助判断题目是否独立。",
+        "mechanism": "判断独立性时先看机制，再用概率关系核对。若是不同硬币分别抛、随机数发生器独立调用、有放回抽取等，常具有独立结构；若无放回抽取、共享资源或后一步规则由前一步结果决定，就应警惕依赖。乘法公式只能在独立条件成立时直接使用。",
+        "sections": [
+          {
+            "title": "独立事件的概率关系",
+            "body": "当A、B相互独立时，同时发生的概率可写为乘积。",
+            "formula": {
+              "tex": "P(AB)=P(A)P(B)",
+              "mathml": "<math display=\"block\"><mi>P</mi><mo>(</mo><mi>A</mi><mi>B</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo></math>",
+              "spoken": "独立事件同时发生的概率等于各自概率的乘积",
+              "id": "eq-ind"
+            }
+          },
+          {
+            "title": "独立与互斥是两种不同关系",
+            "body": "互斥关注“能否同时发生”；独立关注“是否改变概率”。若两个正概率事件互斥，知道A发生就会让B概率变成0，因此通常不独立。"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex15a",
+            "title": "例1：分别抛两枚均匀硬币",
+            "text": "第一枚正面与第二枚反面由两枚硬币分别决定，二者可看作独立；同时发生的概率为两个二分之一的乘积。",
+            "variantType": "standard"
+          },
+          {
+            "id": "ex15b",
+            "title": "例2：无放回摸球",
+            "text": "第一次摸到红球后，袋中红白比例改变，因此第二次摸红球的概率受到影响，不应直接当独立。",
+            "variantType": "contrast"
+          },
+          {
+            "id": "ex15c",
+            "title": "例3：有放回摸球",
+            "text": "每次摸出后放回并充分摇匀，袋中组成恢复，第二次机制与第一次相同，独立模型通常合理。",
+            "variantType": "boundary"
+          }
+        ],
+        "pitfalls": [
+          "把互斥当独立",
+          "看到两件事“不同”就默认独立",
+          "无放回抽样仍直接使用乘法关系"
+        ],
+        "connections": [
+          "本章把集合、计数、比例和数据观察连接起来：先定义随机试验中的对象，再给概率建立可计算模型，最后用重复试验理解概率的经验意义。"
+        ],
+        "checkYourself": [
+          "独立和互斥分别回答什么问题？",
+          "为什么“放回”常能恢复独立结构？"
+        ],
+        "pedagogicalFigures": [],
+        "citations": [
+          {
+            "sourceId": "src-textbook",
+            "locator": "10.2 事件的相互独立性"
+          }
+        ]
+      }
+    },
+    {
+      "id": "A102",
+      "stageId": "S102",
+      "type": "interactive",
+      "title": "过程动画：相互独立的两个试验",
+      "objectiveIds": [
+        "O5"
+      ],
+      "knowledge": {
+        "title": "过程动画：两台互不联动的“结果机器”",
+        "summary": "动画让两枚硬币在两条独立轨道上同时翻转。第一枚硬币的状态变化不会改变第二枚硬币的运动规则；最后两个结果组合成一个有序结果。重点观察：两条轨道没有共享状态，也没有“第一枚结果出来后去改第二枚”的动作。随后再对比无放回抽球：若前一步直接改变后一步可选对象，就不再是同样的独立机制。",
+        "prerequisites": [
+          "集合与基本运算",
+          "分数与比例",
+          "能够读简单表格与图形"
+        ],
+        "mentalModel": "把独立试验想成两台互不联动的结果机器。第一台出现什么，不会修改第二台内部的规则。相反，不放回摸球会改变袋中组成，因此第二次概率通常受第一次影响。这个对比比死记乘法公式更能帮助判断题目是否独立。",
+        "mechanism": "第一步两枚硬币各自在自己的起点；第二步它们同时移动并旋转，代表两个试验分别进行；第三步分别落定，显示各自结果；第四步两个结果一起移动到组合结果框中。动画的“独立”不是因为对象离得远，而是因为一条轨道的状态没有改变另一条轨道的规则。数学上，这与独立事件的乘法关系相对应。",
+        "sections": [
+          {
+            "title": "动画对应的数学问题",
+            "body": "如果每枚均匀硬币正反概率各为二分之一，那么一个指定有序组合由两个独立选择共同形成。独立性允许把两个阶段的概率相乘。"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex15a",
+            "title": "例1：分别抛两枚均匀硬币",
+            "text": "第一枚正面与第二枚反面由两枚硬币分别决定，二者可看作独立；同时发生的概率为两个二分之一的乘积。",
+            "variantType": "standard"
+          },
+          {
+            "id": "ex15b",
+            "title": "例2：无放回摸球",
+            "text": "第一次摸到红球后，袋中红白比例改变，因此第二次摸红球的概率受到影响，不应直接当独立。",
+            "variantType": "contrast"
+          },
+          {
+            "id": "ex15c",
+            "title": "例3：有放回摸球",
+            "text": "每次摸出后放回并充分摇匀，袋中组成恢复，第二次机制与第一次相同，独立模型通常合理。",
+            "variantType": "boundary"
+          }
+        ],
+        "pitfalls": [
+          "把互斥当独立",
+          "看到两件事“不同”就默认独立",
+          "无放回抽样仍直接使用乘法关系"
+        ],
+        "connections": [
+          "本章把集合、计数、比例和数据观察连接起来：先定义随机试验中的对象，再给概率建立可计算模型，最后用重复试验理解概率的经验意义。"
+        ],
+        "checkYourself": [
+          "动画中的哪一种“没有连接”才是独立性的关键？",
+          "若把第一枚硬币结果改成会调整第二枚硬币正面概率，动画应该发生什么结构变化？"
+        ],
+        "pedagogicalFigures": [],
+        "citations": [
+          {
+            "sourceId": "src-textbook",
+            "locator": "10.2 事件的相互独立性"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "两枚硬币的独立过程",
+          "principle": "用两条互不修改状态的运动轨道展示“概率机制互不影响”。",
+          "actors": [
+            {
+              "id": "track1",
+              "type": "track",
+              "x2": 360,
+              "role": "muted",
+              "semanticRole": "reference-path"
+            },
+            {
+              "id": "track2",
+              "type": "track",
+              "x2": 360,
+              "role": "muted",
+              "semanticRole": "reference-path"
+            },
+            {
+              "id": "c1",
+              "type": "coin",
+              "r": 32,
+              "label": "硬币1",
+              "role": "primary",
+              "semanticRole": "independent-random-device"
+            },
+            {
+              "id": "c2",
+              "type": "coin",
+              "r": 32,
+              "label": "硬币2",
+              "role": "secondary",
+              "semanticRole": "independent-random-device"
+            },
+            {
+              "id": "pair",
+              "type": "zone",
+              "w": 190,
+              "h": 96,
+              "label": "组合结果",
+              "role": "container",
+              "labelPlacement": "top-outside",
+              "contains": [
+                "c1",
+                "c2"
+              ],
+              "semanticRole": "joint-outcome"
+            }
+          ],
+          "steps": [
+            {
+              "id": "a",
+              "title": "各自准备",
+              "caption": "两枚硬币位于不同试验轨道，规则彼此不修改。",
+              "states": {
+                "c1": {
+                  "x": 130,
+                  "y": 110,
+                  "face": "?"
+                },
+                "c2": {
+                  "x": 130,
+                  "y": 260,
+                  "face": "?"
+                },
+                "pair": {
+                  "x": 625,
+                  "y": 185,
+                  "opacity": 0
+                },
+                "track1": {
+                  "x": 115,
+                  "y": 110,
+                  "x2": 360,
+                  "opacity": 1
+                },
+                "track2": {
+                  "x": 115,
+                  "y": 260,
+                  "x2": 360,
+                  "opacity": 1
+                }
+              },
+              "focus": "两枚硬币分别位于自己的试验轨道；一枚硬币的规则没有写进另一枚硬币的状态。",
+              "changeSummary": "建立两条互不干扰的轨道。",
+              "semanticAction": "state-transition-1",
+              "whyItMatters": "两枚硬币分别位于自己的试验轨道；一枚硬币的规则没有写进另一枚硬币的状态。",
+              "emphasis": "setup",
+              "motionMs": 680
+            },
+            {
+              "id": "b",
+              "title": "同时翻转",
+              "caption": "两枚硬币分别运动和旋转；第一枚的状态没有改变第二枚的规则。",
+              "states": {
+                "c1": {
+                  "x": 350,
+                  "y": 85,
+                  "rotation": 720,
+                  "face": "?"
+                },
+                "c2": {
+                  "x": 350,
+                  "y": 235,
+                  "rotation": -720,
+                  "face": "?"
+                },
+                "pair": {
+                  "x": 625,
+                  "y": 185,
+                  "opacity": 0
+                },
+                "track1": {
+                  "x": 115,
+                  "y": 110,
+                  "x2": 360,
+                  "opacity": 1
+                },
+                "track2": {
+                  "x": 115,
+                  "y": 260,
+                  "x2": 360,
+                  "opacity": 1
+                }
+              },
+              "focus": "注意两枚硬币都在运动，但它们的运动轨迹和翻转状态彼此独立更新。",
+              "changeSummary": "两枚硬币分别沿自己的轨道移动并反向旋转。",
+              "semanticAction": "state-transition-2",
+              "whyItMatters": "注意两枚硬币都在运动，但它们的运动轨迹和翻转状态彼此独立更新。",
+              "emphasis": "key",
+              "motionMs": 1050
+            },
+            {
+              "id": "c",
+              "title": "各自得到结果",
+              "caption": "两次结果分别落定，例如第一枚正面、第二枚反面。",
+              "states": {
+                "c1": {
+                  "x": 440,
+                  "y": 110,
+                  "rotation": 900,
+                  "label": "正",
+                  "face": "正"
+                },
+                "c2": {
+                  "x": 440,
+                  "y": 260,
+                  "rotation": -900,
+                  "label": "反",
+                  "face": "反"
+                },
+                "pair": {
+                  "x": 625,
+                  "y": 185,
+                  "opacity": 0
+                },
+                "track1": {
+                  "x": 115,
+                  "y": 110,
+                  "x2": 360,
+                  "opacity": 1
+                },
+                "track2": {
+                  "x": 115,
+                  "y": 260,
+                  "x2": 360,
+                  "opacity": 1
+                }
+              },
+              "focus": "结果落定以后，第一枚为正并没有“迫使”第二枚为反；这只是本次组合结果。",
+              "changeSummary": "两枚硬币在各自轨道末端停下并显示各自结果。",
+              "semanticAction": "state-transition-3",
+              "whyItMatters": "结果落定以后，第一枚为正并没有“迫使”第二枚为反；这只是本次组合结果。",
+              "emphasis": "consolidate",
+              "motionMs": 680
+            },
+            {
+              "id": "d",
+              "title": "组合为积事件结果",
+              "caption": "两个独立结果一起组成“正,反”；独立条件下同时发生的概率可由各自概率相乘。",
+              "states": {
+                "c1": {
+                  "x": 590,
+                  "y": 180,
+                  "scale": 0.7,
+                  "label": "正",
+                  "face": "正"
+                },
+                "c2": {
+                  "x": 665,
+                  "y": 215,
+                  "scale": 0.7,
+                  "label": "反",
+                  "face": "反"
+                },
+                "pair": {
+                  "x": 630,
+                  "y": 200,
+                  "opacity": 1,
+                  "label": "组合结果（正，反）"
+                },
+                "track1": {
+                  "x": 115,
+                  "y": 110,
+                  "x2": 360,
+                  "opacity": 1
+                },
+                "track2": {
+                  "x": 115,
+                  "y": 260,
+                  "x2": 360,
+                  "opacity": 1
+                }
+              },
+              "focus": "最后才把两个已经分别产生的结果组合成一个有序结果。",
+              "changeSummary": "两枚硬币缩小并进入组合区域，形成（正，反）。",
+              "semanticAction": "state-transition-4",
+              "whyItMatters": "最后才把两个已经分别产生的结果组合成一个有序结果。",
+              "emphasis": "consolidate",
+              "motionMs": 680
+            }
+          ],
+          "canvas": {
+            "width": 780,
+            "height": 380
+          },
+          "stepDuration": 1250,
+          "layoutPolicy": {
+            "safeMargin": 24,
+            "minGap": 12,
+            "preventOverlap": true
+          },
+          "principleCheck": {
+            "prompt": "动画中的对象为什么要这样移动或改变？请用本页概率原理解释。",
+            "expectedIdeas": [
+              "用两条互不修改状态的运动轨道展示“概率机制互不影响”。"
+            ]
+          },
+          "animationSemantics": {
+            "profile": "mathematics-probability",
+            "knowledgeType": "mechanism-process",
+            "teachingGoal": "看到两个试验分别产生结果，再组成联合结果。",
+            "corePrinciple": "用两条互不修改状态的运动轨道展示“概率机制互不影响”。",
+            "entities": [
+              {
+                "id": "trial1",
+                "concept": "第一枚硬币",
+                "actorIds": [
+                  "c1"
+                ]
+              },
+              {
+                "id": "trial2",
+                "concept": "第二枚硬币",
+                "actorIds": [
+                  "c2"
+                ]
+              },
+              {
+                "id": "pair",
+                "concept": "联合结果",
+                "actorIds": [
+                  "pair"
+                ]
+              }
+            ],
+            "stateVariables": [
+              "coin1-face",
+              "coin2-face",
+              "joint-outcome"
+            ],
+            "stepLogic": [
+              "initialize",
+              "run-separately",
+              "resolve",
+              "compose"
+            ],
+            "mustNotMislead": [
+              "两条轨道只是并列展示，不是独立性的原因。",
+              "独立不等于互斥。"
+            ],
+            "motionRationale": "并列运动让两个概率机制分别更新，结果只在最后组合。",
+            "contentFitAudit": {
+              "entitySpecificity": "high",
+              "motionNaturalness": "high",
+              "misleadingRisk": "low",
+              "visualStory": "先独立生成两个结果，再组成一个有序对。"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "Q102",
+      "stageId": "S102",
+      "type": "quiz",
+      "title": "10.2 分层练习",
+      "objectiveIds": [
+        "O5"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "q15g",
+            "objectiveIds": [
+              "O5"
+            ],
+            "practiceLevel": "guided",
+            "kind": "single",
+            "prompt": "分别抛两枚均匀硬币，A为第一枚正面，B为第二枚正面。A与B最合理的关系是？",
+            "options": [
+              {
+                "id": "A",
+                "text": "互斥"
+              },
+              {
+                "id": "B",
+                "text": "相互独立"
+              },
+              {
+                "id": "C",
+                "text": "互为对立"
+              },
+              {
+                "id": "D",
+                "text": "必然同时发生"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "两枚硬币分别决定结果。",
+              "incorrect": "独立不是不能同时发生。"
+            },
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "q15i",
+            "objectiveIds": [
+              "O5"
+            ],
+            "practiceLevel": "independent",
+            "kind": "single",
+            "prompt": "袋中有2红2白球，摸一球后不放回再摸。两次“摸到红球”事件通常是否独立？",
+            "options": [
+              {
+                "id": "A",
+                "text": "独立"
+              },
+              {
+                "id": "B",
+                "text": "不独立"
+              },
+              {
+                "id": "C",
+                "text": "互斥"
+              },
+              {
+                "id": "D",
+                "text": "对立"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "第一次结果改变袋中组成。",
+              "incorrect": "不放回会改变第二次概率。"
+            },
+            "gapTags": [
+              "mechanism"
+            ]
+          },
+          {
+            "id": "q15t",
+            "objectiveIds": [
+              "O5"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "若A、B独立，事件A的概率为0.4，事件B的概率为0.5，则同时发生的概率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "0.1"
+              },
+              {
+                "id": "B",
+                "text": "0.2"
+              },
+              {
+                "id": "C",
+                "text": "0.4"
+              },
+              {
+                "id": "D",
+                "text": "0.9"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "独立时0.4×0.5=0.2。",
+              "incorrect": "使用独立事件乘法关系。"
+            },
+            "gapTags": [
+              "boundary"
+            ]
+          },
+          {
+            "id": "q15r",
+            "objectiveIds": [
+              "O5"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "两个正概率事件互斥时，为什么通常不能独立？",
+            "options": [
+              {
+                "id": "A",
+                "text": "因为A发生会使B发生概率降为0"
+              },
+              {
+                "id": "B",
+                "text": "因为互斥事件概率都为1"
+              },
+              {
+                "id": "C",
+                "text": "因为它们一定相等"
+              },
+              {
+                "id": "D",
+                "text": "因为独立事件不能计算"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "互斥意味着A发生后B不可能发生。",
+              "incorrect": "独立要求概率不受影响。"
+            },
+            "gapTags": [
+              "calculation"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "E102",
+      "stageId": "S102",
+      "type": "explain-back",
+      "title": "复述自检：独立不等于互斥",
+      "objectiveIds": [
+        "O5"
+      ],
+      "content": {
+        "conceptIds": [
+          "I102"
+        ],
+        "prompt": "请分别用“抛两枚硬币”和“无放回摸球”解释什么叫相互独立，并说明独立为什么不是互斥。",
+        "requiredIdeas": [
+          {
+            "id": "i1",
+            "label": "概率不受影响",
+            "check": "一个事件发生不会改变另一个事件的概率。"
+          },
+          {
+            "id": "i2",
+            "label": "乘法关系",
+            "check": "独立时积事件概率等于各自概率乘积。"
+          },
+          {
+            "id": "i3",
+            "label": "与互斥区分",
+            "check": "互斥描述不能同时发生。"
+          }
+        ],
+        "commonGaps": [
+          {
+            "id": "chain",
+            "label": "推理链少了一步",
+            "description": "有结论但缺少关键依据。",
+            "repairQuestion": "关于“事件独立性”，请只补充最关键的一句“因为……所以……”。"
+          },
+          {
+            "id": "definition",
+            "label": "概念说得太模糊",
+            "description": "用了术语，却没有给出可判断的条件。",
+            "repairQuestion": "不用“事件独立性”这个名称，怎样用条件描述它？"
+          },
+          {
+            "id": "boundary",
+            "label": "边界条件漏了",
+            "description": "没有说明什么时候不能使用这个规则。",
+            "repairQuestion": "给出一个看起来相似、但该规则不能直接使用的情形。"
+          },
+          {
+            "id": "example",
+            "label": "缺少具体例子",
+            "description": "只有抽象说法，没有把它落到随机试验。",
+            "repairQuestion": "请用掷骰子、摸球或抛硬币中的一个例子重述。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C103",
+      "stageId": "S103",
+      "type": "concept",
+      "title": "10.3 频率的稳定性与随机模拟",
+      "objectiveIds": [
+        "O6"
+      ],
+      "knowledge": {
+        "title": "10.3 频率与概率：从有限波动看到长期稳定",
+        "summary": "现实试验往往不满足古典概型的等可能条件，因此需要通过重复试验观察事件出现的频率。事件A在n次试验中发生n_A次，其频率是发生次数与总试验次数的比。小样本下频率可能大幅波动；当试验次数增加时，许多稳定随机机制的累计频率会在某个数值附近波动并逐渐表现出稳定趋势，这个稳定水平帮助我们认识事件的概率。教材随后进一步介绍用随机数构造随机模拟，以较低成本重复大量试验。",
+        "prerequisites": [
+          "集合与基本运算",
+          "分数与比例",
+          "能够读简单表格与图形"
+        ],
+        "mentalModel": "把累计频率想成一条不断被新数据拉动的曲线。前几次试验每一个新结果都会大幅改变比例，所以曲线跳得很厉害；当已经积累数百次试验后，一个新结果只占很小权重，曲线的单步变化越来越小，因此整体看起来更稳定。稳定不是停止波动，也不是保证频率等于概率，而是波动逐渐围绕某个水平展开。",
+        "mechanism": "实验时要同时观察试验次数、事件发生次数和累计频率。不要只截取某一个时刻；应比较10次、50次、100次、500次等不同规模。随机模拟使用伪随机数来近似重复试验，它可以帮助探索概率规律，但一次模拟轨迹本身不是理论证明；改变随机种子会得到不同的短期波动。",
+        "sections": [
+          {
+            "title": "频率定义",
+            "body": "累计频率由发生次数和总试验次数共同决定。",
+            "formula": {
+              "tex": "f_n(A)=\\frac{n_A}{n}",
+              "mathml": "<math display=\"block\"><msub><mi>f</mi><mi>n</mi></msub><mo>(</mo><mi>A</mi><mo>)</mo><mo>=</mo><mfrac><msub><mi>n</mi><mi>A</mi></msub><mi>n</mi></mfrac></math>",
+              "spoken": "事件A的频率等于A发生次数除以试验总次数",
+              "id": "eq-freq"
+            }
+          },
+          {
+            "title": "稳定性的含义",
+            "body": "随着试验次数增加，频率常在概率附近波动并呈稳定趋势，但有限次频率仍可能高于或低于理论概率。"
+          },
+          {
+            "title": "随机模拟",
+            "body": "计算机可用伪随机数快速重复试验。模拟适合探索、估计与检验直觉，但应说明模型规则与随机数映射方式。"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex16a",
+            "title": "例1：抛硬币频率",
+            "text": "前10次可能得到0.7的正面频率，继续到1000次后频率可能回到0.5附近；前10次的偏离并不矛盾。",
+            "variantType": "standard"
+          },
+          {
+            "id": "ex16b",
+            "title": "例2：同样次数得到不同频率",
+            "text": "两组同学各抛50次硬币，结果可能一个0.46、一个0.58。频率是随机试验的观测量，不应要求不同组完全相同。",
+            "variantType": "contrast"
+          },
+          {
+            "id": "ex16c",
+            "title": "例3：模拟袋中红球",
+            "text": "若2红3白且有放回，可用1到5的随机整数，将1、2映射为红、3到5映射为白，重复生成来估计红球频率。",
+            "variantType": "boundary"
+          }
+        ],
+        "pitfalls": [
+          "把频率稳定理解成最终完全不变",
+          "把一次模拟结果直接当理论概率",
+          "模拟映射没有保持原试验各结果比例"
+        ],
+        "connections": [
+          "本章把集合、计数、比例和数据观察连接起来：先定义随机试验中的对象，再给概率建立可计算模型，最后用重复试验理解概率的经验意义。"
+        ],
+        "checkYourself": [
+          "为什么试验次数越多时单个新结果对累计频率影响越小？",
+          "随机模拟和理论证明分别能告诉我们什么？"
+        ],
+        "pedagogicalFigures": [],
+        "citations": [
+          {
+            "sourceId": "src-textbook",
+            "locator": "10.3 频率与概率"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L103",
+      "stageId": "S103",
+      "type": "interactive",
+      "title": "随机试验实验室：累计频率如何逐渐稳定",
+      "objectiveIds": [
+        "O6"
+      ],
+      "knowledge": {
+        "title": "随机试验实验室：自己改变次数观察频率轨迹",
+        "summary": "下面不是一张预先画好的结论图。你可以把试验次数从很小的样本逐步增加到数百或上千次，并重新模拟，观察累计频率曲线怎样改变。每次重新模拟都会产生另一条短期轨迹，因此重点不是寻找一条“最漂亮”的曲线，而是比较不同试验次数下波动尺度和整体稳定趋势。",
+        "prerequisites": [
+          "集合与基本运算",
+          "分数与比例",
+          "能够读简单表格与图形"
+        ],
+        "mentalModel": "把累计频率想成一条不断被新数据拉动的曲线。前几次试验每一个新结果都会大幅改变比例，所以曲线跳得很厉害；当已经积累数百次试验后，一个新结果只占很小权重，曲线的单步变化越来越小，因此整体看起来更稳定。稳定不是停止波动，也不是保证频率等于概率，而是波动逐渐围绕某个水平展开。",
+        "mechanism": "本实验用确定性的伪随机数生成器模拟理论成功概率为二分之一的伯努利试验。每发生一次成功，累计成功次数加1；第n次后的累计频率等于此前成功总次数除以n。随着n增大，分母越来越大，一个新成功或失败对累计比值的影响会越来越小，这就是曲线后段通常比前段平稳的直接数值原因。重新模拟会改变具体成功/失败序列，但理论参考线不变。",
+        "sections": [
+          {
+            "title": "控制变量实验",
+            "body": "先固定理论概率，只改变试验次数；比较20、100、500、1000次。再在相同试验次数下多次重新模拟，区分“随机轨迹不同”和“长期稳定水平相近”这两件事。"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex16a",
+            "title": "例1：抛硬币频率",
+            "text": "前10次可能得到0.7的正面频率，继续到1000次后频率可能回到0.5附近；前10次的偏离并不矛盾。",
+            "variantType": "standard"
+          },
+          {
+            "id": "ex16b",
+            "title": "例2：同样次数得到不同频率",
+            "text": "两组同学各抛50次硬币，结果可能一个0.46、一个0.58。频率是随机试验的观测量，不应要求不同组完全相同。",
+            "variantType": "contrast"
+          },
+          {
+            "id": "ex16c",
+            "title": "例3：模拟袋中红球",
+            "text": "若2红3白且有放回，可用1到5的随机整数，将1、2映射为红、3到5映射为白，重复生成来估计红球频率。",
+            "variantType": "boundary"
+          }
+        ],
+        "pitfalls": [
+          "把频率稳定理解成最终完全不变",
+          "把一次模拟结果直接当理论概率",
+          "模拟映射没有保持原试验各结果比例"
+        ],
+        "connections": [
+          "本章把集合、计数、比例和数据观察连接起来：先定义随机试验中的对象，再给概率建立可计算模型，最后用重复试验理解概率的经验意义。"
+        ],
+        "checkYourself": [
+          "把试验次数从50增到800后，曲线前段和后段的波动有什么差别？",
+          "同样800次重新模拟时，为什么最终频率不完全相同？"
+        ],
+        "pedagogicalFigures": [],
+        "citations": [
+          {
+            "sourceId": "src-textbook",
+            "locator": "10.3.1 频率的稳定性；10.3.2 随机模拟"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "random-trial-lab",
+        "widgetConfig": {
+          "theoreticalP": 0.5,
+          "minTrials": 20,
+          "maxTrials": 1200,
+          "initialTrials": 80,
+          "step": 20,
+          "seed": 10103,
+          "question": "试验次数增加时，累计频率是否会“越来越不波动”？",
+          "boundary": "有限次频率仍会随机波动；观察的是整体稳定趋势，不要求任何一次模拟恰好等于理论概率。",
+          "experimentPrompts": [
+            "先运行20、100、500、1000次，比较曲线前段与后段的摆动幅度。",
+            "固定在500次，连续点三次“重新模拟”，记录末端频率是否完全相同，以及它们是否仍围绕0.5。",
+            "解释为什么试验已经很多时，再增加一次成功或失败对累计频率的影响变小。"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q103",
+      "stageId": "S103",
+      "type": "quiz",
+      "title": "10.3 分层练习",
+      "objectiveIds": [
+        "O6"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "q16g",
+            "objectiveIds": [
+              "O6"
+            ],
+            "practiceLevel": "guided",
+            "kind": "single",
+            "prompt": "某事件在200次试验中发生86次，频率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "0.23"
+              },
+              {
+                "id": "B",
+                "text": "0.43"
+              },
+              {
+                "id": "C",
+                "text": "0.57"
+              },
+              {
+                "id": "D",
+                "text": "0.86"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "86/200=0.43。",
+              "incorrect": "频率=发生次数/总次数。"
+            },
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "q16i",
+            "objectiveIds": [
+              "O6"
+            ],
+            "practiceLevel": "independent",
+            "kind": "single",
+            "prompt": "两组各做100次同一随机试验，频率一个0.47、一个0.55。最合理解释是？",
+            "options": [
+              {
+                "id": "A",
+                "text": "至少一组做错"
+              },
+              {
+                "id": "B",
+                "text": "有限次频率允许随机波动"
+              },
+              {
+                "id": "C",
+                "text": "概率同时有两个真值"
+              },
+              {
+                "id": "D",
+                "text": "试验次数越多波动越大"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "不同随机序列会造成有限样本波动。",
+              "incorrect": "稳定不意味着每组完全相同。"
+            },
+            "gapTags": [
+              "mechanism"
+            ]
+          },
+          {
+            "id": "q16t",
+            "objectiveIds": [
+              "O6"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "若要用随机整数1到5模拟“2红3白且有放回摸一球”，哪个映射合理？",
+            "options": [
+              {
+                "id": "A",
+                "text": "1、2表示红，3、4、5表示白"
+              },
+              {
+                "id": "B",
+                "text": "1表示红，其余白"
+              },
+              {
+                "id": "C",
+                "text": "1、2、3表示红，4、5白"
+              },
+              {
+                "id": "D",
+                "text": "奇数红、偶数白"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "2/5的整数映射到红，3/5映射到白。",
+              "incorrect": "模拟映射要保持概率比例。"
+            },
+            "gapTags": [
+              "boundary"
+            ]
+          },
+          {
+            "id": "q16r",
+            "objectiveIds": [
+              "O6"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "关于频率稳定性，下列说法正确的是？",
+            "options": [
+              {
+                "id": "A",
+                "text": "试验足够多后频率永远不再改变"
+              },
+              {
+                "id": "B",
+                "text": "频率通常在概率附近波动并逐渐表现出稳定趋势"
+              },
+              {
+                "id": "C",
+                "text": "一次模拟即可证明理论概率"
+              },
+              {
+                "id": "D",
+                "text": "频率与概率没有联系"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "稳定是长期趋势而非停止波动。",
+              "incorrect": "关注“附近波动”和“趋势”。"
+            },
+            "gapTags": [
+              "calculation"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "E103",
+      "stageId": "S103",
+      "type": "explain-back",
+      "title": "复述自检：频率稳定不是“最后不动了”",
+      "objectiveIds": [
+        "O6"
+      ],
+      "content": {
+        "conceptIds": [
+          "I103"
+        ],
+        "prompt": "请解释频率、概率和随机模拟之间的关系，并说明为什么重复模拟仍会得到不同频率轨迹。",
+        "requiredIdeas": [
+          {
+            "id": "i1",
+            "label": "频率定义",
+            "check": "发生次数除以试验总次数。"
+          },
+          {
+            "id": "i2",
+            "label": "稳定趋势",
+            "check": "次数增加后常围绕概率附近波动。"
+          },
+          {
+            "id": "i3",
+            "label": "模拟边界",
+            "check": "模拟用于探索和估计，不等同理论证明。"
+          }
+        ],
+        "commonGaps": [
+          {
+            "id": "chain",
+            "label": "推理链少了一步",
+            "description": "有结论但缺少关键依据。",
+            "repairQuestion": "关于“频率稳定性与随机模拟”，请只补充最关键的一句“因为……所以……”。"
+          },
+          {
+            "id": "definition",
+            "label": "概念说得太模糊",
+            "description": "用了术语，却没有给出可判断的条件。",
+            "repairQuestion": "不用“频率稳定性与随机模拟”这个名称，怎样用条件描述它？"
+          },
+          {
+            "id": "boundary",
+            "label": "边界条件漏了",
+            "description": "没有说明什么时候不能使用这个规则。",
+            "repairQuestion": "给出一个看起来相似、但该规则不能直接使用的情形。"
+          },
+          {
+            "id": "example",
+            "label": "缺少具体例子",
+            "description": "只有抽象说法，没有把它落到随机试验。",
+            "repairQuestion": "请用掷骰子、摸球或抛硬币中的一个例子重述。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "RALL",
+      "stageId": "S103",
+      "type": "quiz",
+      "title": "跨节累积复习：关系、计算与实验",
+      "objectiveIds": [
+        "O2",
+        "O3",
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "content": {
+        "cumulative": true,
+        "practiceLevel": "retrieval",
+        "items": [
+          {
+            "id": "ra1",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "互斥与独立最关键的区别是？",
+            "options": [
+              {
+                "id": "A",
+                "text": "互斥描述能否同时发生，独立描述概率是否受影响"
+              },
+              {
+                "id": "B",
+                "text": "二者完全相同"
+              },
+              {
+                "id": "C",
+                "text": "独立一定互斥"
+              },
+              {
+                "id": "D",
+                "text": "互斥一定独立"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "两者回答不同问题。",
+              "incorrect": "一个是集合关系，一个是概率关系。"
+            },
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "ra2",
+            "objectiveIds": [
+              "O3"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "“每个结果等可能”在古典概型中扮演什么角色？",
+            "options": [
+              {
+                "id": "A",
+                "text": "保证可以用样本点数量比例计算概率"
+              },
+              {
+                "id": "B",
+                "text": "保证事件互斥"
+              },
+              {
+                "id": "C",
+                "text": "保证频率不波动"
+              },
+              {
+                "id": "D",
+                "text": "保证样本空间无限"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "等权重才允许直接计数。",
+              "incorrect": "数量比依赖等可能。"
+            },
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "ra3",
+            "objectiveIds": [
+              "O4"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "求至少一个事件发生的概率时，为什么一般要减交集？",
+            "options": [
+              {
+                "id": "A",
+                "text": "避免重叠样本点被重复计算"
+              },
+              {
+                "id": "B",
+                "text": "让概率变大"
+              },
+              {
+                "id": "C",
+                "text": "保证事件独立"
+              },
+              {
+                "id": "D",
+                "text": "因为交集一定为空"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "相加时交集被算两次。",
+              "incorrect": "画两个重叠区域。"
+            },
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "ra4",
+            "objectiveIds": [
+              "O5"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "有放回抽样为什么比无放回抽样更容易建立独立模型？",
+            "options": [
+              {
+                "id": "A",
+                "text": "每次抽取前总体组成恢复"
+              },
+              {
+                "id": "B",
+                "text": "因为结果互斥"
+              },
+              {
+                "id": "C",
+                "text": "因为概率为0"
+              },
+              {
+                "id": "D",
+                "text": "因为样本空间变无限"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "放回恢复下一次机制。",
+              "incorrect": "看第二次概率是否被第一次改变。"
+            },
+            "gapTags": [
+              "transfer"
+            ]
+          },
+          {
+            "id": "ra5",
+            "objectiveIds": [
+              "O6"
+            ],
+            "practiceLevel": "retrieval",
+            "kind": "single",
+            "prompt": "频率曲线在大样本后仍轻微波动说明什么？",
+            "options": [
+              {
+                "id": "A",
+                "text": "正常，稳定不等于恒定"
+              },
+              {
+                "id": "B",
+                "text": "概率不存在"
+              },
+              {
+                "id": "C",
+                "text": "模拟失败"
+              },
+              {
+                "id": "D",
+                "text": "古典概型必错"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "长期稳定允许有限波动。",
+              "incorrect": "稳定指围绕某水平。"
+            },
+            "gapTags": [
+              "transfer"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "MASTER",
+      "stageId": "SF",
+      "type": "mastery",
+      "title": "第十章独立掌握检测",
+      "objectiveIds": [
+        "O1",
+        "O2",
+        "O3",
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "content": {
+        "practiceLevel": "transfer",
+        "items": [
+          {
+            "id": "m1a",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "随机选择一家有两个孩子的家庭，只记录“男孩人数”。样本空间应为？",
+            "options": [
+              {
+                "id": "A",
+                "text": "{男,女}"
+              },
+              {
+                "id": "B",
+                "text": "{0,1,2}"
+              },
+              {
+                "id": "C",
+                "text": "{男男,男女,女男,女女}"
+              },
+              {
+                "id": "D",
+                "text": "{1,2}"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "m1b",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "连续三次投篮，只记录“是否至少命中一次”。若把试验结果直接编码为该观察量，样本空间有几个样本点？",
+            "options": [
+              {
+                "id": "A",
+                "text": "2"
+              },
+              {
+                "id": "B",
+                "text": "3"
+              },
+              {
+                "id": "C",
+                "text": "4"
+              },
+              {
+                "id": "D",
+                "text": "8"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "m2a",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "若A∩B为空，但A∪B不是Ω，则A、B是什么关系？",
+            "options": [
+              {
+                "id": "A",
+                "text": "互为对立"
+              },
+              {
+                "id": "B",
+                "text": "互斥但不对立"
+              },
+              {
+                "id": "C",
+                "text": "必然独立"
+              },
+              {
+                "id": "D",
+                "text": "完全相同"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "m2b",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "事件“不是A”与A的并集是什么？",
+            "options": [
+              {
+                "id": "A",
+                "text": "空集"
+              },
+              {
+                "id": "B",
+                "text": "A"
+              },
+              {
+                "id": "C",
+                "text": "整个样本空间"
+              },
+              {
+                "id": "D",
+                "text": "无法判断"
+              }
+            ],
+            "answer": [
+              "C"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "mechanism"
+            ]
+          },
+          {
+            "id": "m3a",
+            "objectiveIds": [
+              "O3"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "袋中5个外观相同球编号1到5，随机取1球。编号为平方数的概率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "1/5"
+              },
+              {
+                "id": "B",
+                "text": "2/5"
+              },
+              {
+                "id": "C",
+                "text": "3/5"
+              },
+              {
+                "id": "D",
+                "text": "4/5"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "m3b",
+            "objectiveIds": [
+              "O3"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "某抽奖有三个结果标签，但三个结果机会由不同面积扇区决定。能否仅按“3种结果”使用古典概型？",
+            "options": [
+              {
+                "id": "A",
+                "text": "能，每种1/3"
+              },
+              {
+                "id": "B",
+                "text": "不能，需检查等可能性"
+              },
+              {
+                "id": "C",
+                "text": "能，只要次数有限"
+              },
+              {
+                "id": "D",
+                "text": "一定每种1/2"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "mechanism"
+            ]
+          },
+          {
+            "id": "m4a",
+            "objectiveIds": [
+              "O4"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "事件A的概率为0.7，事件B的概率为0.4，两者同时发生的概率为0.2，则至少一个发生的概率是多少？",
+            "options": [
+              {
+                "id": "A",
+                "text": "0.5"
+              },
+              {
+                "id": "B",
+                "text": "0.9"
+              },
+              {
+                "id": "C",
+                "text": "1.1"
+              },
+              {
+                "id": "D",
+                "text": "0.28"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "m4b",
+            "objectiveIds": [
+              "O4"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "某事件失败概率为0.08，则成功事件作为其对立事件的概率为？",
+            "options": [
+              {
+                "id": "A",
+                "text": "0.08"
+              },
+              {
+                "id": "B",
+                "text": "0.42"
+              },
+              {
+                "id": "C",
+                "text": "0.92"
+              },
+              {
+                "id": "D",
+                "text": "1.08"
+              }
+            ],
+            "answer": [
+              "C"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "mechanism"
+            ]
+          },
+          {
+            "id": "m5a",
+            "objectiveIds": [
+              "O5"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "两次从袋中有放回抽取，且每次红球概率0.3。两次都红的概率为？",
+            "options": [
+              {
+                "id": "A",
+                "text": "0.09"
+              },
+              {
+                "id": "B",
+                "text": "0.3"
+              },
+              {
+                "id": "C",
+                "text": "0.6"
+              },
+              {
+                "id": "D",
+                "text": "0.7"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "m5b",
+            "objectiveIds": [
+              "O5"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "一个系统第二步的规则会根据第一步结果改变。对两步事件独立性的判断最合理是？",
+            "options": [
+              {
+                "id": "A",
+                "text": "仍必然独立"
+              },
+              {
+                "id": "B",
+                "text": "通常应先视为可能依赖并重新计算"
+              },
+              {
+                "id": "C",
+                "text": "一定互斥"
+              },
+              {
+                "id": "D",
+                "text": "一定对立"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "condition"
+            ]
+          },
+          {
+            "id": "m6a",
+            "objectiveIds": [
+              "O6"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "一次模拟500次得到频率0.47，另一次500次得到0.53。若理论概率0.5，最合理结论是？",
+            "options": [
+              {
+                "id": "A",
+                "text": "两次都可能是正常随机波动"
+              },
+              {
+                "id": "B",
+                "text": "理论概率必须改成0.47"
+              },
+              {
+                "id": "C",
+                "text": "理论概率必须改成0.53"
+              },
+              {
+                "id": "D",
+                "text": "模拟不能用于学习概率"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "representation"
+            ]
+          },
+          {
+            "id": "m6b",
+            "objectiveIds": [
+              "O6"
+            ],
+            "practiceLevel": "transfer",
+            "kind": "single",
+            "prompt": "把随机整数1到10映射为事件成功，若目标成功概率0.3，应给多少个整数映射为成功？",
+            "options": [
+              {
+                "id": "A",
+                "text": "1个"
+              },
+              {
+                "id": "B",
+                "text": "2个"
+              },
+              {
+                "id": "C",
+                "text": "3个"
+              },
+              {
+                "id": "D",
+                "text": "5个"
+              }
+            ],
+            "answer": [
+              "C"
+            ],
+            "feedback": {
+              "correct": "回答满足新情境中的目标关系。",
+              "incorrect": "重新检查定义、条件或计算。"
+            },
+            "novelTransfer": true,
+            "gapTags": [
+              "condition"
+            ]
+          }
+        ],
+        "masteryGate": {
+          "threshold": 0.85,
+          "objectiveRules": [
+            {
+              "objectiveId": "O1",
+              "questionIds": [
+                "m1a",
+                "m1b"
+              ],
+              "minCorrect": 2
+            },
+            {
+              "objectiveId": "O2",
+              "questionIds": [
+                "m2a",
+                "m2b"
+              ],
+              "minCorrect": 2
+            },
+            {
+              "objectiveId": "O3",
+              "questionIds": [
+                "m3a",
+                "m3b"
+              ],
+              "minCorrect": 2
+            },
+            {
+              "objectiveId": "O4",
+              "questionIds": [
+                "m4a",
+                "m4b"
+              ],
+              "minCorrect": 2
+            },
+            {
+              "objectiveId": "O5",
+              "questionIds": [
+                "m5a",
+                "m5b"
+              ],
+              "minCorrect": 2
+            },
+            {
+              "objectiveId": "O6",
+              "questionIds": [
+                "m6a",
+                "m6b"
+              ],
+              "minCorrect": 2
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

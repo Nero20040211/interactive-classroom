@@ -1,0 +1,621 @@
+{
+  "meta": {
+    "id": "人工智能-a-搜索与可采纳启发式",
+    "title": "人工智能：A* 搜索与可采纳启发式",
+    "subtitle": "严格公式与证明练习回归课堂",
+    "language": "zh-CN",
+    "level": "大学基础",
+    "offline": true,
+    "depthProfile": "learn-deep",
+    "autoNumbering": true,
+    "sourcePolicy": "grounded",
+    "discipline": {
+      "primary": "computational-data",
+      "secondary": []
+    },
+    "experimentPolicy": "adjustable-when-applicable",
+    "disciplinePack": "ml-ai",
+    "learnerQualityPolicy": {
+      "mode": "three-indicator",
+      "targetLearner": "人工智能搜索算法入门学习者",
+      "requireDiagnosticGapTags": true
+    },
+    "visualQualityPolicy": {
+      "mode": "reader-first-accessible",
+      "minTextContrast": 4.5,
+      "minNonTextContrast": 3.0,
+      "animationLabelMinPx": 15,
+      "avoidColorOnlyEncoding": true,
+      "mobileAnimationStrategy": "scroll-inside"
+    }
+  },
+  "sources": [
+    {
+      "id": "src-aima",
+      "title": "Artificial Intelligence: A Modern Approach, 4th ed.",
+      "author": "Russell & Norvig",
+      "note": "用于启发式搜索、A* 与可采纳性的回归测试。"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "O1",
+      "text": "理解 A* 评价函数中已付代价与启发式估计的组合方式",
+      "evidence": "能解释 g 与 h"
+    },
+    {
+      "id": "O2",
+      "text": "理解可采纳启发式为何不会高估真实剩余代价",
+      "evidence": "证明练习与检测"
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "M1",
+      "text": "认为 h 越大越好",
+      "repair": "h 要提供信息，但为保持可采纳性不能超过真实剩余代价。"
+    }
+  ],
+  "roles": [
+    {
+      "id": "teacher",
+      "name": "林老师",
+      "function": "概念讲解与综合",
+      "avatar": "师",
+      "tone": "teacher"
+    },
+    {
+      "id": "curious",
+      "name": "好奇型同学",
+      "function": "追问直觉与先修",
+      "avatar": "问",
+      "tone": "curious"
+    },
+    {
+      "id": "skeptic",
+      "name": "质疑型同学",
+      "function": "检查边界与误区",
+      "avatar": "疑",
+      "tone": "skeptic"
+    },
+    {
+      "id": "specialist",
+      "name": "人工智能助教",
+      "function": "检查学科规范",
+      "avatar": "专",
+      "tone": "specialist"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "启发式搜索",
+      "roster": [
+        "teacher",
+        "curious",
+        "skeptic",
+        "specialist"
+      ],
+      "sceneIds": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "ST2",
+      "title": "证明练习",
+      "roster": [
+        "teacher",
+        "skeptic",
+        "specialist"
+      ],
+      "sceneIds": [
+        "S3",
+        "S4"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S1",
+      "stageId": "ST1",
+      "type": "orientation",
+      "title": "学习导览：A* 搜索",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "先看这门知识要解决什么问题",
+        "summary": "在状态空间很大时，盲目把所有可能路径都展开会浪费大量计算。A* 的核心是把“已经付出的代价”和“对剩余代价的估计”结合起来，优先探索看起来最有希望的节点。",
+        "mentalModel": "学习 A* 搜索 时，不要先背结论。先问三个问题：研究对象是什么、哪些量或结构会发生变化、我们凭什么判断一个解释是对的。在状态空间很大时，盲目把所有可能路径都展开会浪费大量计算。A* 的核心是把“已经付出的代价”和“对剩余代价的估计”结合起来，优先探索看起来最有希望的节点。 这会把零散公式、图示或术语放回同一条推理链中。\n\n本课堂采用“讲解—例子—交互—检测”的顺序。交互不是知识本身，而是用来检验你是否真的能把规则迁移到新情境。",
+        "sections": [
+          {
+            "title": "学习路线",
+            "body": "先理解 g、h、f 三个量；再理解“可采纳”为什么要求 h 不高估；最后通过证明排序练习重建 A* 最优性论证的一条核心链。"
+          },
+          {
+            "title": "如何使用本课堂",
+            "body": "先完整读完每页知识讲解，再进入实践区。遇到公式先解释符号和单位，遇到生物过程先追踪结构与因果，遇到算法先明确状态、评价函数与停止条件。每一页都允许返回前文，并可使用左侧搜索和收藏。"
+          },
+          {
+            "title": "进一步建立学习框架",
+            "body": "搜索问题可以统一描述为状态、动作、转移代价和目标测试。真正困难的地方往往不是“能不能找到一条路”，而是在巨大状态空间中怎样把计算预算优先花在更有希望的方向。启发式函数因此不是随便给节点一个分数，而是把领域知识压缩成对未来代价的估计。理解 A* 时应同时关注算法行为和理论保证：g 记录过去，h 估计未来，f 把两者放在同一成本尺度；而可采纳性、一致性等条件决定我们能证明什么。后面的证明练习会让这些条件从术语变成真正参与推理的不等式。"
+          }
+        ],
+        "pitfalls": [
+          "把“看懂”误认为“会用”；只记结论而忽略前提；在没有明确变量、结构或证据时直接套公式。"
+        ],
+        "takeaway": "先建立 A* 搜索 的问题框架，再学习细节。",
+        "citations": [
+          {
+            "sourceId": "src-aima",
+            "locator": "Heuristic search / A*"
+          }
+        ]
+      }
+    },
+    {
+      "id": "S2",
+      "stageId": "ST1",
+      "type": "concept",
+      "title": "A* 为什么要同时考虑过去代价与未来估计",
+      "objectiveIds": [
+        "O1",
+        "O2"
+      ],
+      "knowledge": {
+        "title": "把已付成本与未来估计放在同一把尺子上",
+        "summary": "g(n) 是从起点到当前节点的已知路径代价，h(n) 估计从当前节点到目标的剩余代价。",
+        "mentalModel": [
+          {
+            "text": "想象你在地图上找一条成本最低的路线。只看已经走过的代价，会偏爱目前走得短的节点；只看未来估计，又会忽略到达当前节点已经花掉的代价。A* 把这两类成本放在同一尺度上：",
+            "formula": {
+              "tex": "f(n)=g(n)+h(n)",
+              "spoken": "f n 等于 g n 加 h n",
+              "mathml": "<math display=\"block\"><mi>f</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>+</mo><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo></math>"
+            }
+          },
+          {
+            "text": "因此评价值可以被理解为“经过当前节点完成整条路径”的一个成本估计。"
+          }
+        ],
+        "mechanism": [
+          {
+            "text": "如果启发式估计从不高估真实最小剩余代价，就满足可采纳条件：",
+            "formula": {
+              "tex": "h(n)\\le h^*(n)",
+              "spoken": "h n 小于等于 h 星 n",
+              "mathml": "<math display=\"block\"><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≤</mo><msup><mi>h</mi><mo>*</mo></msup><mo>(</mo><mi>n</mi><mo>)</mo></math>"
+            }
+          },
+          {
+            "text": "在最优路径上的节点中，这个条件可以进一步推出评价值具有上界：",
+            "formula": {
+              "tex": "f(n)\\le C^*",
+              "spoken": "f n 小于等于 C 星",
+              "mathml": "<math display=\"block\"><mi>f</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≤</mo><msup><mi>C</mi><mo>*</mo></msup></math>"
+            }
+          },
+          {
+            "text": "这条上界是 A* 最优性论证中的关键桥梁。"
+          }
+        ],
+        "semanticBlocks": [
+          {
+            "id": "def-astar-f",
+            "kind": "definition",
+            "title": "A* 评价函数",
+            "statement": "A* 把已付路径代价与对剩余路径代价的启发式估计相加，得到候选节点的评价值。",
+            "formula": {
+              "id": "eq-astar",
+              "tex": "f(n)=g(n)+h(n)",
+              "spoken": "f n 等于 g n 加 h n",
+              "mathml": "<math display=\"block\"><mi>f</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>+</mo><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo></math>"
+            },
+            "citations": [
+              {
+                "sourceId": "src-aima",
+                "locator": "A* evaluation function"
+              }
+            ]
+          },
+          {
+            "id": "def-admissible",
+            "kind": "definition",
+            "title": "可采纳启发式",
+            "statement": "对任意节点 n，启发式估计不超过从 n 到目标的真实最小剩余代价。",
+            "formula": {
+              "id": "eq-admissible",
+              "tex": "h(n)\\le h^*(n)",
+              "spoken": "h n 小于等于真实最优剩余代价 h 星 n",
+              "mathml": "<math display=\"block\"><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≤</mo><msup><mi>h</mi><mo>*</mo></msup><mo>(</mo><mi>n</mi><mo>)</mo></math>"
+            },
+            "citations": [
+              {
+                "sourceId": "src-aima",
+                "locator": "Admissible heuristics"
+              }
+            ]
+          },
+          {
+            "id": "thm-astar-bound",
+            "kind": "theorem",
+            "title": "最优路径节点的 f 值上界",
+            "statement": "若启发式可采纳，则最优路径上的任一节点，其评价值不会超过完整最优解的总代价。",
+            "proofSketch": "先由可采纳性把启发式估计替换为真实剩余代价的上界，再使用最优路径的成本分解完成比较。",
+            "references": [
+              "def-astar-f",
+              "def-admissible"
+            ],
+            "citations": [
+              {
+                "sourceId": "src-aima",
+                "locator": "A* optimality argument"
+              }
+            ]
+          },
+          {
+            "id": "proof-astar-bound",
+            "kind": "proof",
+            "of": "thm-astar-bound",
+            "strategy": "把 f 的定义与可采纳性不等式串联。",
+            "steps": [
+              {
+                "text": "从 A* 评价函数定义开始。",
+                "formula": {
+                  "id": "eq-proof1",
+                  "tex": "f(n)=g(n)+h(n)",
+                  "spoken": "f n 等于 g n 加 h n",
+                  "mathml": "<math display=\"block\"><mi>f</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>+</mo><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo></math>"
+                },
+                "reason": "定义"
+              },
+              {
+                "text": "可采纳性保证估计不高于真实剩余代价。",
+                "formula": {
+                  "id": "eq-proof2",
+                  "tex": "h(n)\\le h^*(n)",
+                  "spoken": "h n 小于等于 h 星 n",
+                  "mathml": "<math display=\"block\"><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≤</mo><msup><mi>h</mi><mo>*</mo></msup><mo>(</mo><mi>n</mi><mo>)</mo></math>"
+                },
+                "reason": "可采纳启发式定义"
+              },
+              {
+                "text": "在最优路径上，把已经发生的路径代价与真实最小剩余代价合并。",
+                "reason": "不等式代入与最优路径分解",
+                "formula": {
+                  "tex": "g(n)+h^*(n)=C^*",
+                  "spoken": "g n 加 h 星 n 等于 C 星",
+                  "mathml": "<math display=\"block\"><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>+</mo><msup><mi>h</mi><mo>*</mo></msup><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><msup><mi>C</mi><mo>*</mo></msup></math>"
+                }
+              }
+            ],
+            "conclusion": "所以最优路径节点的评价值具有所需的最优代价上界。",
+            "references": [
+              "eq-astar",
+              "eq-admissible"
+            ]
+          }
+        ],
+        "sections": [
+          {
+            "title": "可采纳不等于“越小越好”",
+            "body": [
+              {
+                "text": "一种极端但合法的可采纳启发式是：",
+                "formula": {
+                  "tex": "h(n)=0",
+                  "spoken": "h n 等于零",
+                  "mathml": "<math display=\"block\"><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mn>0</mn></math>"
+                }
+              },
+              {
+                "text": "它不会高估未来代价，却也几乎不给搜索提供方向，因此 A* 会退化为一致代价搜索。好的启发式希望尽量接近真实剩余代价，同时保持不高估；这体现了信息量与理论保证之间的平衡。"
+              }
+            ]
+          }
+        ],
+        "pitfalls": [
+          "h 值大不代表一定更好；若高估可能破坏最优性保证。",
+          "不同 A* 变体和图搜索还涉及一致性、重复状态处理等更细条件。"
+        ],
+        "takeaway": "A* 的关键不是一个公式，而是 f 的成本分解与 h 的边界条件。",
+        "citations": [
+          {
+            "sourceId": "src-aima",
+            "locator": "A* and heuristic properties"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex-s2",
+            "title": "两个候选节点的取舍",
+            "variantType": "standard",
+            "text": "比较两个候选节点时，一个节点已经走过的代价较低但预计剩余代价较高，另一个相反。A* 的判断不是单看其中一项，而是把已付代价与启发式剩余估计共同纳入优先级。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "S3",
+      "stageId": "ST2",
+      "type": "interactive",
+      "title": "Proof Practice：重建 A* 最优性证明链",
+      "objectiveIds": [
+        "O2"
+      ],
+      "knowledge": {
+        "title": "证明练习前先明确目标",
+        "summary": "证明目标是给最优路径上的节点建立评价值上界，而不是声称所有候选节点都具有同样的性质。",
+        "mentalModel": "证明排序练习的价值在于迫使你识别依赖关系：必须先有 f 的定义，再有可采纳性，再把真实剩余代价和最优总代价联系起来，最后才能得出结论。把步骤顺序打乱后重新排列，是比背诵结论更直接的结构检测。",
+        "mechanism": [
+          {
+            "text": "证明链先写评价函数的定义，再使用可采纳性建立估计量与真实剩余代价之间的方向关系：",
+            "formula": {
+              "tex": "h(n)\\le h^*(n)",
+              "spoken": "h n 小于等于 h 星 n",
+              "mathml": "<math display=\"block\"><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≤</mo><msup><mi>h</mi><mo>*</mo></msup><mo>(</mo><mi>n</mi><mo>)</mo></math>"
+            }
+          },
+          {
+            "text": "最后把最优路径上的已付代价和真实剩余代价合并，就得到目标上界：",
+            "formula": {
+              "tex": "f(n)\\le C^*",
+              "spoken": "f n 小于等于 C 星",
+              "mathml": "<math display=\"block\"><mi>f</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≤</mo><msup><mi>C</mi><mo>*</mo></msup></math>"
+            }
+          },
+          {
+            "text": "如果把结论提前，或没有可采纳条件就替换启发式估计，证明会出现逻辑跳步。"
+          }
+        ],
+        "workedExamples": [
+          {
+            "title": "最短版本的证明骨架",
+            "text": "定义 → 可采纳性 → 最优路径代价分解 → 上界结论。"
+          }
+        ],
+        "pitfalls": [
+          "不要把可采纳性不等式的方向写反。",
+          "C* 是最优完整解代价，不是任意当前节点的 g 值。"
+        ],
+        "takeaway": "证明是依赖链，不是四句话的任意排列。",
+        "citations": [
+          {
+            "sourceId": "src-aima",
+            "locator": "A* optimality proof structure"
+          }
+        ],
+        "sections": [
+          {
+            "title": "进一步建立学习框架",
+            "body": [
+              {
+                "text": "在正式排序之前，再把证明目标拆成三个层次。第一层是定义层，评价函数的记号来自：",
+                "formula": {
+                  "tex": "f(n)=g(n)+h(n)",
+                  "spoken": "f n 等于 g n 加 h n",
+                  "mathml": "<math display=\"block\"><mi>f</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>+</mo><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo></math>"
+                }
+              },
+              {
+                "text": "单靠定义还没有最优性信息。第二层是约束层：可采纳性把启发式估计与真实最优剩余代价联系起来。第三层是路径层：当节点位于某条最优路径上时，已经发生的真实代价与沿这条路径继续走完所需的真实最小剩余代价合成完整最优解代价。三层按依赖顺序连接后，目标上界是：",
+                "formula": {
+                  "tex": "f(n)\\le C^*",
+                  "spoken": "f n 小于等于 C 星",
+                  "mathml": "<math display=\"block\"><mi>f</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≤</mo><msup><mi>C</mi><mo>*</mo></msup></math>"
+                }
+              },
+              {
+                "text": "如果省略任意一层，结论就会看起来像凭空出现。"
+              }
+            ]
+          },
+          {
+            "title": "迁移提示",
+            "body": "做证明练习时，不要只看句子表面是否“像数学”。应逐步检查每个量来自哪里：g(n) 是已经发生的真实代价，h(n) 是启发式估计，h*(n) 才是真实最优剩余代价，C* 是完整最优解代价。证明的核心动作就是在合法条件下把估计量与真实量建立上界关系，再把路径分解合并成最终界。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "proof-practice",
+        "widgetConfig": {
+          "mode": "ordering",
+          "prompt": "把下面四步排列成有效证明链。",
+          "steps": [
+            {
+              "id": "p3",
+              "text": "在最优路径节点上使用完整路径代价分解：",
+              "formula": {
+                "id": "pp-eq3",
+                "tex": "g(n)+h^*(n)=C^*",
+                "spoken": "g n 加 h 星 n 等于 C 星",
+                "mathml": "<math display=\"inline\"><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>+</mo><msup><mi>h</mi><mo>*</mo></msup><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><msup><mi>C</mi><mo>*</mo></msup></math>"
+              }
+            },
+            {
+              "id": "p1",
+              "text": "从评价函数定义开始：",
+              "formula": {
+                "id": "pp-eq1",
+                "tex": "f(n)=g(n)+h(n)",
+                "spoken": "f n 等于 g n 加 h n",
+                "mathml": "<math display=\"inline\"><mi>f</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>+</mo><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo></math>"
+              }
+            },
+            {
+              "id": "p4",
+              "text": "收束到需要证明的上界：",
+              "formula": {
+                "id": "pp-eq4",
+                "tex": "f(n)\\le C^*",
+                "spoken": "f n 小于等于 C 星",
+                "mathml": "<math display=\"inline\"><mi>f</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≤</mo><msup><mi>C</mi><mo>*</mo></msup></math>"
+              }
+            },
+            {
+              "id": "p2",
+              "text": "使用可采纳性把启发式估计替换为真实剩余代价上界：",
+              "formula": {
+                "id": "pp-eq2",
+                "tex": "h(n)\\le h^*(n)\\Rightarrow f(n)\\le g(n)+h^*(n)",
+                "spoken": "由 h n 小于等于 h 星 n 推出 f n 小于等于 g n 加 h 星 n",
+                "mathml": "<math display=\"inline\"><mi>h</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≤</mo><msup><mi>h</mi><mo>*</mo></msup><mo>(</mo><mi>n</mi><mo>)</mo><mo>⇒</mo><mi>f</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>≤</mo><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>+</mo><msup><mi>h</mi><mo>*</mo></msup><mo>(</mo><mi>n</mi><mo>)</mo></math>"
+              }
+            }
+          ],
+          "answer": [
+            "p1",
+            "p2",
+            "p3",
+            "p4"
+          ],
+          "hint": "先找定义，再找能合法替换 h 的条件。",
+          "feedback": {
+            "correct": "顺序正确：定义提供表达式，可采纳性给不等式，最优路径分解把右侧化为 C*。",
+            "incorrect": "检查每一步是否只依赖前面已经建立的事实。"
+          }
+        }
+      },
+      "actions": []
+    },
+    {
+      "id": "S4",
+      "stageId": "ST2",
+      "type": "quiz",
+      "title": "理解检测",
+      "objectiveIds": [
+        "O1",
+        "O2"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "q1",
+            "kind": "single",
+            "prompt": "可采纳启发式的要求是：",
+            "options": [
+              {
+                "id": "a",
+                "text": "h(n) 永远高估剩余代价"
+              },
+              {
+                "id": "b",
+                "text": "h(n) 不超过真实最小剩余代价"
+              },
+              {
+                "id": "c",
+                "text": "h(n) 必须等于 0"
+              }
+            ],
+            "answer": [
+              "b"
+            ],
+            "feedback": {
+              "correct": "这正是可采纳性的定义。",
+              "incorrect": "可采纳允许低估，但不能高估真实最小剩余代价。"
+            },
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "guided",
+            "gapTags": [
+              "admissibility-direction"
+            ]
+          },
+          {
+            "id": "q2",
+            "kind": "single",
+            "prompt": "A* 的 f(n) 组合了：",
+            "options": [
+              {
+                "id": "a",
+                "text": "已经付出的路径代价与估计剩余代价"
+              },
+              {
+                "id": "b",
+                "text": "两个随机数"
+              },
+              {
+                "id": "c",
+                "text": "只有启发式值"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "g 是已知成本，h 是未来估计。",
+              "incorrect": "评价函数应同时包含已付路径代价与启发式剩余代价。"
+            },
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "guided",
+            "gapTags": [
+              "cost-components"
+            ]
+          },
+          {
+            "id": "q3",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "transfer",
+            "gapTags": [
+              "future-estimate-role"
+            ],
+            "kind": "single",
+            "prompt": "如果只依据已经走过的路径代价选择节点，最容易遗漏什么信息？",
+            "options": [
+              {
+                "id": "a",
+                "text": "从当前节点到目标的剩余代价估计"
+              },
+              {
+                "id": "b",
+                "text": "当前节点已经走过的代价"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "判断依据与本节机制一致。",
+              "incorrect": "回到知识解释，先识别对象、条件和因果链，再重新判断。"
+            }
+          },
+          {
+            "id": "q4",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "retrieval",
+            "gapTags": [
+              "assumption-boundary"
+            ],
+            "kind": "single",
+            "prompt": "某启发式在个别节点高估真实最小剩余代价时，哪项说法最稳妥？",
+            "options": [
+              {
+                "id": "a",
+                "text": "它不再满足可采纳启发式的基本条件"
+              },
+              {
+                "id": "b",
+                "text": "它仍然自动拥有同样的最优性保证"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "判断依据与本节机制一致。",
+              "incorrect": "回到知识解释，先识别对象、条件和因果链，再重新判断。"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

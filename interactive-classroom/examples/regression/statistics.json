@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "id": "statistics-regression",
+    "title": "统计学：正态分布实验",
+    "subtitle": "Discipline Pack regression",
+    "language": "zh-CN",
+    "offline": true,
+    "depthProfile": "overview",
+    "discipline": {
+      "primary": "formal-quantitative"
+    },
+    "disciplinePack": "statistics",
+    "sourcePolicy": "illustrative"
+  },
+  "roles": [
+    {
+      "id": "teacher",
+      "name": "教师",
+      "avatar": "师",
+      "tone": "teacher",
+      "function": "讲解与实验引导"
+    },
+    {
+      "id": "specialist",
+      "name": "学科助教",
+      "avatar": "专",
+      "tone": "specialist",
+      "function": "检查学科约定"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "O1",
+      "text": "理解核心机制并能通过交互实验解释结果"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "核心学习",
+      "roster": [
+        "teacher",
+        "specialist"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S0",
+      "stageId": "ST1",
+      "type": "orientation",
+      "title": "统计学：学习导览",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "学习导览",
+        "summary": "概率模型的参数会改变分布位置、离散程度和阈值累计概率；实验要区分模型参数与样本数据。这一页先把概念的对象、条件和可观察结果说清楚，再让学习者操作模型。交互不是替代讲解，而是用来检验你是否真正理解变量之间的关系。",
+        "prerequisites": [
+          "先辨认题目中的对象与已知条件",
+          "区分模型中的可调量、保持不变的量和观察量"
+        ],
+        "mentalModel": "把学习导览看成一个可以被拆解、操控和重新组合的模型。先预测改变一个因素会发生什么，再用页面反馈检查预测。",
+        "mechanism": "学习时要同时追踪定义、约束、变化过程和结果。概率模型的参数会改变分布位置、离散程度和阈值累计概率；实验要区分模型参数与样本数据。如果观察结果与直觉冲突，应回到条件和机制，而不是只记住最终答案。",
+        "keyPoints": [
+          "先建立清楚的对象和约束",
+          "一次只改变一个关键条件进行比较",
+          "把观察到的结果用学科语言解释",
+          "区分教学模型的假设与真实世界的复杂性"
+        ],
+        "boundaries": [
+          "本页交互是确定性的教学模型，只覆盖明确声明的条件，不应把简化模型外推到所有情形。"
+        ],
+        "takeaway": "先预测、再操作、再解释，才能把“看到变化”转化为可迁移的理解。"
+      },
+      "content": {
+        "text": "先读讲解，再进入学科原生实验。"
+      }
+    },
+    {
+      "id": "S1",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "正态分布参数与阈值",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "正态分布参数实验",
+        "summary": "均值控制分布中心，标准差控制离散程度。固定阈值后，改变参数会改变标准化位置和累计概率。这一页先把概念的对象、条件和可观察结果说清楚，再让学习者操作模型。交互不是替代讲解，而是用来检验你是否真正理解变量之间的关系。",
+        "prerequisites": [
+          "先辨认题目中的对象与已知条件",
+          "区分模型中的可调量、保持不变的量和观察量"
+        ],
+        "mentalModel": "把正态分布参数实验看成一个可以被拆解、操控和重新组合的模型。先预测改变一个因素会发生什么，再用页面反馈检查预测。",
+        "mechanism": "学习时要同时追踪定义、约束、变化过程和结果。均值控制分布中心，标准差控制离散程度。固定阈值后，改变参数会改变标准化位置和累计概率。如果观察结果与直觉冲突，应回到条件和机制，而不是只记住最终答案。",
+        "keyPoints": [
+          "先建立清楚的对象和约束",
+          "一次只改变一个关键条件进行比较",
+          "把观察到的结果用学科语言解释",
+          "区分教学模型的假设与真实世界的复杂性"
+        ],
+        "boundaries": [
+          "本页交互是确定性的教学模型，只覆盖明确声明的条件，不应把简化模型外推到所有情形。"
+        ],
+        "takeaway": "先预测、再操作、再解释，才能把“看到变化”转化为可迁移的理解。",
+        "workedExamples": [
+          {
+            "id": "stats-ex-1",
+            "variantType": "standard",
+            "title": "固定阈值时移动均值",
+            "text": "固定标准差与阈值，只把均值向阈值方向移动。曲线中心更靠近阈值，阈值左侧累计面积会随相对位置改变；判断时比较的是阈值相对分布中心的位置，而不是只看阈值本身。"
+          },
+          {
+            "id": "stats-ex-2",
+            "variantType": "boundary",
+            "title": "标准差变化不能只说‘曲线变矮’",
+            "text": "固定均值和阈值时增大标准差会让分布更分散。累计概率怎样变化取决于阈值位于均值哪一侧；因此‘标准差越大，阈值左侧概率一定越大’不是普遍结论。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "stats-lab",
+        "widgetConfig": {
+          "distribution": "normal",
+          "mean": 0,
+          "sd": 1,
+          "threshold": 1,
+          "interpretationPrompt": "先固定阈值，只改变均值或标准差；解释累计概率变化与曲线位置/宽度的关系。"
+        }
+      }
+    }
+  ]
+}

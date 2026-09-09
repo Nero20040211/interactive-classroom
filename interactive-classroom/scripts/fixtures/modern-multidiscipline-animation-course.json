@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "id": "modern-multidiscipline-animation-fixture",
+    "title": "六学科过程动画回归课程",
+    "subtitle": "跨学科动画语义与原生 Modern widget 夹具",
+    "language": "zh-CN",
+    "level": "undergraduate",
+    "offline": true,
+    "runtimeProfile": "modern-react",
+    "depthProfile": "overview",
+    "disciplinePack": "cross-disciplinary",
+    "sourcePolicy": "illustrative"
+  },
+  "sources": [],
+  "objectives": [
+    {"id": "o-chemistry", "text": "用分子状态变化解释成键过程。"},
+    {"id": "o-biology", "text": "用路径顺序解释信号传递。"},
+    {"id": "o-computer-science", "text": "用指针状态解释算法的下一次比较。"},
+    {"id": "o-language", "text": "用词块状态解释句法角色。"},
+    {"id": "o-statistics", "text": "用样本点移动解释估计更新。"},
+    {"id": "o-social-science", "text": "用证据连接解释主张的支持范围。"}
+  ],
+  "scenes": [
+    {
+      "id": "multi-chemistry-bond",
+      "type": "interactive",
+      "title": "化学：键的形成是状态变化",
+      "intro": "动画只展示原子间关系如何改变，不把分子示意图当成真实尺度图。",
+      "objectiveIds": ["o-chemistry"],
+      "knowledge": {
+        "title": "从接近到成键",
+        "summary": "化学过程中的关键证据是原子间关系和体系状态发生改变。动画把这些状态按时间排列，帮助比较反应前、过渡和成键后的差异。",
+        "mentalModel": "先辨认参与者，再观察关系何时出现，最后用守恒和模型边界解释结果。",
+        "definition": "成键状态表示两个原子之间出现了被当前模型编码的稳定连接关系。",
+        "mechanism": "相邻状态中原子位置接近且 bond 状态由 absent 变为 present；这种编码支持关系变化的叙述，但不表示真实电子云尺度。",
+        "workedExamples": [{"id": "chem-ex", "title": "关系证据", "text": "只有当连接状态改变时，才把动画称为成键过程。"}],
+        "boundaries": ["原子大小和距离为示意量。", "动画不能单独证明反应速率或能量数值。"],
+        "checkYourself": ["哪一个状态字段表示关系出现？"]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "分子关系变化",
+          "principle": "原子位置和连接关系共同变化，形成可解释的成键状态。",
+          "autoplay": true,
+          "actors": [{"id": "molecule", "type": "molecule", "primitive": "molecule", "semanticRole": "反应物分子关系", "initialState": {"x": 120, "y": 150}, "atoms": [{"id": "a", "x": -28, "y": 0, "label": "A"}, {"id": "b", "x": 28, "y": 0, "label": "B"}], "bonds": []}],
+          "animationSemantics": {"profile": "chemistry-bond-formation", "knowledgeType": "mechanism-process", "teachingGoal": "解释连接关系何时出现", "corePrinciple": "关系状态的改变必须绑定到相邻时间状态", "entities": [{"concept": "原子与化学键", "actorIds": ["molecule"]}], "stateVariables": ["x", "y", "bond"], "stepLogic": ["分离的原子关系", "接近的过渡状态", "出现连接的产物状态"], "mustNotMislead": ["示意距离不是真实键长"], "motionRationale": "位置接近和连接出现是机制证据", "contentFitAudit": {"entitySpecificity": "high", "motionNaturalness": "high", "misleadingRisk": "controlled", "visualStory": "原子接近后关系字段改变"}},
+          "steps": [
+            {"id": "chem-s0", "title": "反应前", "caption": "先确认两个原子的初始关系。", "semanticAction": "separate-atoms", "focus": "两个原子的相对位置", "changeSummary": "原子相互分离，连接关系尚未出现。", "whyItMatters": "初始状态提供判断关系变化的参照。", "states": {"molecule": {"x": 120, "y": 150, "bond": "absent"}}},
+            {"id": "chem-s1", "title": "接近", "caption": "相邻状态显示空间关系正在改变。", "semanticAction": "approach", "focus": "原子间距离", "changeSummary": "分子示意中的两个原子逐步接近。", "whyItMatters": "接近是关系变化前的可观察过程线索。", "states": {"molecule": {"x": 210, "y": 150, "bond": "forming"}}},
+            {"id": "chem-s2", "title": "成键状态", "caption": "连接出现后，关系状态完成更新。", "semanticAction": "form-bond", "focus": "原子间的键", "changeSummary": "连接关系从 absent 变为 present。", "whyItMatters": "状态字段明确指出动画所表达的化学关系变化。", "emphasis": "key", "states": {"molecule": {"x": 300, "y": 150, "bond": "present"}}}
+          ]
+        }
+      }
+    },
+    {
+      "id": "multi-biology-flow",
+      "type": "interactive",
+      "title": "生物学：信号沿路径传递",
+      "intro": "路径 token 的位置表示顺序状态，不能被误读成细胞内真实尺度。",
+      "objectiveIds": ["o-biology"],
+      "knowledge": {
+        "title": "路径与顺序",
+        "summary": "信号传递的一个核心关系是状态按有序路径展开。动画将信号标记放在不同区室，便于观察先后顺序与结果之间的联系。",
+        "mentalModel": "把区室看作有方向的路径，把 token 的当前节点看作离散状态。",
+        "definition": "路径状态记录信号当前所在的区室或节点。",
+        "mechanism": "token 从起点移动到中继节点，再到终点；每次移动都更新路径位置，顺序而非运动速度是当前教学重点。",
+        "workedExamples": [{"id": "bio-ex", "title": "顺序证据", "text": "若跳过中继节点，不能把图示直接解释成完整的传递机制。"}],
+        "boundaries": ["区室位置是教学抽象。", "动画不推断分子浓度或反应速率。"],
+        "checkYourself": ["信号在哪一步进入下一个区室？"]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "信号路径",
+          "principle": "信号按区室顺序推进，路径节点变化承载机制叙述。",
+          "autoplay": true,
+          "actors": [{"id": "signal", "type": "pathway-token", "primitive": "pathway-token", "semanticRole": "信号状态", "initialState": {"x": 90, "y": 150}, "label": "信号"}],
+          "animationSemantics": {"profile": "biology-pathway-transmission", "knowledgeType": "mechanism-process", "teachingGoal": "解释信号的路径顺序", "corePrinciple": "每个路径节点对应一个可检查状态", "entities": [{"concept": "信号 token", "actorIds": ["signal"]}], "stateVariables": ["x", "y", "compartment"], "stepLogic": ["起始区室", "中继区室", "目标区室"], "mustNotMislead": ["节点间距不代表细胞内真实距离"], "motionRationale": "沿路径的移动表达状态顺序", "contentFitAudit": {"entitySpecificity": "high", "motionNaturalness": "high", "misleadingRisk": "controlled", "visualStory": "信号 token 依次通过路径节点"}},
+          "steps": [
+            {"id": "bio-s0", "title": "起始区室", "caption": "信号从路径起点开始。", "semanticAction": "start-pathway", "focus": "信号所在节点", "changeSummary": "token 位于起始区室。", "whyItMatters": "起点定义传递顺序的参照。", "states": {"signal": {"x": 90, "y": 150, "compartment": "source"}}},
+            {"id": "bio-s1", "title": "中继", "caption": "信号进入中间节点。", "semanticAction": "advance-pathway", "focus": "中继节点", "changeSummary": "token 移到下一个区室。", "whyItMatters": "中继状态说明路径不是一步跳到结果。", "states": {"signal": {"x": 250, "y": 150, "compartment": "relay"}}},
+            {"id": "bio-s2", "title": "目标区室", "caption": "信号抵达路径终点。", "semanticAction": "reach-target", "focus": "目标节点", "changeSummary": "token 到达目标区室。", "whyItMatters": "终点状态连接路径顺序与功能结果。", "emphasis": "key", "states": {"signal": {"x": 420, "y": 150, "compartment": "target"}}}
+          ]
+        }
+      }
+    },
+    {
+      "id": "multi-cs-pointer",
+      "type": "interactive",
+      "title": "计算机科学：指针推进下一次比较",
+      "intro": "指针移动表示算法状态更新，箭头本身不是程序执行速度的测量。",
+      "objectiveIds": ["o-computer-science"],
+      "knowledge": {
+        "title": "从当前位置到下一状态",
+        "summary": "算法跟踪需要区分当前指针、候选元素和下一次比较。过程动画将指针绑定到状态变量，避免把整张数组图当成执行过程。",
+        "mentalModel": "每一步先读当前索引，再根据比较结果更新索引，最后说明为什么进入下一步。",
+        "definition": "指针状态是算法在当前时刻选择的数组位置或节点位置。",
+        "mechanism": "比较失败或成功会改变指针的目标单元；动画中的 x 位移只表示目标单元变化，不代表时间复杂度大小。",
+        "workedExamples": [{"id": "cs-ex", "title": "状态转移", "text": "把比较结果与指针的新位置同时记录，才能复核一次循环迭代。"}],
+        "boundaries": ["单个例子的移动次数不能证明一般复杂度。", "图中单元间距不是内存地址距离。"],
+        "checkYourself": ["哪一个动作触发了下一次比较？"]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "数组指针状态",
+          "principle": "比较结果驱动指针从当前单元转移到下一单元。",
+          "autoplay": true,
+          "actors": [{"id": "pointer", "type": "pointer", "primitive": "pointer", "semanticRole": "当前数组指针", "initialState": {"x": 100, "y": 170}, "label": "i"}],
+          "animationSemantics": {"profile": "computer-science-pointer-update", "knowledgeType": "reasoning-evolution", "teachingGoal": "解释算法状态如何推进", "corePrinciple": "状态转移必须由比较或分支条件触发", "entities": [{"concept": "指针", "actorIds": ["pointer"]}], "stateVariables": ["x", "y", "index", "comparison"], "stepLogic": ["当前单元", "比较结果", "下一单元"], "mustNotMislead": ["几何位移不表示运行时间"], "motionRationale": "指针移动表达离散算法状态转移", "contentFitAudit": {"entitySpecificity": "high", "motionNaturalness": "high", "misleadingRisk": "low", "visualStory": "指针随分支结果指向下一个数组单元"}},
+          "steps": [
+            {"id": "cs-s0", "title": "读取当前单元", "caption": "指针先标记当前比较位置。", "semanticAction": "read-current", "focus": "当前指针位置", "changeSummary": "指针位于第一个候选单元。", "whyItMatters": "当前状态决定本轮比较对象。", "states": {"pointer": {"x": 100, "y": 170, "index": 0}}},
+            {"id": "cs-s1", "title": "比较", "caption": "算法在当前单元完成条件判断。", "semanticAction": "compare-cell", "focus": "当前比较", "changeSummary": "比较结果要求继续检查下一个单元。", "whyItMatters": "分支结果是状态转移的原因。", "states": {"pointer": {"x": 190, "y": 170, "index": 1, "comparison": "continue"}}},
+            {"id": "cs-s2", "title": "推进指针", "caption": "指针指向下一次比较的位置。", "semanticAction": "advance-pointer", "focus": "下一次比较的指针", "changeSummary": "pointer targets the next cell。", "whyItMatters": "把循环的一次迭代连接到下一次状态。", "emphasis": "key", "states": {"pointer": {"x": 300, "y": 170, "index": 2, "comparison": "next"}}}
+          ]
+        }
+      }
+    },
+    {
+      "id": "multi-language-token",
+      "type": "interactive",
+      "title": "语言学：短语角色在结构中变清晰",
+      "intro": "词块高亮帮助读者定位结构，不把颜色变化当成语义证明。",
+      "objectiveIds": ["o-language"],
+      "knowledge": {
+        "title": "意义、形式与用法",
+        "summary": "语言分析需要把词块形式与句法角色联系起来。动画突出目标短语并更新其结构状态，帮助学习者比较普通文本和分析状态。",
+        "mentalModel": "先读词块本身，再看它在结构中的角色，最后用替换或移动测试解释判断。",
+        "definition": "结构高亮状态表示当前分析把某个连续词块作为一个句法单位处理。",
+        "mechanism": "token 从未标注变为被强调，再与角色标签关联；变化对象是分析状态，不是词义本身突然改变。",
+        "workedExamples": [{"id": "lang-ex", "title": "结构单位", "text": "一个短语被标为单位后，应继续说明它在句中的功能。"}],
+        "boundaries": ["高亮不等于完整语义解释。", "单句分析不能覆盖所有语境变体。"],
+        "checkYourself": ["高亮的对象和它的句法角色分别是什么？"]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "句法词块",
+          "principle": "词块从未标注到结构高亮，分析状态逐步明确。",
+          "autoplay": true,
+          "actors": [{"id": "token", "type": "token", "primitive": "token", "semanticRole": "句法词块", "initialState": {"x": 110, "y": 160}, "w": 110, "h": 48, "label": "短语"}],
+          "animationSemantics": {"profile": "language-phrase-highlighting", "knowledgeType": "structure-build", "teachingGoal": "解释词块如何获得结构角色", "corePrinciple": "形式、位置和角色共同支撑结构分析", "entities": [{"concept": "目标词块", "actorIds": ["token"]}], "stateVariables": ["x", "y", "opacity", "scale", "role"], "stepLogic": ["未标注词块", "结构候选", "角色明确"], "mustNotMislead": ["视觉高亮不替代语境解释"], "motionRationale": "高亮和状态标签表达分析焦点的建立", "contentFitAudit": {"entitySpecificity": "high", "motionNaturalness": "medium", "misleadingRisk": "controlled", "visualStory": "词块被识别并绑定到结构角色"}},
+          "steps": [
+            {"id": "lang-s0", "title": "读原句", "caption": "先把词块作为普通文本读取。", "semanticAction": "read-phrase", "focus": "词块边界", "changeSummary": "目标短语尚未被标注。", "whyItMatters": "边界是后续结构判断的起点。", "states": {"token": {"x": 110, "y": 160, "scale": 1, "role": "unmarked"}}},
+            {"id": "lang-s1", "title": "识别词块", "caption": "结构候选获得视觉焦点。", "semanticAction": "highlight-phrase", "focus": "句法成分", "changeSummary": "the phrase receives emphasis。", "whyItMatters": "焦点变化提示学习者检查词块内部和外部关系。", "states": {"token": {"x": 210, "y": 160, "scale": 1.12, "role": "candidate"}}},
+            {"id": "lang-s2", "title": "确定角色", "caption": "高亮对象与角色说明同步呈现。", "semanticAction": "assign-phrase-role", "focus": "短语在句中的功能", "changeSummary": "词块与目标结构角色建立对应。", "whyItMatters": "结构标签让形式与用法之间的推理可见。", "emphasis": "key", "states": {"token": {"x": 310, "y": 160, "scale": 1.08, "role": "complement"}}}
+          ]
+        }
+      }
+    },
+    {
+      "id": "multi-statistics-point",
+      "type": "interactive",
+      "title": "统计学：样本更新会改变估计",
+      "intro": "点的位置代表样本状态变化，不能只凭一个动画帧宣称总体结论。",
+      "objectiveIds": ["o-statistics"],
+      "knowledge": {
+        "title": "样本与估计",
+        "summary": "统计估计会随着样本信息更新。动画让一个样本点进入新的位置，用于说明样本状态如何影响估计，而不是把一次移动等同于总体规律。",
+        "mentalModel": "先区分样本和总体，再观察点如何改变，最后说明估计变化的条件与不确定性。",
+        "definition": "样本点是当前观测数据在图上的一个表示，估计是由样本计算出的统计量。",
+        "mechanism": "新增或更新的点改变样本位置，中心或拟合状态随之更新；动画只展示一个确定性示例。",
+        "workedExamples": [{"id": "stats-ex", "title": "更新边界", "text": "样本点移动可以说明估计对数据的敏感性，但不能单独给出置信区间。"}],
+        "boundaries": ["单个样本不代表总体。", "动画未展示抽样分布和测量误差。"],
+        "checkYourself": ["点的变化支持哪一个样本层面的结论？"]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "样本点与估计",
+          "principle": "样本状态变化会更新估计，但需要区分样本证据和总体结论。",
+          "autoplay": true,
+          "actors": [{"id": "point", "type": "sample-point", "primitive": "point", "semanticRole": "样本点", "initialState": {"x": 120, "y": 220}, "label": "xᵢ", "r": 10}],
+          "animationSemantics": {"profile": "statistics-sample-update", "knowledgeType": "dynamic-quantity", "teachingGoal": "解释样本变化与估计更新", "corePrinciple": "统计量由当前样本状态计算", "entities": [{"concept": "样本点", "actorIds": ["point"]}], "stateVariables": ["x", "y", "estimate"], "stepLogic": ["初始样本点", "新观测进入", "估计更新"], "mustNotMislead": ["一次样本移动不代表总体因果规律"], "motionRationale": "点的位置变化表达样本信息更新", "contentFitAudit": {"entitySpecificity": "high", "motionNaturalness": "high", "misleadingRisk": "controlled", "visualStory": "样本点更新后估计状态随之改变"}},
+          "steps": [
+            {"id": "stats-s0", "title": "初始样本", "caption": "先读当前样本点的位置。", "semanticAction": "start-sample", "focus": "样本点与中心", "changeSummary": "点位于初始观测位置。", "whyItMatters": "初始样本定义估计的参照。", "states": {"point": {"x": 120, "y": 220, "estimate": "initial"}}},
+            {"id": "stats-s1", "title": "更新观测", "caption": "样本点进入新的观测位置。", "semanticAction": "update-sample", "focus": "新增样本点", "changeSummary": "the point moves to a new sample position。", "whyItMatters": "估计输入发生变化，需重新计算统计量。", "states": {"point": {"x": 230, "y": 175, "estimate": "pending"}}},
+            {"id": "stats-s2", "title": "估计更新", "caption": "用更新后的样本解释当前估计。", "semanticAction": "update-estimate", "focus": "样本对估计的影响", "changeSummary": "估计状态随样本位置更新。", "whyItMatters": "把可观察数据变化与统计量变化连接起来。", "emphasis": "key", "states": {"point": {"x": 340, "y": 135, "estimate": "updated"}}}
+          ]
+        }
+      }
+    },
+    {
+      "id": "multi-social-evidence",
+      "type": "interactive",
+      "title": "社会科学：证据连接限定主张范围",
+      "intro": "证据卡片的移动表示论证关系建立，不自动升级为因果结论。",
+      "objectiveIds": ["o-social-science"],
+      "knowledge": {
+        "title": "从证据到主张",
+        "summary": "社会科学论证需要说明证据支持什么、不能支持什么。动画把证据卡片连接到主张节点，用于观察支持范围如何被限定。",
+        "mentalModel": "先读证据来源和研究设计，再把证据与具体主张连接，最后检查替代解释和外推边界。",
+        "definition": "证据—主张关系表示某项材料在给定设计和条件下支持一项限定性主张。",
+        "mechanism": "证据卡片从未连接状态进入候选关系，再与主张建立连接；连接出现不等于因果识别完成。",
+        "workedExamples": [{"id": "social-ex", "title": "支持范围", "text": "同一证据可以支持相关性描述，却未必支持干预效果。"}],
+        "boundaries": ["关联证据不自动证明因果。", "局部样本结果不能无条件外推到所有人群。"],
+        "checkYourself": ["连接建立后还需要检查哪个研究设计边界？"]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "证据与主张",
+          "principle": "证据连接到主张时，支持范围和研究边界必须同时可见。",
+          "autoplay": true,
+          "actors": [{"id": "evidence", "type": "evidence-card", "primitive": "evidence-card", "semanticRole": "证据卡片", "initialState": {"x": 120, "y": 210}, "label": "证据", "w": 120, "h": 64}],
+          "animationSemantics": {"profile": "social-science-evidence-link", "knowledgeType": "reasoning-evolution", "teachingGoal": "解释证据如何限定主张", "corePrinciple": "证据支持范围取决于研究设计与关系声明", "entities": [{"concept": "证据卡片", "actorIds": ["evidence"]}], "stateVariables": ["x", "y", "opacity", "relation", "claimScope"], "stepLogic": ["独立证据", "候选连接", "限定性支持关系"], "mustNotMislead": ["连接不是因果证明"], "motionRationale": "卡片进入主张关系表达论证结构建立", "contentFitAudit": {"entitySpecificity": "high", "motionNaturalness": "medium", "misleadingRisk": "controlled", "visualStory": "证据卡片从独立材料变为限定性支持关系"}},
+          "steps": [
+            {"id": "social-s0", "title": "读证据", "caption": "先保留证据的来源和设计信息。", "semanticAction": "read-evidence", "focus": "证据的研究设计", "changeSummary": "证据卡片尚未连接到主张。", "whyItMatters": "研究设计决定可支持的推断范围。", "states": {"evidence": {"x": 120, "y": 210, "relation": "independent", "claimScope": "unknown"}}},
+            {"id": "social-s1", "title": "建立候选关系", "caption": "证据靠近待支持的主张。", "semanticAction": "link-evidence", "focus": "证据与主张的关系", "changeSummary": "the evidence card connects to the claim。", "whyItMatters": "候选连接把材料和待检验主张放在同一推理链上。", "states": {"evidence": {"x": 250, "y": 175, "relation": "candidate", "claimScope": "conditional"}}},
+            {"id": "social-s2", "title": "限定支持范围", "caption": "关系建立后仍需保留边界说明。", "semanticAction": "bound-claim", "focus": "可支持的主张范围", "changeSummary": "证据与主张形成限定性支持关系。", "whyItMatters": "把证据存在、关系方向和因果强度区分开来。", "emphasis": "key", "states": {"evidence": {"x": 380, "y": 140, "relation": "supports", "claimScope": "limited"}}}
+          ]
+        }
+      }
+    }
+  ]
+}

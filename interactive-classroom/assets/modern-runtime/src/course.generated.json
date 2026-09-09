@@ -1,0 +1,11 @@
+{
+ "meta": {
+ "id": "replace-me",
+ "runtimeProfile": "modern-react",
+ "title": "Replace with generated course",
+ "language": "zh-CN",
+ "offline": true
+ },
+ "stages": [],
+ "scenes": []
+}

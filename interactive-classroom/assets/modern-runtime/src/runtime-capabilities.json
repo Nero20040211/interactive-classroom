@@ -1,0 +1,15 @@
+{
+  "sceneTypes": [
+    "orientation", "concept", "interactive", "quiz", "explain-back", "mastery",
+    "discussion", "pbl", "reflection", "checkpoint"
+  ],
+  "semanticBlockKinds": [
+    "definition", "theorem", "lemma", "corollary", "proposition", "proof", "example", "exercise", "note", "remark"
+  ],
+  "builtinWidgetTypes": [
+    "equation", "process-animation", "motion-lab", "simulation", "random-trial-lab", "fbd-lab", "circuit-lab", "map-lab", "code",
+    "stats-lab", "data-lab", "genetics-lab", "cloze-lab", "sentence-builder-lab", "grammar-tree-lab",
+    "source-comparison-lab", "argument-map-lab", "causal-dag-lab", "evidence-matrix-lab", "proof-practice"
+  ],
+  "generatedWidgetPolicy": "course-specific widgets may extend the explicit generatedWidgetRegistry and must be listed in widget-manifest.json"
+}

@@ -1,0 +1,360 @@
+{
+  "meta": {
+    "id": "物理：受力与电路原生实验",
+    "title": "物理：受力与电路原生实验",
+    "subtitle": "Discipline Pack regression classroom",
+    "language": "zh-CN",
+    "offline": true,
+    "depthProfile": "overview",
+    "discipline": {
+      "primary": "physical-experimental"
+    },
+    "disciplinePack": "physics",
+    "sourcePolicy": "illustrative",
+    "learnerQualityPolicy": {
+      "mode": "three-indicator",
+      "targetLearner": "高中物理入门学习者",
+      "requireDiagnosticGapTags": true
+    },
+    "visualQualityPolicy": {
+      "mode": "reader-first-accessible",
+      "minTextContrast": 4.5,
+      "minNonTextContrast": 3.0,
+      "animationLabelMinPx": 15,
+      "avoidColorOnlyEncoding": true,
+      "mobileAnimationStrategy": "scroll-inside"
+    }
+  },
+  "roles": [
+    {
+      "id": "teacher",
+      "name": "教师",
+      "avatar": "师",
+      "tone": "teacher",
+      "function": "讲解与实验引导"
+    },
+    {
+      "id": "specialist",
+      "name": "学科助教",
+      "avatar": "专",
+      "tone": "specialist",
+      "function": "检查学科约定"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "O1",
+      "text": "理解核心机制并能通过交互实验解释结果"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "核心学习",
+      "roster": [
+        "teacher",
+        "specialist"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S0",
+      "stageId": "ST1",
+      "type": "orientation",
+      "title": "高中物理：学习导览",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "学习导览",
+        "summary": "先从相互作用判断受力，再把电路中的电压、电阻和电流作为可调模型研究。这一页先把概念的对象、条件和可观察结果说清楚，再让学习者操作模型。交互不是替代讲解，而是用来检验你是否真正理解变量之间的关系。",
+        "prerequisites": [
+          "先辨认题目中的对象与已知条件",
+          "区分模型中的可调量、保持不变的量和观察量"
+        ],
+        "mentalModel": "把学习导览看成一个可以被拆解、操控和重新组合的模型。先预测改变一个因素会发生什么，再用页面反馈检查预测。",
+        "mechanism": "学习时要同时追踪定义、约束、变化过程和结果。先从相互作用判断受力，再把电路中的电压、电阻和电流作为可调模型研究。如果观察结果与直觉冲突，应回到条件和机制，而不是只记住最终答案。",
+        "keyPoints": [
+          "先建立清楚的对象和约束",
+          "一次只改变一个关键条件进行比较",
+          "把观察到的结果用学科语言解释",
+          "区分教学模型的假设与真实世界的复杂性"
+        ],
+        "boundaries": [
+          "本页交互是确定性的教学模型，只覆盖明确声明的条件，不应把简化模型外推到所有情形。"
+        ],
+        "takeaway": "先预测、再操作、再解释，才能把“看到变化”转化为可迁移的理解。"
+      },
+      "content": {
+        "text": "先读讲解，再进入学科原生实验。"
+      }
+    },
+    {
+      "id": "S1",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "离开桌边后，小球受到哪些力？",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "自由体图",
+        "summary": "自由体图只画研究对象实际受到的力。速度方向、轨迹方向和已经消失的支持力都不能混进受力图。这一页先把概念的对象、条件和可观察结果说清楚，再让学习者操作模型。交互不是替代讲解，而是用来检验你是否真正理解变量之间的关系。",
+        "prerequisites": [
+          "先辨认题目中的对象与已知条件",
+          "区分模型中的可调量、保持不变的量和观察量"
+        ],
+        "mentalModel": "把自由体图看成一个可以被拆解、操控和重新组合的模型。先预测改变一个因素会发生什么，再用页面反馈检查预测。",
+        "mechanism": "学习时要同时追踪定义、约束、变化过程和结果。自由体图只画研究对象实际受到的力。速度方向、轨迹方向和已经消失的支持力都不能混进受力图。如果观察结果与直觉冲突，应回到条件和机制，而不是只记住最终答案。",
+        "keyPoints": [
+          "先建立清楚的对象和约束",
+          "一次只改变一个关键条件进行比较",
+          "把观察到的结果用学科语言解释",
+          "区分教学模型的假设与真实世界的复杂性"
+        ],
+        "boundaries": [
+          "本页交互是确定性的教学模型，只覆盖明确声明的条件，不应把简化模型外推到所有情形。"
+        ],
+        "takeaway": "先预测、再操作、再解释，才能把“看到变化”转化为可迁移的理解。",
+        "workedExamples": [
+          {
+            "id": "ex-s1",
+            "title": "离桌瞬间的受力判断",
+            "variantType": "standard",
+            "text": "小球刚离开桌边后，桌面对小球的支持作用随接触消失；若忽略空气阻力，自由体图只保留地球对小球的重力。这个例子强调“力来自相互作用”，而不是“沿运动方向必须有一个力”。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "fbd-lab",
+        "widgetConfig": {
+          "prompt": "忽略空气阻力。平抛小球离开桌边后，选择它实际受到的力。",
+          "candidateForces": [
+            {
+              "id": "G",
+              "label": "重力",
+              "symbol": "G",
+              "direction": "down",
+              "source": "地球对小球的引力相互作用"
+            },
+            {
+              "id": "N",
+              "label": "桌面对小球的支持力",
+              "symbol": "N",
+              "direction": "up",
+              "source": "桌面接触相互作用"
+            },
+            {
+              "id": "V",
+              "label": "“向右的运动力”",
+              "symbol": "?",
+              "direction": "right",
+              "source": "错误选项：运动状态不是相互作用"
+            }
+          ],
+          "targetForceIds": [
+            "G"
+          ],
+          "correctFeedback": "离开桌边后接触消失，只剩地球施加的重力。",
+          "incorrectFeedback": "检查是否把速度方向或已经消失的桌面接触力误当成力。",
+          "motionNote": "向右速度说明运动状态，不代表存在一个“向右的力”。"
+        }
+      }
+    },
+    {
+      "id": "S2",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "串联电路：调电阻观察电流",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "直流串联电路",
+        "summary": "在理想串联电路中，电源电压固定时，总电阻变化会改变同一回路中的电流。调节单个电阻可以做控制变量比较。这一页先把概念的对象、条件和可观察结果说清楚，再让学习者操作模型。交互不是替代讲解，而是用来检验你是否真正理解变量之间的关系。",
+        "prerequisites": [
+          "先辨认题目中的对象与已知条件",
+          "区分模型中的可调量、保持不变的量和观察量"
+        ],
+        "mentalModel": "把直流串联电路看成一个可以被拆解、操控和重新组合的模型。先预测改变一个因素会发生什么，再用页面反馈检查预测。",
+        "mechanism": "学习时要同时追踪定义、约束、变化过程和结果。在理想串联电路中，电源电压固定时，总电阻变化会改变同一回路中的电流。调节单个电阻可以做控制变量比较。如果观察结果与直觉冲突，应回到条件和机制，而不是只记住最终答案。",
+        "keyPoints": [
+          "先建立清楚的对象和约束",
+          "一次只改变一个关键条件进行比较",
+          "把观察到的结果用学科语言解释",
+          "区分教学模型的假设与真实世界的复杂性"
+        ],
+        "boundaries": [
+          "本页交互是确定性的教学模型，只覆盖明确声明的条件，不应把简化模型外推到所有情形。"
+        ],
+        "takeaway": "先预测、再操作、再解释，才能把“看到变化”转化为可迁移的理解。",
+        "workedExamples": [
+          {
+            "id": "ex-s2",
+            "title": "只改变一个电阻",
+            "variantType": "standard",
+            "text": "保持理想电源电压与另一个串联电阻不变，只增大其中一个电阻。总电阻增大后，整个串联回路的电流减小；同一时刻各串联元件中的电流仍相同。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "circuit-lab",
+        "widgetConfig": {
+          "kind": "series",
+          "sourceVoltage": 6,
+          "resistors": [
+            {
+              "id": "R1",
+              "label": "R₁",
+              "unit": "Ω",
+              "value": 10,
+              "min": 2,
+              "max": 30,
+              "step": 1
+            },
+            {
+              "id": "R2",
+              "label": "R₂",
+              "unit": "Ω",
+              "value": 20,
+              "min": 2,
+              "max": 40,
+              "step": 1
+            }
+          ],
+          "instructions": "一次只改变一个电阻，观察等效电阻与总电流。",
+          "assumption": "理想电源、理想导线，忽略电源内阻和导线电阻。"
+        }
+      }
+    },
+    {
+      "id": "SQ",
+      "type": "quiz",
+      "title": "物理机制检测",
+      "objectiveIds": [
+        "O1"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "phys-q1",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "guided",
+            "gapTags": [
+              "force-source"
+            ],
+            "kind": "single",
+            "prompt": "小球离开水平桌面后，若忽略空气阻力，哪一项应保留在自由体图中？",
+            "options": [
+              {
+                "id": "a",
+                "text": "竖直向下的重力"
+              },
+              {
+                "id": "b",
+                "text": "沿速度方向的“运动力”"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "判断依据与本节机制一致。",
+              "incorrect": "回到知识解释，先识别对象、条件和因果链，再重新判断。"
+            }
+          },
+          {
+            "id": "phys-q2",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "independent",
+            "gapTags": [
+              "interaction-model"
+            ],
+            "kind": "single",
+            "prompt": "判断某个力是否存在时，最可靠的第一步是什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "寻找能产生该力的相互作用对象"
+              },
+              {
+                "id": "b",
+                "text": "只看物体运动方向"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "判断依据与本节机制一致。",
+              "incorrect": "回到知识解释，先识别对象、条件和因果链，再重新判断。"
+            }
+          },
+          {
+            "id": "phys-q3",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "transfer",
+            "gapTags": [
+              "circuit-response"
+            ],
+            "kind": "single",
+            "prompt": "理想串联电路中，只增大一个电阻而电源不变，整体电流怎样变化？",
+            "options": [
+              {
+                "id": "a",
+                "text": "减小"
+              },
+              {
+                "id": "b",
+                "text": "增大"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "判断依据与本节机制一致。",
+              "incorrect": "回到知识解释，先识别对象、条件和因果链，再重新判断。"
+            }
+          },
+          {
+            "id": "phys-q4",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "retrieval",
+            "gapTags": [
+              "model-boundary"
+            ],
+            "kind": "single",
+            "prompt": "把课堂电路实验迁移到真实电路前，最需要保留哪条边界意识？",
+            "options": [
+              {
+                "id": "a",
+                "text": "课堂模型基于明确的理想化条件"
+              },
+              {
+                "id": "b",
+                "text": "所有真实元件都严格符合理想模型"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "判断依据与本节机制一致。",
+              "incorrect": "回到知识解释，先识别对象、条件和因果链，再重新判断。"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

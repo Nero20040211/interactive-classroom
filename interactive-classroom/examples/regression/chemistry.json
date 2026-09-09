@@ -1,0 +1,492 @@
+{
+  "meta": {
+    "id": "reg-v451-chemistry-process",
+    "title": "离子反应：从自由离子到沉淀",
+    "subtitle": "用贴合学科机制的过程动画建立可迁移理解",
+    "language": "zh-CN",
+    "offline": true,
+    "depthProfile": "overview",
+    "disciplinePack": "chemistry",
+    "sourcePolicy": "illustrative",
+    "autoNumbering": true,
+    "learnerSurfacePolicy": {
+      "hideEngineering": true
+    },
+    "learnerQualityPolicy": {
+      "mode": "three-indicator",
+      "targetLearner": "具备相应先修知识的入门学习者",
+      "requireDiagnosticGapTags": true
+    },
+    "animationPolicy": {
+      "mode": "process-first",
+      "requireProcessAnimation": true,
+      "requireSpecificSteps": true,
+      "preventVisualOverlap": true,
+      "minSafeMargin": 20,
+      "minActorGap": 10
+    },
+    "visualQualityPolicy": {
+      "mode": "reader-first-accessible",
+      "minTextContrast": 4.5,
+      "minNonTextContrast": 3.0,
+      "animationLabelMinPx": 15,
+      "avoidColorOnlyEncoding": true,
+      "mobileAnimationStrategy": "scroll-inside"
+    },
+    "animationContentPolicy": {
+      "mode": "content-fit",
+      "requireSemantics": true,
+      "requireDomainPrimitiveWhenAvailable": true,
+      "requireStepWhy": true,
+      "requireMisleadingBoundary": true,
+      "requireKeyStep": true,
+      "animateOnlyWhenMechanismBenefits": true
+    }
+  },
+  "sources": [],
+  "objectives": [
+    {
+      "id": "O1",
+      "text": "解释净离子反应中参与粒子的状态变化"
+    },
+    {
+      "id": "O2",
+      "text": "用原子、电荷和计量守恒检查沉淀形成"
+    }
+  ],
+  "roles": [],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "粒子机制"
+    },
+    {
+      "id": "ST2",
+      "title": "理解检测"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "CH1",
+      "stageId": "ST1",
+      "type": "concept",
+      "title": "先确定哪些粒子真正发生变化",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "离子在溶液中相遇并形成沉淀",
+        "summary": "离子反应的核心不是“两个化学式靠在一起”，而是水溶液中的特定离子发生重新组合。以银离子和氯离子为例，两个带相反电荷的离子在溶液中接近后形成难溶的氯化银固体；旁观离子并不是这个净离子变化的组成部分。学习时要同时守住离子种类、电荷和原子计量三个约束。",
+        "prerequisites": [
+          "先区分对象、状态、条件和结果，并能按步骤描述变化。"
+        ],
+        "mentalModel": "把溶液想成许多分散粒子的空间：真正参与反应的离子从分散状态接近，在满足组成比例时进入同一个固体晶格结果；“沉淀”不是离子消失，而是它们从自由移动的水合离子状态变成难溶固体中的组成粒子。",
+        "mechanism": "动画只追踪 Ag⁺ 与 Cl⁻ 这一对反应离子：先分散、再接近、最后以 1:1 组成形成 AgCl 固体符号。它不模拟真实水合层、碰撞轨迹或晶格生长速度；这些省略必须和化学计量真实性分开。",
+        "workedExamples": [
+          {
+            "id": "离子在溶液中相遇并形成沉淀-ex1",
+            "variantType": "standard",
+            "title": "标准：Ag⁺ 与 Cl⁻ 的净离子式",
+            "problem": "先预测关键状态会怎样变化，再说明依据。",
+            "solution": "先锁定当前对象与条件，只沿本节机制追踪状态变化。"
+          },
+          {
+            "id": "离子在溶液中相遇并形成沉淀-ex2",
+            "variantType": "contrast",
+            "title": "对比：加入旁观离子并不改变净离子核心",
+            "problem": "如果改变一个关键条件，哪一步会首先不同？",
+            "solution": "找出机制链上最先受到该条件影响的状态，再向后推演。"
+          }
+        ],
+        "pitfalls": [
+          "不要把“离子相遇”误解成任意两种离子都必然生成沉淀。",
+          "不要把动画中的空间位置、颜色或速度直接当成真实尺度，除非课程明确说明按比例绘制。"
+        ],
+        "connections": [
+          "把动画状态与文字定义、符号表示和练习题互相翻译。"
+        ],
+        "checkYourself": [
+          "暂停动画后，能否不用画面说出三步机制？",
+          "能否指出一个动画不能代表的真实细节？"
+        ]
+      }
+    },
+    {
+      "id": "CH2",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "看 Ag⁺ 与 Cl⁻ 如何形成沉淀",
+      "objectiveIds": [
+        "O1",
+        "O2"
+      ],
+      "knowledge": {
+        "title": "用动画检查净离子反应的三个守恒",
+        "summary": "过程动画的价值在于把净离子方程式中的对象和状态变化拆开看：反应前是两个独立离子，关键步骤是它们接触并满足 1:1 组成，反应后用 AgCl 固体表示新的状态。观察时不要只记最终符号，要检查银原子、氯原子与总电荷在方程式两侧是否一致。",
+        "prerequisites": [
+          "先区分对象、状态、条件和结果，并能按步骤描述变化。"
+        ],
+        "mentalModel": "把每个离子看成带身份和电荷的“记名粒子”。移动只是帮助你看到参与者靠近；真正决定化学结论的是身份、计量和溶解性条件，而不是动画里谁移动得更快。",
+        "mechanism": "先列出参与离子，再让 Ag⁺ 与 Cl⁻ 接触，最后把它们替换为一个 AgCl 固体符号。通过 semantic relation 声明两个离子在关键步骤允许发生有意义的接触，这种重叠是反应语义而不是布局错误。",
+        "workedExamples": [
+          {
+            "id": "用动画检查净离子反应的三个守恒-ex1",
+            "variantType": "standard",
+            "title": "标准：从离子到沉淀",
+            "problem": "先预测关键状态会怎样变化，再说明依据。",
+            "solution": "先锁定当前对象与条件，只沿本节机制追踪状态变化。"
+          },
+          {
+            "id": "用动画检查净离子反应的三个守恒-ex2",
+            "variantType": "contrast",
+            "title": "边界：若没有难溶产物条件则不能仅凭“接触”判反应",
+            "problem": "如果改变一个关键条件，哪一步会首先不同？",
+            "solution": "找出机制链上最先受到该条件影响的状态，再向后推演。"
+          }
+        ],
+        "pitfalls": [
+          "颜色只辅助区分离子，电荷和标签才是身份信息。",
+          "不要把动画中的空间位置、颜色或速度直接当成真实尺度，除非课程明确说明按比例绘制。"
+        ],
+        "connections": [
+          "把动画状态与文字定义、符号表示和练习题互相翻译。"
+        ],
+        "checkYourself": [
+          "暂停动画后，能否不用画面说出三步机制？",
+          "能否指出一个动画不能代表的真实细节？"
+        ]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "Ag⁺ 与 Cl⁻ 怎样从自由离子形成沉淀",
+          "principle": "参与反应的 Ag⁺ 与 Cl⁻ 按 1:1 接近并形成难溶 AgCl；原子种类与总电荷守恒。",
+          "canvas": {
+            "width": 760,
+            "height": 360
+          },
+          "layoutPolicy": {
+            "preventOverlap": true,
+            "safeMargin": 24,
+            "minGap": 12
+          },
+          "actors": [
+            {
+              "id": "ag",
+              "type": "ion",
+              "x": 170,
+              "y": 180,
+              "r": 30,
+              "label": "Ag",
+              "charge": "+",
+              "role": "primary",
+              "semanticRole": "reactant-ion"
+            },
+            {
+              "id": "cl",
+              "type": "ion",
+              "x": 590,
+              "y": 180,
+              "r": 30,
+              "label": "Cl",
+              "charge": "−",
+              "role": "secondary",
+              "semanticRole": "reactant-ion"
+            },
+            {
+              "id": "ppt",
+              "type": "molecule",
+              "x": 380,
+              "y": 265,
+              "w": 132,
+              "h": 62,
+              "label": "AgCl(s)",
+              "role": "good",
+              "semanticRole": "precipitate",
+              "shape": "chain",
+              "carbonCount": 0
+            }
+          ],
+          "steps": [
+            {
+              "title": "反应前：离子分散在水溶液中",
+              "caption": "Ag⁺ 与 Cl⁻ 仍是彼此独立的水合离子；动画省略周围水分子。",
+              "focus": "先读身份和电荷，而不是只看颜色。",
+              "changeSummary": "两个离子位于画布两侧，沉淀产物隐藏。",
+              "states": {
+                "ag": {
+                  "x": 170,
+                  "y": 180
+                },
+                "cl": {
+                  "x": 590,
+                  "y": 180
+                },
+                "ppt": {
+                  "opacity": 0
+                }
+              },
+              "semanticAction": "separate-reactant-ions",
+              "whyItMatters": "净离子方程式要从真正参与变化的离子开始。",
+              "emphasis": "setup",
+              "motionMs": 620
+            },
+            {
+              "title": "关键：Ag⁺ 与 Cl⁻ 接近并形成 1:1 接触",
+              "caption": "两个反应离子移动到同一区域；这里的接触是化学语义允许的有意义重叠。",
+              "focus": "检查一枚 Ag⁺ 对应一枚 Cl⁻，总电荷相互抵消。",
+              "changeSummary": "Ag⁺ 向右、Cl⁻ 向左移动，二者边界相接。",
+              "states": {
+                "ag": {
+                  "x": 350,
+                  "y": 170
+                },
+                "cl": {
+                  "x": 410,
+                  "y": 170
+                },
+                "ppt": {
+                  "opacity": 0
+                }
+              },
+              "semanticAction": "stoichiometric-contact",
+              "whyItMatters": "1:1 接触把计量关系和电荷守恒同时显性化。",
+              "emphasis": "key",
+              "motionMs": 1050
+            },
+            {
+              "title": "形成难溶 AgCl 固体",
+              "caption": "自由离子淡出，AgCl(s) 产物出现；这是状态改变，不是原子消失。",
+              "focus": "比较反应前后的 Ag、Cl 数量和总电荷。",
+              "changeSummary": "两枚离子淡出，AgCl(s) 在下方产物区出现。",
+              "states": {
+                "ag": {
+                  "x": 360,
+                  "y": 170,
+                  "opacity": 0
+                },
+                "cl": {
+                  "x": 400,
+                  "y": 170,
+                  "opacity": 0
+                },
+                "ppt": {
+                  "x": 380,
+                  "y": 250,
+                  "opacity": 1
+                }
+              },
+              "semanticAction": "form-precipitate",
+              "whyItMatters": "沉淀形成的本质是粒子状态和组合方式改变，原子仍守恒。",
+              "emphasis": "consolidate",
+              "motionMs": 760
+            }
+          ],
+          "principleCheck": {
+            "prompt": "为什么这段动画中 Ag⁺ 与 Cl⁻ 的“重叠/接触”不是应该消除的视觉遮挡？",
+            "expectedIdeas": [
+              "它表示反应粒子发生有意义的接触",
+              "1:1 计量关系必须保留",
+              "最终形成难溶 AgCl 固体而非原子消失"
+            ]
+          },
+          "animationSemantics": {
+            "profile": "chemistry-particle-reaction",
+            "knowledgeType": "mechanism-process",
+            "teachingGoal": "用具体离子对象看清净离子反应中的接近、计量接触和沉淀形成。",
+            "corePrinciple": "Ag⁺ 与 Cl⁻ 以 1:1 形成难溶 AgCl，同时保持原子和电荷守恒。",
+            "entities": [
+              {
+                "id": "silver",
+                "concept": "银离子 Ag⁺",
+                "actorIds": [
+                  "ag"
+                ]
+              },
+              {
+                "id": "chloride",
+                "concept": "氯离子 Cl⁻",
+                "actorIds": [
+                  "cl"
+                ]
+              },
+              {
+                "id": "precipitate",
+                "concept": "AgCl 沉淀",
+                "actorIds": [
+                  "ppt"
+                ]
+              }
+            ],
+            "stateVariables": [
+              "particle-identity",
+              "charge",
+              "separation",
+              "phase-state",
+              "stoichiometric-ratio"
+            ],
+            "stepLogic": [
+              "separated",
+              "contact",
+              "precipitate"
+            ],
+            "mustNotMislead": [
+              "动画位置和速度不是微观真实尺度。",
+              "离子“接触”并不意味着任意离子组合都能自发生成沉淀；仍需满足化学条件。"
+            ],
+            "motionRationale": "离子原语的靠近和产物替换把反应参与者、1:1 计量和状态改变放在同一视觉链中。",
+            "contentFitAudit": {
+              "entitySpecificity": "high",
+              "motionNaturalness": "high",
+              "misleadingRisk": "controlled",
+              "visualStory": "两种带电反应离子从分散到计量接触，再转化为难溶产物。"
+            },
+            "semanticRelations": [
+              {
+                "type": "touches",
+                "source": "ag",
+                "targets": [
+                  "cl"
+                ],
+                "meaning": "关键步骤中反应离子发生有意义接触。",
+                "whenSteps": [
+                  "stoichiometric-contact"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "CHQ",
+      "stageId": "ST2",
+      "type": "quiz",
+      "title": "检查粒子、计量和守恒",
+      "objectiveIds": [
+        "O1",
+        "O2"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "chq1",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "guided",
+            "gapTags": [
+              "participant-selection"
+            ],
+            "kind": "single",
+            "prompt": "净离子反应动画首先应该追踪什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "真正参与变化的离子身份与状态"
+              },
+              {
+                "id": "b",
+                "text": "所有溶液中的离子都同等作为反应物"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          },
+          {
+            "id": "chq2",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "independent",
+            "gapTags": [
+              "state-vs-disappearance"
+            ],
+            "kind": "single",
+            "prompt": "Ag⁺ 和 Cl⁻ 接近后，为什么不能说“原子消失了”？",
+            "options": [
+              {
+                "id": "a",
+                "text": "它们转变为 AgCl 固体中的组成粒子"
+              },
+              {
+                "id": "b",
+                "text": "因为动画把它们隐藏了所以现实也消失"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          },
+          {
+            "id": "chq3",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "transfer",
+            "gapTags": [
+              "stoichiometry"
+            ],
+            "kind": "single",
+            "prompt": "Ag⁺ + Cl⁻ → AgCl 中最直接的计量关系是什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "Ag 与 Cl 为 1:1"
+              },
+              {
+                "id": "b",
+                "text": "Ag 与 Cl 为 2:1"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          },
+          {
+            "id": "chq4",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "retrieval",
+            "gapTags": [
+              "conservation"
+            ],
+            "kind": "single",
+            "prompt": "判断动画是否化学可信，至少还要检查什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "原子种类和总电荷守恒"
+              },
+              {
+                "id": "b",
+                "text": "运动轨迹是否像真实分子一样平滑"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

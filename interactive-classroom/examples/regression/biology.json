@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "id": "生物：单基因遗传实验",
+    "title": "生物：单基因遗传实验",
+    "subtitle": "Discipline Pack regression classroom",
+    "language": "zh-CN",
+    "offline": true,
+    "depthProfile": "overview",
+    "discipline": {
+      "primary": "life-clinical"
+    },
+    "disciplinePack": "biology",
+    "sourcePolicy": "illustrative",
+    "learnerQualityPolicy": {
+      "mode": "three-indicator",
+      "targetLearner": "高中生物遗传学入门学习者",
+      "requireDiagnosticGapTags": true
+    },
+    "visualQualityPolicy": {
+      "mode": "reader-first-accessible",
+      "minTextContrast": 4.5,
+      "minNonTextContrast": 3.0,
+      "animationLabelMinPx": 15,
+      "avoidColorOnlyEncoding": true,
+      "mobileAnimationStrategy": "scroll-inside"
+    }
+  },
+  "roles": [
+    {
+      "id": "teacher",
+      "name": "教师",
+      "avatar": "师",
+      "tone": "teacher",
+      "function": "讲解与实验引导"
+    },
+    {
+      "id": "specialist",
+      "name": "学科助教",
+      "avatar": "专",
+      "tone": "specialist",
+      "function": "检查学科约定"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "O1",
+      "text": "理解核心机制并能通过交互实验解释结果"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "核心学习",
+      "roster": [
+        "teacher",
+        "specialist"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S0",
+      "stageId": "ST1",
+      "type": "orientation",
+      "title": "高中生物：学习导览",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "学习导览",
+        "summary": "遗传概率来自配子组合规则；先明确基因型与表现型映射，再观察不同亲本组合。这一页先把概念的对象、条件和可观察结果说清楚，再让学习者操作模型。交互不是替代讲解，而是用来检验你是否真正理解变量之间的关系。",
+        "prerequisites": [
+          "先辨认题目中的对象与已知条件",
+          "区分模型中的可调量、保持不变的量和观察量"
+        ],
+        "mentalModel": "把学习导览看成一个可以被拆解、操控和重新组合的模型。先预测改变一个因素会发生什么，再用页面反馈检查预测。",
+        "mechanism": "学习时要同时追踪定义、约束、变化过程和结果。遗传概率来自配子组合规则；先明确基因型与表现型映射，再观察不同亲本组合。如果观察结果与直觉冲突，应回到条件和机制，而不是只记住最终答案。",
+        "keyPoints": [
+          "先建立清楚的对象和约束",
+          "一次只改变一个关键条件进行比较",
+          "把观察到的结果用学科语言解释",
+          "区分教学模型的假设与真实世界的复杂性"
+        ],
+        "boundaries": [
+          "本页交互是确定性的教学模型，只覆盖明确声明的条件，不应把简化模型外推到所有情形。"
+        ],
+        "takeaway": "先预测、再操作、再解释，才能把“看到变化”转化为可迁移的理解。"
+      },
+      "content": {
+        "text": "先读讲解，再进入学科原生实验。"
+      }
+    },
+    {
+      "id": "S1",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "单基因遗传 Punnett 方格",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "孟德尔单基因遗传",
+        "summary": "亲本基因型决定可产生的配子类型，随机结合形成后代基因型。教学模型假设单基因、完全显性和等概率配子。这一页先把概念的对象、条件和可观察结果说清楚，再让学习者操作模型。交互不是替代讲解，而是用来检验你是否真正理解变量之间的关系。",
+        "prerequisites": [
+          "先辨认题目中的对象与已知条件",
+          "区分模型中的可调量、保持不变的量和观察量"
+        ],
+        "mentalModel": "把孟德尔单基因遗传看成一个可以被拆解、操控和重新组合的模型。先预测改变一个因素会发生什么，再用页面反馈检查预测。",
+        "mechanism": "学习时要同时追踪定义、约束、变化过程和结果。亲本基因型决定可产生的配子类型，随机结合形成后代基因型。教学模型假设单基因、完全显性和等概率配子。如果观察结果与直觉冲突，应回到条件和机制，而不是只记住最终答案。",
+        "keyPoints": [
+          "先建立清楚的对象和约束",
+          "一次只改变一个关键条件进行比较",
+          "把观察到的结果用学科语言解释",
+          "区分教学模型的假设与真实世界的复杂性"
+        ],
+        "boundaries": [
+          "本页交互是确定性的教学模型，只覆盖明确声明的条件，不应把简化模型外推到所有情形。"
+        ],
+        "takeaway": "先预测、再操作、再解释，才能把“看到变化”转化为可迁移的理解。",
+        "workedExamples": [
+          {
+            "id": "ex-s1",
+            "title": "杂合双亲的配子组合",
+            "variantType": "standard",
+            "text": "当两个杂合亲本分别形成两类配子时，Punnett 方格把父母双方可能配子的组合逐格列出。每个格子表示一次后代基因型的可能组合，而不是保证四个真实后代恰好各出现一次。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "genetics-lab",
+        "widgetConfig": {
+          "parentA": "Aa",
+          "parentB": "Aa",
+          "allowedGenotypes": [
+            "AA",
+            "Aa",
+            "aa"
+          ],
+          "phenotypeMap": "在完全显性假设下，AA 与 Aa 表现显性性状，aa 表现隐性性状。",
+          "phenotypes": {
+            "AA": "显性",
+            "Aa": "显性",
+            "aa": "隐性"
+          },
+          "prompt": "改变两个亲本的基因型，比较后代基因型比例。"
+        }
+      }
+    },
+    {
+      "id": "BQ",
+      "type": "quiz",
+      "title": "遗传概率检测",
+      "objectiveIds": [
+        "O1"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "bio-q1",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "guided",
+            "gapTags": [
+              "probability-vs-certainty"
+            ],
+            "kind": "single",
+            "prompt": "Punnett 方格中的每个格子主要表示什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "一种由父母配子组合形成的后代基因型可能"
+              },
+              {
+                "id": "b",
+                "text": "一个真实家庭中必然出生的固定个体"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "判断依据与本节机制一致。",
+              "incorrect": "回到知识解释，先识别对象、条件和因果链，再重新判断。"
+            }
+          },
+          {
+            "id": "bio-q2",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "transfer",
+            "gapTags": [
+              "sample-variation"
+            ],
+            "kind": "single",
+            "prompt": "把理论比例用于少量真实后代时，正确的解释是什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "小样本可能明显偏离理论比例"
+              },
+              {
+                "id": "b",
+                "text": "任何小样本都必须精确等于理论比例"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "判断依据与本节机制一致。",
+              "incorrect": "回到知识解释，先识别对象、条件和因果链，再重新判断。"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

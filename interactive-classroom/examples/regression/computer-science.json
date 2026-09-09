@@ -1,0 +1,716 @@
+{
+  "meta": {
+    "id": "reg-v451-cs-process",
+    "title": "二分查找：指针如何缩小候选区间",
+    "subtitle": "用贴合学科机制的过程动画建立可迁移理解",
+    "language": "zh-CN",
+    "offline": true,
+    "depthProfile": "overview",
+    "disciplinePack": "computer-science",
+    "sourcePolicy": "illustrative",
+    "autoNumbering": true,
+    "learnerSurfacePolicy": {
+      "hideEngineering": true
+    },
+    "learnerQualityPolicy": {
+      "mode": "three-indicator",
+      "targetLearner": "具备相应先修知识的入门学习者",
+      "requireDiagnosticGapTags": true
+    },
+    "animationPolicy": {
+      "mode": "process-first",
+      "requireProcessAnimation": true,
+      "requireSpecificSteps": true,
+      "preventVisualOverlap": true,
+      "minSafeMargin": 20,
+      "minActorGap": 10
+    },
+    "visualQualityPolicy": {
+      "mode": "reader-first-accessible",
+      "minTextContrast": 4.5,
+      "minNonTextContrast": 3.0,
+      "animationLabelMinPx": 15,
+      "avoidColorOnlyEncoding": true,
+      "mobileAnimationStrategy": "scroll-inside"
+    },
+    "animationContentPolicy": {
+      "mode": "content-fit",
+      "requireSemantics": true,
+      "requireDomainPrimitiveWhenAvailable": true,
+      "requireStepWhy": true,
+      "requireMisleadingBoundary": true,
+      "requireKeyStep": true,
+      "animateOnlyWhenMechanismBenefits": true
+    }
+  },
+  "sources": [],
+  "objectives": [
+    {
+      "id": "O1",
+      "text": "解释二分查找每轮如何利用有序性排除一半候选"
+    },
+    {
+      "id": "O2",
+      "text": "追踪 low/high/mid 的状态变化并识别常见误解"
+    }
+  ],
+  "roles": [],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "算法状态"
+    },
+    {
+      "id": "ST2",
+      "title": "理解检测"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "CS1",
+      "stageId": "ST1",
+      "type": "concept",
+      "title": "先理解搜索区间不变量",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "二分查找不是“猜中间”，而是维护搜索区间不变量",
+        "summary": "二分查找只适用于有序序列。每一轮都选择当前搜索区间的中点，与目标值比较；如果中点值偏小，就把左半段连同中点排除，如果偏大就排除右半段，只有相等才结束。真正需要理解的是 low、high 和 mid 如何共同定义仍可能包含目标的区间，而不是死记三行代码。",
+        "prerequisites": [
+          "先区分对象、状态、条件和结果，并能按步骤描述变化。"
+        ],
+        "mentalModel": "把数组想成一条有序街道，low 和 high 是仍允许搜索的两端，中点指针每轮只去检查街道中央。比较结果不是“往左或往右走一点”，而是一次性证明半个区间不可能包含目标，因此可以永久排除。",
+        "mechanism": "目标设为 9：先检查中点 7，由于 7<9，低端收缩到右半段；再检查 11，由于 11>9，高端回缩；最后中点落在 9。动画中的指针必须真正指向当前数组格，不能只让一个标签在页面上闪烁。",
+        "workedExamples": [
+          {
+            "id": "二分查找不是“猜中间”，而是维护搜索区间不变量-ex1",
+            "variantType": "standard",
+            "title": "标准：在七个有序数中找9",
+            "problem": "先预测关键状态会怎样变化，再说明依据。",
+            "solution": "先锁定当前对象与条件，只沿本节机制追踪状态变化。"
+          },
+          {
+            "id": "二分查找不是“猜中间”，而是维护搜索区间不变量-ex2",
+            "variantType": "contrast",
+            "title": "边界：无序数组不能用相同排除逻辑",
+            "problem": "如果改变一个关键条件，哪一步会首先不同？",
+            "solution": "找出机制链上最先受到该条件影响的状态，再向后推演。"
+          }
+        ],
+        "pitfalls": [
+          "把 mid 当成固定位置，而忘记它要随 low/high 更新。",
+          "不要把动画中的空间位置、颜色或速度直接当成真实尺度，除非课程明确说明按比例绘制。"
+        ],
+        "connections": [
+          "把动画状态与文字定义、符号表示和练习题互相翻译。"
+        ],
+        "checkYourself": [
+          "暂停动画后，能否不用画面说出三步机制？",
+          "能否指出一个动画不能代表的真实细节？"
+        ]
+      }
+    },
+    {
+      "id": "CS2",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "让指针真正指向每一轮中点",
+      "objectiveIds": [
+        "O1",
+        "O2"
+      ],
+      "knowledge": {
+        "title": "让指针运动表达“检查对象改变”，让着色表达“区间被排除”",
+        "summary": "过程动画将数组单元格保持在固定位置，只移动检查指针并改变被排除单元格的状态。第一轮指针指向7，比较后排除左半区；第二轮指向11，比较后排除右端；第三轮指向9并结束。这样运动对应“当前检查对象改变”，而颜色与边框只辅助显示已排除区间，不承担唯一语义。",
+        "prerequisites": [
+          "先区分对象、状态、条件和结果，并能按步骤描述变化。"
+        ],
+        "mentalModel": "想象一盏探照灯每轮照向当前中点。灯移动并不是算法在数组里逐个走，而是把“这一轮比较谁”显式化；真正的效率来自每次比较后删除一半候选区间。",
+        "mechanism": "每一步同时更新三件事：指针位置、当前中点角色、排除区域。通过 semantic relation 声明 pointer 对数组格的 points-to 关系，使箭头端接触目标格成为合法且必要的语义接触。",
+        "workedExamples": [
+          {
+            "id": "让指针运动表达“检查对象改变”，让着色表达“区间被排除”-ex1",
+            "variantType": "standard",
+            "title": "标准：7→11→9 的比较序列",
+            "problem": "先预测关键状态会怎样变化，再说明依据。",
+            "solution": "先锁定当前对象与条件，只沿本节机制追踪状态变化。"
+          },
+          {
+            "id": "让指针运动表达“检查对象改变”，让着色表达“区间被排除”-ex2",
+            "variantType": "contrast",
+            "title": "对比：线性查找会依次访问多个元素",
+            "problem": "如果改变一个关键条件，哪一步会首先不同？",
+            "solution": "找出机制链上最先受到该条件影响的状态，再向后推演。"
+          }
+        ],
+        "pitfalls": [
+          "不要从动画速度直接推断时间复杂度；复杂度来自候选规模的减半。",
+          "不要把动画中的空间位置、颜色或速度直接当成真实尺度，除非课程明确说明按比例绘制。"
+        ],
+        "connections": [
+          "把动画状态与文字定义、符号表示和练习题互相翻译。"
+        ],
+        "checkYourself": [
+          "暂停动画后，能否不用画面说出三步机制？",
+          "能否指出一个动画不能代表的真实细节？"
+        ]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "目标 9 的二分查找：每轮排除一半候选",
+          "principle": "在有序数组中，中点比较可以证明一半区间不再可能包含目标。",
+          "canvas": {
+            "width": 760,
+            "height": 350
+          },
+          "layoutPolicy": {
+            "preventOverlap": true,
+            "safeMargin": 24,
+            "minGap": 10
+          },
+          "actors": [
+            {
+              "id": "c0",
+              "type": "array-cell",
+              "x": 170,
+              "y": 220,
+              "w": 58,
+              "h": 54,
+              "label": "1",
+              "role": "muted",
+              "semanticRole": "sorted-array-value"
+            },
+            {
+              "id": "c1",
+              "type": "array-cell",
+              "x": 240,
+              "y": 220,
+              "w": 58,
+              "h": 54,
+              "label": "3",
+              "role": "muted",
+              "semanticRole": "sorted-array-value"
+            },
+            {
+              "id": "c2",
+              "type": "array-cell",
+              "x": 310,
+              "y": 220,
+              "w": 58,
+              "h": 54,
+              "label": "5",
+              "role": "muted",
+              "semanticRole": "sorted-array-value"
+            },
+            {
+              "id": "c3",
+              "type": "array-cell",
+              "x": 380,
+              "y": 220,
+              "w": 58,
+              "h": 54,
+              "label": "7",
+              "role": "muted",
+              "semanticRole": "sorted-array-value"
+            },
+            {
+              "id": "c4",
+              "type": "array-cell",
+              "x": 450,
+              "y": 220,
+              "w": 58,
+              "h": 54,
+              "label": "9",
+              "role": "muted",
+              "semanticRole": "sorted-array-value"
+            },
+            {
+              "id": "c5",
+              "type": "array-cell",
+              "x": 520,
+              "y": 220,
+              "w": 58,
+              "h": 54,
+              "label": "11",
+              "role": "muted",
+              "semanticRole": "sorted-array-value"
+            },
+            {
+              "id": "c6",
+              "type": "array-cell",
+              "x": 590,
+              "y": 220,
+              "w": 58,
+              "h": 54,
+              "label": "13",
+              "role": "muted",
+              "semanticRole": "sorted-array-value"
+            },
+            {
+              "id": "ptr",
+              "type": "pointer",
+              "x": 380,
+              "y": 125,
+              "x2": 0,
+              "y2": 58,
+              "label": "mid",
+              "role": "primary",
+              "semanticRole": "current-mid-pointer"
+            }
+          ],
+          "steps": [
+            {
+              "title": "第1轮：检查中点 7",
+              "caption": "当前区间覆盖全部元素，中点值7小于目标9。",
+              "focus": "比较结果不是让指针右移一格，而是排除7及其左侧。",
+              "changeSummary": "指针指向7；左半区仍显示为候选，比较后准备收缩 low。",
+              "states": {
+                "c0": {
+                  "role": "muted"
+                },
+                "c1": {
+                  "role": "muted"
+                },
+                "c2": {
+                  "role": "muted"
+                },
+                "c3": {
+                  "role": "primary"
+                },
+                "c4": {
+                  "role": "muted"
+                },
+                "c5": {
+                  "role": "muted"
+                },
+                "c6": {
+                  "role": "muted"
+                },
+                "ptr": {
+                  "x": 380,
+                  "y": 125,
+                  "x2": 0,
+                  "y2": 65
+                }
+              },
+              "semanticAction": "compare-mid-less-than-target",
+              "whyItMatters": "一次比较证明四个位置无需再检查，体现候选区间减半。",
+              "emphasis": "setup",
+              "motionMs": 620
+            },
+            {
+              "title": "第2轮：新区间中点变为 11",
+              "caption": "low 移到9所在一侧，新中点11大于目标9，因此右端收缩。",
+              "focus": "观察左侧四格已被排除，指针直接跳到新区间中点11。",
+              "changeSummary": "0–3号格降为已排除状态，指针从7移动到11。",
+              "states": {
+                "c0": {
+                  "opacity": 0.34
+                },
+                "c1": {
+                  "opacity": 0.34
+                },
+                "c2": {
+                  "opacity": 0.34
+                },
+                "c3": {
+                  "opacity": 0.34
+                },
+                "c4": {
+                  "role": "muted"
+                },
+                "c5": {
+                  "role": "warn",
+                  "opacity": 1
+                },
+                "c6": {
+                  "role": "muted"
+                },
+                "ptr": {
+                  "x": 520,
+                  "y": 125,
+                  "x2": 0,
+                  "y2": 65
+                }
+              },
+              "semanticAction": "discard-left-then-compare-high",
+              "whyItMatters": "二分查找的效率来自整段排除，不来自“移动得快”。",
+              "emphasis": "key",
+              "motionMs": 1050
+            },
+            {
+              "title": "第3轮：检查 9 并找到目标",
+              "caption": "11右侧被排除后，剩余区间只需检查9，中点与目标相等。",
+              "focus": "最终候选区间收缩到目标位置。",
+              "changeSummary": "指针移到9，11和13所在右端降为排除状态，9高亮。",
+              "states": {
+                "c0": {
+                  "opacity": 0.28
+                },
+                "c1": {
+                  "opacity": 0.28
+                },
+                "c2": {
+                  "opacity": 0.28
+                },
+                "c3": {
+                  "opacity": 0.28
+                },
+                "c4": {
+                  "role": "good",
+                  "opacity": 1
+                },
+                "c5": {
+                  "opacity": 0.28
+                },
+                "c6": {
+                  "opacity": 0.28
+                },
+                "ptr": {
+                  "x": 450,
+                  "y": 125,
+                  "x2": 0,
+                  "y2": 65,
+                  "role": "good"
+                }
+              },
+              "semanticAction": "match-target",
+              "whyItMatters": "找到目标是区间不变量持续收缩后的结果，而不是随机猜中。",
+              "emphasis": "consolidate",
+              "motionMs": 760
+            }
+          ],
+          "principleCheck": {
+            "prompt": "为什么二分查找必须依赖“数组有序”这个条件？",
+            "expectedIdeas": [
+              "比较中点后才能确定目标只可能位于一侧",
+              "每轮可排除约一半候选",
+              "无序时大小比较不能证明哪一半可排除"
+            ]
+          },
+          "animationSemantics": {
+            "profile": "computer-science-algorithm-state",
+            "knowledgeType": "reasoning-evolution",
+            "teachingGoal": "让指针和候选区间变化直接对应二分查找的比较与排除逻辑。",
+            "corePrinciple": "有序性使中点比较能够排除一半候选区间。",
+            "entities": [
+              {
+                "id": "array",
+                "concept": "有序数组候选值",
+                "actorIds": [
+                  "c0",
+                  "c1",
+                  "c2",
+                  "c3",
+                  "c4",
+                  "c5",
+                  "c6"
+                ]
+              },
+              {
+                "id": "mid",
+                "concept": "当前中点指针",
+                "actorIds": [
+                  "ptr"
+                ]
+              }
+            ],
+            "stateVariables": [
+              "low",
+              "high",
+              "mid",
+              "comparison-result",
+              "candidate-set"
+            ],
+            "stepLogic": [
+              "compare-7",
+              "discard-left-compare-11",
+              "discard-right-find-9"
+            ],
+            "mustNotMislead": [
+              "指针的空间跳跃不表示逐项遍历。",
+              "颜色不是唯一的候选/排除语义，步骤文字同时说明区间变化。"
+            ],
+            "motionRationale": "固定数组、移动中点指针，使“检查对象变化”与“候选区间减半”分离显示。",
+            "contentFitAudit": {
+              "entitySpecificity": "high",
+              "motionNaturalness": "high",
+              "misleadingRisk": "low",
+              "visualStory": "指针按每轮中点跳转，数组格逐步被排除，最后定位目标。"
+            },
+            "semanticRelations": [
+              {
+                "type": "points-to",
+                "source": "ptr",
+                "targets": [
+                  "c3"
+                ],
+                "whenSteps": [
+                  "compare-mid-less-than-target"
+                ],
+                "meaning": "第一轮指针指向值7所在中点单元格。"
+              },
+              {
+                "type": "points-to",
+                "source": "ptr",
+                "targets": [
+                  "c5"
+                ],
+                "whenSteps": [
+                  "discard-left-then-compare-high"
+                ],
+                "meaning": "第二轮指针指向值11所在中点单元格。"
+              },
+              {
+                "type": "points-to",
+                "source": "ptr",
+                "targets": [
+                  "c4"
+                ],
+                "whenSteps": [
+                  "match-target"
+                ],
+                "meaning": "第三轮指针指向值9所在目标单元格。"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "CS3",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "把同一机制对照到确定性代码跟踪",
+      "objectiveIds": [
+        "O2"
+      ],
+      "knowledge": {
+        "title": "动画显示“为什么排除”，代码跟踪显示“状态变量怎样更新”",
+        "summary": "二分查找的过程动画把注意力放在中点指针和候选区间；代码跟踪则把同一机制翻译成 low、high、mid 的离散状态更新。两种表示必须一致：当中点值偏小时 low 越过 mid，当中点值偏大时 high 退到 mid 左侧，找到目标时停止。把视觉过程与变量状态并排理解，可以避免只会背循环模板。",
+        "prerequisites": [
+          "理解有序数组与下标。"
+        ],
+        "mentalModel": "把 low 与 high 看作候选区间两扇门，mid 是每轮重新计算的探针。动画告诉你哪半边被关掉，代码状态告诉你门的编号具体变成多少。",
+        "mechanism": "目标9、数组[1,3,5,7,9,11,13]：先检查索引3得到7，因此把低端更新到索引4；再检查索引5得到11，因此把高端更新到索引4；最后检查索引4得到9并结束。",
+        "workedExamples": [
+          {
+            "id": "cs-code-ex1",
+            "variantType": "standard",
+            "title": "跟踪 low/high/mid",
+            "problem": "第一轮7<9后low是多少？",
+            "solution": "第一次中点索引为3；因为中点值7小于目标9，所以新的低端索引变为4。"
+          },
+          {
+            "id": "cs-code-ex2",
+            "variantType": "contrast",
+            "title": "如果目标是6",
+            "problem": "哪些更新会不同？",
+            "solution": "仍先比较7，但此时7>6，因此先更新high而不是low。"
+          }
+        ],
+        "pitfalls": [
+          "mid 不是固定数组中心，而是当前候选区间的中心。",
+          "确定性代码跟踪不是浏览器里真实执行任意语言程序。"
+        ],
+        "connections": [
+          "过程动画中的指针位置对应 traceSteps 里的 mid。"
+        ],
+        "checkYourself": [
+          "能否只看 low/high 推出下一轮 mid？",
+          "能否说明为什么每次更新仍不丢失可能的目标？"
+        ]
+      },
+      "content": {
+        "widgetType": "code",
+        "widgetConfig": {
+          "language": "Python（确定性教学跟踪）",
+          "task": "先预测 low/high/mid 的更新，再逐步对照。",
+          "code": "a = [1,3,5,7,9,11,13]\ntarget = 9\nlow, high = 0, 6\nwhile low <= high:\n    mid = (low + high) // 2\n    if a[mid] < target: low = mid + 1\n    elif a[mid] > target: high = mid - 1\n    else: break",
+          "traceSteps": [
+            {
+              "line": 5,
+              "explanation": "低端索引0、高端索引6，因此本轮中点索引3，对应值7。",
+              "state": {
+                "low": 0,
+                "high": 6,
+                "mid": 3,
+                "value": 7
+              }
+            },
+            {
+              "line": 6,
+              "explanation": "7小于9，排除左半段，并把低端索引更新为4。",
+              "state": {
+                "low": 4,
+                "high": 6
+              }
+            },
+            {
+              "line": 5,
+              "explanation": "新区间的中点索引为5，对应值11。",
+              "state": {
+                "low": 4,
+                "high": 6,
+                "mid": 5,
+                "value": 11
+              }
+            },
+            {
+              "line": 7,
+              "explanation": "11大于9，把高端索引更新为4。",
+              "state": {
+                "low": 4,
+                "high": 4
+              }
+            },
+            {
+              "line": 5,
+              "explanation": "中点索引为4，对应值9，找到目标。",
+              "state": {
+                "low": 4,
+                "high": 4,
+                "mid": 4,
+                "value": 9
+              },
+              "output": "found"
+            }
+          ],
+          "expectedOutput": "found"
+        }
+      }
+    },
+    {
+      "id": "CSQ",
+      "stageId": "ST2",
+      "type": "quiz",
+      "title": "检查有序性、排除逻辑和状态追踪",
+      "objectiveIds": [
+        "O1",
+        "O2"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "csq1",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "guided",
+            "gapTags": [
+              "sorted-precondition"
+            ],
+            "kind": "single",
+            "prompt": "二分查找能在比较7<9后排除左半区，最关键的前提是什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "数组按大小有序"
+              },
+              {
+                "id": "b",
+                "text": "指针动画移动得很快"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          },
+          {
+            "id": "csq2",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "independent",
+            "gapTags": [
+              "half-elimination"
+            ],
+            "kind": "single",
+            "prompt": "中点值小于目标值时，应怎样更新候选区间？",
+            "options": [
+              {
+                "id": "a",
+                "text": "把 low 移到中点右侧"
+              },
+              {
+                "id": "b",
+                "text": "只把指针右移一个格继续逐项找"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          },
+          {
+            "id": "csq3",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "transfer",
+            "gapTags": [
+              "state-update"
+            ],
+            "kind": "single",
+            "prompt": "动画中的 mid 指针从7跳到11说明什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "新候选区间的中点发生了变化"
+              },
+              {
+                "id": "b",
+                "text": "算法跳过了必要的比较所以不可靠"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          },
+          {
+            "id": "csq4",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "retrieval",
+            "gapTags": [
+              "complexity-vs-motion"
+            ],
+            "kind": "single",
+            "prompt": "为什么不能从动画时长直接判断 O(log n)？",
+            "options": [
+              {
+                "id": "a",
+                "text": "复杂度依据候选规模每轮约减半"
+              },
+              {
+                "id": "b",
+                "text": "因为任何动画都不能表示算法"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

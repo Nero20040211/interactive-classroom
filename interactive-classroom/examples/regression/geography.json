@@ -1,0 +1,691 @@
+{
+  "meta": {
+    "id": "reg-v451-geography-process",
+    "title": "水循环：追踪一滴水跨越海洋、大气与陆地",
+    "subtitle": "用贴合学科机制的过程动画建立可迁移理解",
+    "language": "zh-CN",
+    "offline": true,
+    "depthProfile": "overview",
+    "disciplinePack": "geography",
+    "sourcePolicy": "illustrative",
+    "autoNumbering": true,
+    "learnerSurfacePolicy": {
+      "hideEngineering": true
+    },
+    "learnerQualityPolicy": {
+      "mode": "three-indicator",
+      "targetLearner": "具备相应先修知识的入门学习者",
+      "requireDiagnosticGapTags": true
+    },
+    "animationPolicy": {
+      "mode": "process-first",
+      "requireProcessAnimation": true,
+      "requireSpecificSteps": true,
+      "preventVisualOverlap": true,
+      "minSafeMargin": 20,
+      "minActorGap": 10
+    },
+    "visualQualityPolicy": {
+      "mode": "reader-first-accessible",
+      "minTextContrast": 4.5,
+      "minNonTextContrast": 3.0,
+      "animationLabelMinPx": 15,
+      "avoidColorOnlyEncoding": true,
+      "mobileAnimationStrategy": "scroll-inside"
+    },
+    "animationContentPolicy": {
+      "mode": "content-fit",
+      "requireSemantics": true,
+      "requireDomainPrimitiveWhenAvailable": true,
+      "requireStepWhy": true,
+      "requireMisleadingBoundary": true,
+      "requireKeyStep": true,
+      "animateOnlyWhenMechanismBenefits": true
+    }
+  },
+  "sources": [
+    {
+      "id": "src-ne-places",
+      "title": "Natural Earth 1:110m Populated Places (simple)",
+      "author": "Natural Earth",
+      "locator": "teaching excerpt; coordinates rounded to 0.1°"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "O1",
+      "text": "解释水在主要储库之间如何通过蒸发、输送和降水转移"
+    },
+    {
+      "id": "O2",
+      "text": "区分动画示意路径与真实水循环的多路径、多尺度特征"
+    }
+  ],
+  "roles": [],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "储库与通量"
+    },
+    {
+      "id": "ST2",
+      "title": "理解检测"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "GE1",
+      "stageId": "ST1",
+      "type": "concept",
+      "title": "先把水循环理解成储库之间的转移",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "水循环是水在储库之间改变位置和状态的过程",
+        "summary": "水循环不应该只记成“蒸发—降水”两个词。太阳能驱动地表水蒸发或植物蒸腾进入大气，水汽在适宜条件下凝结形成云滴，随后通过降水返回地表，再经径流、下渗等路径进入不同储库。学习的重点是水在海洋、大气和陆地之间如何转移，而不是把每一步看成彼此独立的图标。",
+        "prerequisites": [
+          "先区分对象、状态、条件和结果，并能按步骤描述变化。"
+        ],
+        "mentalModel": "把海洋、大气和陆地想成三个储水区，同一份水可以在不同时间进入不同储库。动画里的水滴是“追踪标记”，帮助观察一份水跨越储库；真实水循环当然是大量分子同时发生、路径也远比单个水滴复杂。",
+        "mechanism": "先让水滴从海面上升，表示蒸发进入大气；再进入云区，表示水汽凝结形成云滴；随后随气团向陆地移动并下降，表示降水把水返回地表。每一步都要保留能量驱动、状态变化和储库转移的区分。",
+        "workedExamples": [
+          {
+            "id": "水循环是水在储库之间改变位置和状态的过程-ex1",
+            "variantType": "standard",
+            "title": "标准：海洋—大气—陆地的一次循环路径",
+            "problem": "先预测关键状态会怎样变化，再说明依据。",
+            "solution": "先锁定当前对象与条件，只沿本节机制追踪状态变化。"
+          },
+          {
+            "id": "水循环是水在储库之间改变位置和状态的过程-ex2",
+            "variantType": "contrast",
+            "title": "边界：并非所有水都按同一顺序快速循环",
+            "problem": "如果改变一个关键条件，哪一步会首先不同？",
+            "solution": "找出机制链上最先受到该条件影响的状态，再向后推演。"
+          }
+        ],
+        "pitfalls": [
+          "不要把示意图中的上升方向理解成所有蒸发水都垂直直线上升。",
+          "不要把动画中的空间位置、颜色或速度直接当成真实尺度，除非课程明确说明按比例绘制。"
+        ],
+        "connections": [
+          "把动画状态与文字定义、符号表示和练习题互相翻译。"
+        ],
+        "checkYourself": [
+          "暂停动画后，能否不用画面说出三步机制？",
+          "能否指出一个动画不能代表的真实细节？"
+        ]
+      }
+    },
+    {
+      "id": "GE2",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "追踪一滴水跨越三个储库",
+      "objectiveIds": [
+        "O1",
+        "O2"
+      ],
+      "knowledge": {
+        "title": "让一滴“追踪水”跨越储库，帮助看清蒸发、凝结与降水",
+        "summary": "过程动画用水滴和气团而不是抽象方框。第一步水滴位于海洋储库；第二步上升进入云区，强调从液态水到大气水汽/云滴的阶段变化；第三步气团向陆地输送，水滴随之移动；最后水滴下降进入陆地储库。动画的空间路径只是教学示意，真正需要迁移的是储库之间的通量和状态变化。",
+        "prerequisites": [
+          "先区分对象、状态、条件和结果，并能按步骤描述变化。"
+        ],
+        "mentalModel": "把水滴当成被贴上追踪标签的一小份水：你只追踪它“现在在哪个储库、以什么状态存在、下一步由什么过程转移”。气团负责表现大气输送，但不会让学生误以为云本身是一块固体物体。",
+        "mechanism": "海洋、云区和陆地区域先作为容器背景出现；水滴依次进入海洋/云/陆地区域，气团在输送阶段移动。semantic relation 的 enters/contains 说明水滴进入区域属于知识语义，不应被防遮挡机制强行分开。",
+        "workedExamples": [
+          {
+            "id": "让一滴“追踪水”跨越储库，帮助看清蒸发、凝结与降水-ex1",
+            "variantType": "standard",
+            "title": "标准：一次海陆水循环路径",
+            "problem": "先预测关键状态会怎样变化，再说明依据。",
+            "solution": "先锁定当前对象与条件，只沿本节机制追踪状态变化。"
+          },
+          {
+            "id": "让一滴“追踪水”跨越储库，帮助看清蒸发、凝结与降水-ex2",
+            "variantType": "contrast",
+            "title": "对比：地下水或冰雪可以有不同停留时间",
+            "problem": "如果改变一个关键条件，哪一步会首先不同？",
+            "solution": "找出机制链上最先受到该条件影响的状态，再向后推演。"
+          }
+        ],
+        "pitfalls": [
+          "不要把一个水滴的单一路径当成地球上所有水的唯一循环路线。",
+          "不要把动画中的空间位置、颜色或速度直接当成真实尺度，除非课程明确说明按比例绘制。"
+        ],
+        "connections": [
+          "把动画状态与文字定义、符号表示和练习题互相翻译。"
+        ],
+        "checkYourself": [
+          "暂停动画后，能否不用画面说出三步机制？",
+          "能否指出一个动画不能代表的真实细节？"
+        ]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "追踪一滴水：海洋 → 大气 → 陆地",
+          "principle": "水通过蒸发进入大气，在适宜条件下凝结，并通过降水返回地表；水在不同储库之间持续转移。",
+          "canvas": {
+            "width": 760,
+            "height": 390
+          },
+          "layoutPolicy": {
+            "preventOverlap": true,
+            "safeMargin": 24,
+            "minGap": 10
+          },
+          "actors": [
+            {
+              "id": "sea",
+              "type": "zone",
+              "x": 150,
+              "y": 300,
+              "w": 220,
+              "h": 105,
+              "label": "海洋储库",
+              "role": "secondary",
+              "contains": [
+                "drop"
+              ]
+            },
+            {
+              "id": "cloud",
+              "type": "zone",
+              "x": 410,
+              "y": 105,
+              "w": 240,
+              "h": 105,
+              "label": "云 / 大气储库",
+              "role": "muted",
+              "contains": [
+                "drop",
+                "air"
+              ]
+            },
+            {
+              "id": "land",
+              "type": "zone",
+              "x": 620,
+              "y": 300,
+              "w": 200,
+              "h": 105,
+              "label": "陆地储库",
+              "role": "good",
+              "contains": [
+                "drop"
+              ]
+            },
+            {
+              "id": "drop",
+              "type": "water-drop",
+              "x": 150,
+              "y": 290,
+              "label": "追踪水",
+              "role": "primary",
+              "semanticRole": "tracked-water"
+            },
+            {
+              "id": "air",
+              "type": "air-mass",
+              "x": 390,
+              "y": 120,
+              "label": "气团",
+              "role": "secondary",
+              "semanticRole": "atmospheric-transport"
+            }
+          ],
+          "steps": [
+            {
+              "title": "起点：水处于海洋储库",
+              "caption": "追踪水以液态存在于海洋。",
+              "focus": "先确认“水在哪个储库”，不要急着背过程名称。",
+              "changeSummary": "水滴位于海洋区域，气团保持在高空。",
+              "states": {
+                "drop": {
+                  "x": 150,
+                  "y": 290
+                },
+                "air": {
+                  "x": 390,
+                  "y": 120,
+                  "opacity": 0.55
+                }
+              },
+              "semanticAction": "locate-in-ocean",
+              "whyItMatters": "水循环首先是储库之间的物质转移，位置和状态都要追踪。",
+              "emphasis": "setup",
+              "motionMs": 620
+            },
+            {
+              "title": "蒸发并进入大气",
+              "caption": "受能量驱动，部分地表水进入大气；示意水滴上升到云区。",
+              "focus": "“上升”是储库转移的示意，真实过程是液态水变为水汽并混入大气。",
+              "changeSummary": "追踪水从海洋上升并进入大气/云区域。",
+              "states": {
+                "drop": {
+                  "x": 360,
+                  "y": 110,
+                  "scale": 0.8
+                },
+                "air": {
+                  "x": 400,
+                  "y": 120,
+                  "opacity": 0.85
+                }
+              },
+              "semanticAction": "evaporate-enter-atmosphere",
+              "whyItMatters": "蒸发改变水所在储库，并伴随相态/分散状态变化。",
+              "emphasis": "key",
+              "motionMs": 1200
+            },
+            {
+              "title": "大气输送：云和水向陆地方向移动",
+              "caption": "气团把水汽/云滴输送到别处；输送方向会受真实天气系统影响。",
+              "focus": "把“水平移动”理解成大气输送，不是固定风向。",
+              "changeSummary": "气团和追踪水向右移动到陆地上空。",
+              "states": {
+                "drop": {
+                  "x": 560,
+                  "y": 115,
+                  "scale": 0.85
+                },
+                "air": {
+                  "x": 545,
+                  "y": 120,
+                  "opacity": 1
+                }
+              },
+              "semanticAction": "atmospheric-transport",
+              "whyItMatters": "水循环不仅有垂直相变，还包含空间输送。",
+              "emphasis": "key",
+              "motionMs": 1050
+            },
+            {
+              "title": "降水：水返回陆地储库",
+              "caption": "云滴增长并形成降水，追踪水下降进入陆地区域。",
+              "focus": "最终变化是储库从大气转回陆地；后续还可能径流、下渗或再次蒸发。",
+              "changeSummary": "追踪水从高空下降到陆地区域，气团退到背景。",
+              "states": {
+                "drop": {
+                  "x": 620,
+                  "y": 285,
+                  "scale": 1
+                },
+                "air": {
+                  "x": 570,
+                  "y": 110,
+                  "opacity": 0.38
+                }
+              },
+              "semanticAction": "precipitate-to-land",
+              "whyItMatters": "降水把大气中的水重新输入地表储库，闭合这条教学路径。",
+              "emphasis": "consolidate",
+              "motionMs": 1000
+            }
+          ],
+          "principleCheck": {
+            "prompt": "为什么“追踪一滴水”的动画不能被理解成所有水都沿同一路径循环？",
+            "expectedIdeas": [
+              "动画只抽取一条典型储库转移路径",
+              "真实水有多种停留时间和路径",
+              "关键是理解储库、状态和通量而不是记固定轨迹"
+            ]
+          },
+          "animationSemantics": {
+            "profile": "geography-water-cycle",
+            "knowledgeType": "mechanism-process",
+            "teachingGoal": "追踪一份水在海洋、大气和陆地储库之间的位置与状态变化。",
+            "corePrinciple": "水通过蒸发、凝结/输送和降水在不同储库之间循环转移。",
+            "entities": [
+              {
+                "id": "water",
+                "concept": "被追踪的一份水",
+                "actorIds": [
+                  "drop"
+                ]
+              },
+              {
+                "id": "air",
+                "concept": "大气输送气团",
+                "actorIds": [
+                  "air"
+                ]
+              }
+            ],
+            "stateVariables": [
+              "reservoir",
+              "phase-state",
+              "altitude",
+              "horizontal-location"
+            ],
+            "stepLogic": [
+              "ocean",
+              "evaporation",
+              "transport",
+              "precipitation"
+            ],
+            "mustNotMislead": [
+              "单个水滴轨迹只是教学追踪，不代表所有水分子的真实路径。",
+              "动画中的水平风向和空间距离不是固定的全球尺度。"
+            ],
+            "motionRationale": "水滴跨储库移动和气团输送把相变、储库转移与空间移动区分开。",
+            "contentFitAudit": {
+              "entitySpecificity": "high",
+              "motionNaturalness": "high",
+              "misleadingRisk": "controlled",
+              "visualStory": "追踪水从海洋升入大气，随气团输送，再通过降水返回陆地。"
+            },
+            "semanticRelations": [
+              {
+                "type": "enters",
+                "source": "drop",
+                "targets": [
+                  "sea"
+                ],
+                "whenSteps": [
+                  "locate-in-ocean"
+                ],
+                "meaning": "起始水滴位于海洋储库。"
+              },
+              {
+                "type": "enters",
+                "source": "drop",
+                "targets": [
+                  "cloud"
+                ],
+                "whenSteps": [
+                  "evaporate-enter-atmosphere",
+                  "atmospheric-transport"
+                ],
+                "meaning": "蒸发后追踪水进入大气/云区。"
+              },
+              {
+                "type": "enters",
+                "source": "drop",
+                "targets": [
+                  "land"
+                ],
+                "whenSteps": [
+                  "precipitate-to-land"
+                ],
+                "meaning": "降水后追踪水进入陆地储库。"
+              },
+              {
+                "type": "contains",
+                "source": "cloud",
+                "targets": [
+                  "air"
+                ],
+                "meaning": "输送阶段气团位于大气/云区域。",
+                "whenSteps": [
+                  "atmospheric-transport"
+                ]
+              },
+              {
+                "type": "attached-to",
+                "source": "air",
+                "targets": [
+                  "drop"
+                ],
+                "meaning": "大气输送阶段，追踪水与承载它的气团处于同一输送区域。",
+                "whenSteps": [
+                  "evaporate-enter-atmosphere",
+                  "atmospheric-transport"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "GE3",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "把“储库转移”重新放回全球空间",
+      "objectiveIds": [
+        "O2"
+      ],
+      "knowledge": {
+        "title": "过程动画解释机制，地图负责提醒空间差异真实存在",
+        "summary": "水循环机制可以用一条典型路径说明，但不同地区的纬度、海陆位置和大气环流条件不同，不能把同一动画轨迹当成全球统一路径。这里用几个真实城市点只训练经纬度和空间比较：同样接近赤道的城市分布在不同经度，说明“低纬”不是单一地点；水循环的实际输送还要结合具体区域条件分析。",
+        "prerequisites": [
+          "会读经纬度。"
+        ],
+        "mentalModel": "动画像显微镜，突出一条机制链；地图像广角镜头，提醒同一种机制发生在不同空间背景中。两种表示回答不同问题。",
+        "mechanism": "筛选赤道附近城市并比较经度：新加坡、基多、内罗毕纬度都接近0°，但经度相差很大。由此建立“相同纬度带≠相同空间位置”的地理判断。",
+        "workedExamples": [
+          {
+            "id": "ge-map-ex1",
+            "variantType": "standard",
+            "title": "筛选赤道附近城市",
+            "problem": "哪些点纬度绝对值较小？",
+            "solution": "新加坡、基多、内罗毕。"
+          },
+          {
+            "id": "ge-map-ex2",
+            "variantType": "contrast",
+            "title": "比较经度",
+            "problem": "这些城市是否集中在同一经度？",
+            "solution": "不是，它们分布在不同大陆和经度。"
+          }
+        ],
+        "pitfalls": [
+          "地图点位用于空间背景，不直接推出具体水循环强度。",
+          "投影上的屏幕距离不能替代大圆距离。"
+        ],
+        "connections": [
+          "把过程机制和地理空间背景分开建模再联系。"
+        ],
+        "checkYourself": [
+          "同纬度是否等于同气候？为什么不能直接这样推？",
+          "地图和过程动画分别回答什么问题？"
+        ]
+      },
+      "content": {
+        "widgetType": "map-lab",
+        "widgetConfig": {
+          "verified": true,
+          "provenance": {
+            "title": "Natural Earth 1:110m Populated Places (simple)",
+            "sourceRef": "src-ne-places",
+            "note": "coordinates rounded to 0.1° for teaching",
+            "edition": "teaching-extract"
+          },
+          "coordinateSystem": "EPSG:4326 / WGS 84",
+          "projection": "equirectangular",
+          "scaleNote": "全球点位教学图；不渲染行政边界。点位用于经纬度空间比较。",
+          "boundaryPolicy": "No administrative boundaries rendered; point-based lesson only.",
+          "graticule": {
+            "lonStep": 30,
+            "latStep": 30
+          },
+          "filters": {
+            "enabled": true
+          },
+          "categoryLabels": {
+            "equatorial": "赤道附近"
+          },
+          "legend": [
+            {
+              "label": "赤道附近",
+              "color": "var(--good)"
+            }
+          ],
+          "spatialTask": "筛选赤道附近城市，比较它们的经度，说明“纬度相近”为什么不等于“空间位置相同”。",
+          "points": [
+            {
+              "id": "singapore",
+              "name": "新加坡",
+              "lon": 103.8,
+              "lat": 1.3,
+              "category": "equatorial",
+              "color": "var(--good)",
+              "sourceRef": "src-ne-places",
+              "properties": {
+                "观察": "低纬、东经"
+              }
+            },
+            {
+              "id": "quito",
+              "name": "基多",
+              "lon": -78.5,
+              "lat": -0.2,
+              "category": "equatorial",
+              "color": "var(--good)",
+              "sourceRef": "src-ne-places",
+              "properties": {
+                "观察": "非常接近赤道"
+              }
+            },
+            {
+              "id": "nairobi",
+              "name": "内罗毕",
+              "lon": 36.8,
+              "lat": -1.3,
+              "category": "equatorial",
+              "color": "var(--good)",
+              "sourceRef": "src-ne-places",
+              "properties": {
+                "观察": "低纬、东经"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GEQ",
+      "stageId": "ST2",
+      "type": "quiz",
+      "title": "检查储库、过程和模型边界",
+      "objectiveIds": [
+        "O1",
+        "O2"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "geq1",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "guided",
+            "gapTags": [
+              "reservoir-transfer"
+            ],
+            "kind": "single",
+            "prompt": "海洋表面水进入大气的过程首先对应什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "蒸发造成储库与状态变化"
+              },
+              {
+                "id": "b",
+                "text": "降水直接把水送入大气"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          },
+          {
+            "id": "geq2",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "independent",
+            "gapTags": [
+              "atmospheric-transport"
+            ],
+            "kind": "single",
+            "prompt": "气团把水从海洋上空带向陆地上空主要体现什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "大气输送造成空间转移"
+              },
+              {
+                "id": "b",
+                "text": "水分子永久固定在云中"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          },
+          {
+            "id": "geq3",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "transfer",
+            "gapTags": [
+              "model-boundary"
+            ],
+            "kind": "single",
+            "prompt": "动画中一滴水走“海洋→云→陆地”意味着什么？",
+            "options": [
+              {
+                "id": "a",
+                "text": "它是便于追踪的一条典型教学路径"
+              },
+              {
+                "id": "b",
+                "text": "所有水都必须按完全相同顺序循环"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          },
+          {
+            "id": "geq4",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "retrieval",
+            "gapTags": [
+              "scale-vs-mechanism"
+            ],
+            "kind": "single",
+            "prompt": "为什么动画里的距离和风向不能直接当真实全球比例？",
+            "options": [
+              {
+                "id": "a",
+                "text": "这是机制示意而非统一测绘尺度"
+              },
+              {
+                "id": "b",
+                "text": "因为地理动画不需要任何空间信息"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "抓住了本题要检查的机制。",
+              "incorrect": "回到过程动画，先定位发生变化的对象和条件。"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

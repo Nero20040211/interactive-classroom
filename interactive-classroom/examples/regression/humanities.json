@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "id": "humanities-regression",
+    "title": "Industrial Revolution: compare sources and arguments",
+    "disciplinePack": "humanities",
+    "secondaryPacks": [],
+    "discipline": {
+      "primary": "historical-interpretive"
+    },
+    "depthProfile": "overview",
+    "sourcePolicy": "recommended",
+    "experimentPolicy": "adjustable-when-applicable",
+    "autoNumbering": true,
+    "subtitle": "validated-native regression"
+  },
+  "sources": [
+    {
+      "id": "smith",
+      "title": "An Inquiry into the Nature and Causes of the Wealth of Nations",
+      "author": "Adam Smith",
+      "year": 1776
+    },
+    {
+      "id": "engels",
+      "title": "The Condition of the Working Class in England",
+      "author": "Friedrich Engels",
+      "year": 1845
+    }
+  ],
+  "roles": [
+    {
+      "id": "teacher",
+      "name": "教师",
+      "tone": "teacher",
+      "avatar": "师",
+      "function": "组织知识"
+    },
+    {
+      "id": "specialist",
+      "name": "学科助教",
+      "tone": "specialist",
+      "avatar": "专",
+      "function": "检查学科规则"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "来源与解释",
+      "roster": [
+        "teacher",
+        "specialist"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S1",
+      "stageId": "ST1",
+      "type": "orientation",
+      "title": "同一时代为什么会有不同描述",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "来源不是透明窗口",
+        "summary": "历史文本不是把过去原样搬到今天。作者所处位置、写作目的、观察范围与概念框架都会影响其描述。比较史料时，第一步不是挑一句最支持自己观点的话，而是先恢复来源的语境。",
+        "mentalModel": "工业化既可从分工、生产率和市场扩张来观察，也可从劳动条件、城市贫困和阶级关系来观察。两种观察对象不同，因此产生差异并不自动意味着其中一个“完全错误”。",
+        "mechanism": "工业化既可从分工、生产率和市场扩张来观察，也可从劳动条件、城市贫困和阶级关系来观察。两种观察对象不同，因此产生差异并不自动意味着其中一个“完全错误”。",
+        "keyPoints": [
+          "区分来源内容与后来的解释。",
+          "比较作者位置、目的与观察范围。",
+          "综合时允许多维结论，而非强迫单一评价。"
+        ],
+        "pitfalls": [
+          "不要把 paraphrase 当成原文引语。",
+          "不要把来源的立场直接等同于整段历史事实。"
+        ],
+        "connections": [
+          "下一页用两个文本的教学性转述练习比较。"
+        ],
+        "checkYourself": [
+          "先不用看答案，用自己的话说出本页核心关系。",
+          "指出一个容易混淆的替代解释，并说明为什么不成立或何时成立。"
+        ]
+      },
+      "content": {
+        "html": "<p>本 Demo 使用明确标记的 paraphrase，不把转述冒充原文逐字引语。</p>"
+      }
+    },
+    {
+      "id": "S2",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "来源比较：生产率与劳动处境",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "比较要有共同镜头",
+        "summary": "如果只是把两个文本并排放置，学习者很容易各读各的。真正比较需要共享问题，例如“作者关注的社会主体是谁”“什么被当成进步证据”“什么被忽略”。同一镜头应用于所有来源，才有可比性。",
+        "mentalModel": "Smith 的著作更早且主要讨论分工与市场机制；Engels 的写作处于工业化进一步发展之后，集中观察工人生活。时间、对象与目的都不同，因此比较必须同时考虑变化与视角差异。",
+        "mechanism": "Smith 的著作更早且主要讨论分工与市场机制；Engels 的写作处于工业化进一步发展之后，集中观察工人生活。时间、对象与目的都不同，因此比较必须同时考虑变化与视角差异。",
+        "keyPoints": [
+          "同一 lens 比较不同来源。",
+          "先识别语境，再解释观点。",
+          "综合结论应说明哪些维度一致、哪些维度冲突。"
+        ],
+        "pitfalls": [
+          "不能从两个作者推出整个社会只有两种立场。"
+        ],
+        "connections": [
+          "下一页把来源观察转成主张—证据—限定结构。"
+        ],
+        "checkYourself": [
+          "先不用看答案，用自己的话说出本页核心关系。",
+          "指出一个容易混淆的替代解释，并说明为什么不成立或何时成立。"
+        ],
+        "citations": [
+          {
+            "sourceId": "smith"
+          },
+          {
+            "sourceId": "engels"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "hum-ex-2",
+            "variantType": "contrast",
+            "title": "同一问题下比较两类来源",
+            "text": "若问题是‘工业化带来了什么变化’，Smith 的材料可以支持生产组织与效率维度，Engels 的材料可以支持工人生活条件维度。二者关注对象不同，因此不能用任一来源单独代表工业革命的全部社会效果。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "source-comparison-lab",
+        "widgetConfig": {
+          "prompt": "切换比较镜头，观察同一文本如何呈现不同信息。",
+          "lenses": [
+            {
+              "id": "focus",
+              "label": "关注对象",
+              "question": "作者把谁/什么放在分析中心？"
+            },
+            {
+              "id": "evidence",
+              "label": "证据与观察",
+              "question": "文本主要依赖什么类型的观察或推理？"
+            },
+            {
+              "id": "limit",
+              "label": "局限",
+              "question": "这份来源不容易回答什么问题？"
+            }
+          ],
+          "sources": [
+            {
+              "id": "a",
+              "title": "《国富论》相关章节（教学转述）",
+              "creator": "Adam Smith",
+              "date": "1776",
+              "sourceRef": "smith",
+              "textStatus": "paraphrase",
+              "excerpt": "分工能够显著提高劳动生产率，并通过交换扩大社会生产能力。",
+              "context": "政治经济学著作，关注分工、交换与财富形成机制。",
+              "perspective": "以经济机制和生产效率为核心观察角度。",
+              "analysis": {
+                "focus": "劳动分工、生产率、市场交换。",
+                "evidence": "通过概念分析和经验观察说明分工带来的效率提升。",
+                "limit": "不以十九世纪工业城市工人生活为主要观察对象。"
+              }
+            },
+            {
+              "id": "b",
+              "title": "《英国工人阶级状况》（教学转述）",
+              "creator": "Friedrich Engels",
+              "date": "1845",
+              "sourceRef": "engels",
+              "textStatus": "paraphrase",
+              "excerpt": "工业城市中的许多工人承受拥挤住房、健康风险与不稳定生活条件。",
+              "context": "对工业城市与工人生活的批判性社会观察。",
+              "perspective": "以劳动者生活条件和阶级关系为核心观察角度。",
+              "analysis": {
+                "focus": "工人生活、城市环境、社会关系。",
+                "evidence": "现场观察、社会描述与批判性解释。",
+                "limit": "不能仅凭此文本直接量化整个工业经济的生产率变化。"
+              }
+            }
+          ],
+          "synthesisPrompt": "如果要回答“工业革命是否改善了社会”，还需要哪些来源与指标，才能避免把生产率或生活困境中的某一维度当成全部？"
+        }
+      }
+    },
+    {
+      "id": "S3",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "论证图：从来源到可辩护结论",
+      "objectiveIds": [
+        "O2"
+      ],
+      "knowledge": {
+        "title": "证据支持的是限定主张",
+        "summary": "人文学科的严谨不是把所有问题都变成可计算的唯一答案，而是让主张、证据、反驳和限定条件彼此可见。一个来源可能支持某个方面的主张，但不能自动支持更宽泛的结论。",
+        "mentalModel": "例如“分工提高生产率”与“工业化在所有方面改善生活”不是同一个命题。前者可以得到某类证据支持，后者需要更广泛的生活、健康、收入、政治权利等证据。",
+        "mechanism": "例如“分工提高生产率”与“工业化在所有方面改善生活”不是同一个命题。前者可以得到某类证据支持，后者需要更广泛的生活、健康、收入、政治权利等证据。",
+        "keyPoints": [
+          "主张范围必须匹配证据范围。",
+          "反驳可以削弱过度概括，而不必否定所有证据。",
+          "限定条件让结论更准确而不是更软弱。"
+        ],
+        "pitfalls": [
+          "论证图不是证明机器；它不能替代来源真实性与背景判断。"
+        ],
+        "connections": [
+          "完成后把自己的结论写成带限定词的一句话。"
+        ],
+        "checkYourself": [
+          "先不用看答案，用自己的话说出本页核心关系。",
+          "指出一个容易混淆的替代解释，并说明为什么不成立或何时成立。"
+        ],
+        "citations": [
+          {
+            "sourceId": "smith"
+          },
+          {
+            "sourceId": "engels"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "hum-ex-3",
+            "variantType": "boundary",
+            "title": "从局部证据到有限结论",
+            "text": "‘分工提高生产率’可以支持‘工业化提高某些生产能力’，但不能直接推出‘工业化在所有方面改善生活’。更宽的结论需要收入、健康、住房、权利等额外证据。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "argument-map-lab",
+        "widgetConfig": {
+          "ariaLabel": "工业革命影响的论证图",
+          "nodes": [
+            {
+              "id": "c",
+              "label": "工业化带来复杂而非单向影响",
+              "kind": "claim",
+              "x": 380,
+              "y": 70,
+              "detail": "综合结论需要同时容纳生产能力与社会成本。"
+            },
+            {
+              "id": "e1",
+              "label": "分工提高生产率",
+              "kind": "evidence",
+              "x": 180,
+              "y": 210,
+              "detail": "支持生产能力提升这一维度。",
+              "sourceRef": "smith"
+            },
+            {
+              "id": "e2",
+              "label": "工人生活存在严重风险",
+              "kind": "evidence",
+              "x": 580,
+              "y": 210,
+              "detail": "支持社会成本与分配问题这一维度。",
+              "sourceRef": "engels"
+            },
+            {
+              "id": "q",
+              "label": "不同地区与时期差异很大",
+              "kind": "qualification",
+              "x": 380,
+              "y": 330,
+              "detail": "防止把局部来源推广为所有地区、所有阶段。"
+            }
+          ],
+          "edges": [
+            {
+              "from": "e1",
+              "to": "c",
+              "relation": "support"
+            },
+            {
+              "from": "e2",
+              "to": "c",
+              "relation": "support"
+            },
+            {
+              "from": "q",
+              "to": "c",
+              "relation": "qualify"
+            }
+          ],
+          "boundary": "该图呈现论证结构与证据范围，不证明历史解释只有一个正确答案。"
+        }
+      }
+    }
+  ]
+}

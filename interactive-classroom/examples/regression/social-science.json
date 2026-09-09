@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "id": "social-science-regression",
+    "title": "Sleep and exam scores: association, confounding and causal claims",
+    "disciplinePack": "social-science",
+    "secondaryPacks": [],
+    "discipline": {
+      "primary": "social-decision"
+    },
+    "depthProfile": "overview",
+    "sourcePolicy": "recommended",
+    "experimentPolicy": "adjustable-when-applicable",
+    "autoNumbering": true,
+    "subtitle": "validated-native regression"
+  },
+  "sources": [
+    {
+      "id": "obs",
+      "title": "Synthetic observational study for teaching",
+      "author": "Interactive Classroom",
+      "year": 2026
+    },
+    {
+      "id": "trial",
+      "title": "Synthetic randomized intervention summary for teaching",
+      "author": "Interactive Classroom",
+      "year": 2026
+    }
+  ],
+  "roles": [
+    {
+      "id": "teacher",
+      "name": "教师",
+      "tone": "teacher",
+      "avatar": "师",
+      "function": "组织知识"
+    },
+    {
+      "id": "specialist",
+      "name": "学科助教",
+      "tone": "specialist",
+      "avatar": "专",
+      "function": "检查学科规则"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "从相关到因果",
+      "roster": [
+        "teacher",
+        "specialist"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S1",
+      "stageId": "ST1",
+      "type": "orientation",
+      "title": "看到相关先问：还有什么共同原因？",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "相关不是因果失败，而是问题起点",
+        "summary": "如果观察到睡眠时间更长的学生平均成绩更高，这个事实可以是有价值的描述，但它还不能独自回答“增加睡眠会不会造成成绩提高”。压力、健康、学习安排等变量可能同时影响睡眠与成绩。",
+        "mentalModel": "因果推断的关键是把可能的生成机制写出来：哪些变量先于睡眠发生，哪些同时影响成绩，哪些可能位于睡眠之后。只有明确假设，才知道应该控制什么、不能随便控制什么。",
+        "mechanism": "因果推断的关键是把可能的生成机制写出来：哪些变量先于睡眠发生，哪些同时影响成绩，哪些可能位于睡眠之后。只有明确假设，才知道应该控制什么、不能随便控制什么。",
+        "keyPoints": [
+          "描述关联与识别因果是不同任务。",
+          "控制变量不是越多越好。",
+          "DAG 让因果假设可见，也让争论点可检查。"
+        ],
+        "pitfalls": [
+          "不要把统计显著自动翻译成因果。",
+          "不要在没有时间顺序和机制假设时随意把变量叫作 confounder。"
+        ],
+        "connections": [
+          "下一页用教学 DAG 选择调整集。"
+        ],
+        "checkYourself": [
+          "先不用看答案，用自己的话说出本页核心关系。",
+          "指出一个容易混淆的替代解释，并说明为什么不成立或何时成立。"
+        ]
+      },
+      "content": {
+        "html": "<p>本课程中的数据与研究摘要均为教学构造，不冒充真实经验研究。</p>"
+      }
+    },
+    {
+      "id": "S2",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "DAG：压力为什么会造成混杂",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "后门路径来自共同原因",
+        "summary": "设睡眠是暴露、考试成绩是结果。如果压力既影响睡眠，又影响考试表现，那么睡眠与成绩之间除了可能的因果路径，还存在一条经过压力的非因果关联路径。调整压力的目的不是“让模型更复杂”，而是阻断这条后门路径。",
+        "mentalModel": "这个教学 DAG 假设压力发生在睡眠和考试之前，并把它视为共同原因。真实研究必须为这些时间与因果方向提供设计或领域依据；DAG 本身不能证明箭头真实存在。",
+        "mechanism": "这个教学 DAG 假设压力发生在睡眠和考试之前，并把它视为共同原因。真实研究必须为这些时间与因果方向提供设计或领域依据；DAG 本身不能证明箭头真实存在。",
+        "keyPoints": [
+          "先识别 exposure 与 outcome。",
+          "找共同原因形成的后门路径。",
+          "选择调整集时遵守当前 DAG 假设。"
+        ],
+        "pitfalls": [
+          "不要控制暴露之后的中介变量来替代混杂控制。",
+          "不要把 collider 当作普通 confounder。"
+        ],
+        "connections": [
+          "下一页比较不同研究设计能支持到什么程度的主张。"
+        ],
+        "checkYourself": [
+          "先不用看答案，用自己的话说出本页核心关系。",
+          "指出一个容易混淆的替代解释，并说明为什么不成立或何时成立。"
+        ],
+        "workedExamples": [
+          {
+            "id": "soc-ex-2",
+            "variantType": "standard",
+            "title": "压力形成后门路径",
+            "text": "若压力同时导致睡眠减少和考试表现下降，就形成 sleep ← stress → score。仅观察睡眠与成绩的关联会混入这条非因果路径；在该教学 DAG 假设成立时，调整 stress 用于阻断它。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "causal-dag-lab",
+        "widgetConfig": {
+          "prompt": "选择需要调整的变量，以阻断本教学 DAG 中的后门路径。",
+          "nodes": [
+            {
+              "id": "stress",
+              "label": "压力",
+              "role": "confounder",
+              "x": 380,
+              "y": 70
+            },
+            {
+              "id": "sleep",
+              "label": "睡眠时长",
+              "role": "exposure",
+              "x": 190,
+              "y": 250
+            },
+            {
+              "id": "score",
+              "label": "考试成绩",
+              "role": "outcome",
+              "x": 570,
+              "y": 250
+            }
+          ],
+          "edges": [
+            {
+              "from": "stress",
+              "to": "sleep"
+            },
+            {
+              "from": "stress",
+              "to": "score"
+            },
+            {
+              "from": "sleep",
+              "to": "score"
+            }
+          ],
+          "adjustmentCandidates": [
+            "stress"
+          ],
+          "validAdjustmentSets": [
+            [
+              "stress"
+            ]
+          ],
+          "dataNote": "教学构造 DAG；箭头表示假设的因果方向，不是由当前图自动发现。",
+          "causalClaimBoundary": "若时间顺序、未测混杂或箭头方向假设不成立，调整 stress 也不能保证识别因果效应。",
+          "correctFeedback": "你阻断了 sleep ← stress → score 这条后门路径。",
+          "incorrectFeedback": "先寻找同时指向睡眠与成绩的共同原因。"
+        }
+      }
+    },
+    {
+      "id": "S3",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "证据矩阵：研究设计决定主张边界",
+      "objectiveIds": [
+        "O2"
+      ],
+      "knowledge": {
+        "title": "不要只按数字大小给证据排序",
+        "summary": "研究设计决定了哪些替代解释能够被排除。大型观察性研究可以非常精确地描述关联，却仍可能受到未测混杂；随机干预如果实施良好，可以提高因果识别能力，但可能样本较小、干预依从性有限或外部效度不足。",
+        "mentalModel": "因此判断证据时要把 design、measurement、assumption 和 target population 一起看，而不是只比较样本量、p 值或效应大小。",
+        "mechanism": "因此判断证据时要把 design、measurement、assumption 和 target population 一起看，而不是只比较样本量、p 值或效应大小。",
+        "keyPoints": [
+          "观察性证据擅长描述真实世界关联与异质性。",
+          "随机化可以帮助平衡干预前共同原因，但不自动解决失访与测量问题。",
+          "主张范围应与研究设计和目标人群一致。"
+        ],
+        "pitfalls": [
+          "“随机试验”不是所有问题的唯一答案，也不等于没有偏倚。"
+        ],
+        "connections": [
+          "完成后把“相关”“支持因果解释”“政策建议”分成三层。"
+        ],
+        "checkYourself": [
+          "先不用看答案，用自己的话说出本页核心关系。",
+          "指出一个容易混淆的替代解释，并说明为什么不成立或何时成立。"
+        ],
+        "citations": [
+          {
+            "sourceId": "obs"
+          },
+          {
+            "sourceId": "trial"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "soc-ex-3",
+            "variantType": "contrast",
+            "title": "大样本关联与小型随机干预",
+            "text": "一个大型观察队列可以非常精确地估计睡眠与成绩的关联，但仍可能有未测混杂；一个较小但实施良好的随机睡眠干预通常更接近因果识别，却可能受到依从性和外部效度限制。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "evidence-matrix-lab",
+        "widgetConfig": {
+          "prompt": "筛选证据类型并比较它们能支持的主张。",
+          "rows": [
+            {
+              "id": "r1",
+              "label": "教学观察性队列",
+              "sourceRef": "obs",
+              "evidenceType": "观察性",
+              "design": "学生自然睡眠差异的队列观察",
+              "claimScope": "支持睡眠与成绩在该样本中的关联描述；在充分调整假设下可探索因果解释",
+              "limitation": "可能存在未测混杂、自我选择和测量误差"
+            },
+            {
+              "id": "r2",
+              "label": "教学随机睡眠干预",
+              "sourceRef": "trial",
+              "evidenceType": "随机干预",
+              "design": "随机分配睡眠延长建议并跟踪成绩",
+              "claimScope": "在依从性、干预实施和随机化有效的条件下，更有力支持干预的因果效应",
+              "limitation": "依从性、失访、样本代表性与干预版本可能限制推广"
+            }
+          ],
+          "boundary": "证据矩阵用于匹配设计与推断边界；不能仅凭“随机”或“大样本”标签跳过具体偏倚检查。"
+        }
+      }
+    }
+  ]
+}

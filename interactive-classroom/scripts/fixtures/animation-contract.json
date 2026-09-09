@@ -1,0 +1,130 @@
+{
+  "cases": [
+    {
+      "id": "chemistry-bond",
+      "pack": "chemistry",
+      "autoplay": true,
+      "actors": [
+        {
+          "id": "molecule",
+          "primitive": "molecule",
+          "initialState": {"x": 80, "y": 80}
+        }
+      ],
+      "steps": [
+        {
+          "semanticAction": "form-bond",
+          "focus": "两原子间的键",
+          "changeSummary": "bond changes from absent to present",
+          "whyItMatters": "the reaction state changes",
+          "states": {"molecule": {"x": 160, "y": 80}}
+        }
+      ]
+    },
+    {
+      "id": "biology-flow",
+      "pack": "biology",
+      "autoplay": true,
+      "actors": [
+        {
+          "id": "signal",
+          "primitive": "pathway-token",
+          "initialState": {"x": 60, "y": 90}
+        }
+      ],
+      "steps": [
+        {
+          "semanticAction": "advance-pathway",
+          "focus": "信号位置",
+          "changeSummary": "signal moves to the next compartment",
+          "whyItMatters": "the pathway order explains the outcome",
+          "states": {"signal": {"x": 180, "y": 90}}
+        }
+      ]
+    },
+    {
+      "id": "cs-pointer",
+      "pack": "computer-science",
+      "autoplay": true,
+      "actors": [
+        {
+          "id": "pointer",
+          "primitive": "pointer",
+          "initialState": {"x": 80, "y": 100}
+        }
+      ],
+      "steps": [
+        {
+          "semanticAction": "advance-pointer",
+          "focus": "当前指针",
+          "changeSummary": "pointer targets the next cell",
+          "whyItMatters": "the algorithm chooses the next comparison",
+          "states": {"pointer": {"x": 200, "y": 100}}
+        }
+      ]
+    },
+    {
+      "id": "language-token",
+      "pack": "language",
+      "autoplay": true,
+      "actors": [
+        {
+          "id": "token",
+          "primitive": "token",
+          "initialState": {"x": 50, "y": 120}
+        }
+      ],
+      "steps": [
+        {
+          "semanticAction": "highlight-phrase",
+          "focus": "句法成分",
+          "changeSummary": "the phrase receives emphasis",
+          "whyItMatters": "the phrase role becomes explicit",
+          "states": {"token": {"opacity": 1, "scale": 1.12}}
+        }
+      ]
+    },
+    {
+      "id": "statistics-point",
+      "pack": "statistics",
+      "autoplay": true,
+      "actors": [
+        {
+          "id": "point",
+          "primitive": "point",
+          "initialState": {"x": 70, "y": 180}
+        }
+      ],
+      "steps": [
+        {
+          "semanticAction": "update-sample",
+          "focus": "样本点与分布中心",
+          "changeSummary": "the point moves to a new sample position",
+          "whyItMatters": "the estimate changes with the sample",
+          "states": {"point": {"x": 220, "y": 135}}
+        }
+      ]
+    },
+    {
+      "id": "social-evidence",
+      "pack": "social-science",
+      "autoplay": true,
+      "actors": [
+        {
+          "id": "evidence",
+          "primitive": "evidence-card",
+          "initialState": {"x": 90, "y": 210}
+        }
+      ],
+      "steps": [
+        {
+          "semanticAction": "link-evidence",
+          "focus": "证据与主张的关系",
+          "changeSummary": "the evidence card connects to the claim",
+          "whyItMatters": "the relation defines the supported scope",
+          "states": {"evidence": {"x": 250, "y": 150}}
+        }
+      ]
+    }
+  ]
+}

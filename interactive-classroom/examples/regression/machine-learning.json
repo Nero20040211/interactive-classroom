@@ -1,0 +1,502 @@
+{
+  "meta": {
+    "id": "机器学习-线性回归与均方误差",
+    "title": "机器学习：线性回归与均方误差",
+    "subtitle": "参数实验回归课堂",
+    "language": "zh-CN",
+    "level": "大学基础",
+    "offline": true,
+    "depthProfile": "learn-deep",
+    "autoNumbering": true,
+    "sourcePolicy": "grounded",
+    "discipline": {
+      "primary": "computational-data",
+      "secondary": []
+    },
+    "experimentPolicy": "adjustable-when-applicable",
+    "disciplinePack": "ml-ai",
+    "learnerQualityPolicy": {
+      "mode": "three-indicator",
+      "targetLearner": "机器学习入门学习者",
+      "requireDiagnosticGapTags": true
+    },
+    "visualQualityPolicy": {
+      "mode": "reader-first-accessible",
+      "minTextContrast": 4.5,
+      "minNonTextContrast": 3.0,
+      "animationLabelMinPx": 15,
+      "avoidColorOnlyEncoding": true,
+      "mobileAnimationStrategy": "scroll-inside"
+    }
+  },
+  "sources": [
+    {
+      "id": "src-islr",
+      "title": "An Introduction to Statistical Learning, 2nd ed.",
+      "author": "James, Witten, Hastie, Tibshirani",
+      "note": "用于线性回归、训练误差和模型解释的回归测试。"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "O1",
+      "text": "理解线性回归的预测函数与均方误差",
+      "evidence": "能解释参数和损失"
+    },
+    {
+      "id": "O2",
+      "text": "区分拟合相关性与因果解释",
+      "evidence": "数据实验与检测"
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "M1",
+      "text": "训练误差低就代表模型能解释因果",
+      "repair": "预测拟合与因果识别是不同问题。"
+    }
+  ],
+  "roles": [
+    {
+      "id": "teacher",
+      "name": "林老师",
+      "function": "概念讲解与综合",
+      "avatar": "师",
+      "tone": "teacher"
+    },
+    {
+      "id": "curious",
+      "name": "好奇型同学",
+      "function": "追问直觉与先修",
+      "avatar": "问",
+      "tone": "curious"
+    },
+    {
+      "id": "skeptic",
+      "name": "质疑型同学",
+      "function": "检查边界与误区",
+      "avatar": "疑",
+      "tone": "skeptic"
+    },
+    {
+      "id": "specialist",
+      "name": "机器学习助教",
+      "function": "检查学科规范",
+      "avatar": "专",
+      "tone": "specialist"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "模型与损失",
+      "roster": [
+        "teacher",
+        "curious",
+        "skeptic",
+        "specialist"
+      ],
+      "sceneIds": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "ST2",
+      "title": "迁移检测",
+      "roster": [
+        "teacher",
+        "specialist"
+      ],
+      "sceneIds": [
+        "S3"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S1",
+      "stageId": "ST1",
+      "type": "orientation",
+      "title": "学习导览：线性回归",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "先看这门知识要解决什么问题",
+        "summary": "线性回归把输入变量与输出之间的关系表示成一条直线或高维超平面。学习重点不只是会调用一个库，而是理解预测函数、损失函数、参数估计和“拟合好”到底意味着什么。",
+        "mentalModel": "学习 线性回归 时，不要先背结论。先问三个问题：研究对象是什么、哪些量或结构会发生变化、我们凭什么判断一个解释是对的。线性回归把输入变量与输出之间的关系表示成一条直线或高维超平面。学习重点不只是会调用一个库，而是理解预测函数、损失函数、参数估计和“拟合好”到底意味着什么。 这会把零散公式、图示或术语放回同一条推理链中。\n\n本课堂采用“讲解—例子—交互—检测”的顺序。交互不是知识本身，而是用来检验你是否真的能把规则迁移到新情境。",
+        "sections": [
+          {
+            "title": "学习路线",
+            "body": [
+              {
+                "text": "先从一元线性回归的预测规则开始：",
+                "formula": {
+                  "tex": "\\hat y=\\beta_0+\\beta_1x",
+                  "spoken": "预测 y 帽等于 beta 零加 beta 一乘 x",
+                  "mathml": "<math display=\"block\"><mover><mi>y</mi><mo>^</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>x</mi></math>"
+                }
+              },
+              {
+                "text": "再理解均方误差如何衡量预测偏差，最后讨论为什么好的预测关系不自动等于因果关系。"
+              }
+            ]
+          },
+          {
+            "title": "如何使用本课堂",
+            "body": "先完整读完每页知识讲解，再进入实践区。遇到公式先解释符号和单位，遇到生物过程先追踪结构与因果，遇到算法先明确状态、评价函数与停止条件。每一页都允许返回前文，并可使用左侧搜索和收藏。"
+          },
+          {
+            "title": "进一步建立学习框架",
+            "body": "机器学习课程还需要区分三个层次：模型表示什么函数族，训练目标怎样评价参数，数据又能支持多强的结论。线性回归看似简单，却把这三层集中在一起：直线形式限制了可表达关系，平方损失定义了什么叫“拟合得好”，样本采集方式决定了模型可以泛化或解释到什么范围。学习时不要把“调用 fit() 得到系数”当成终点，而要能够从图、公式和残差三个角度说明参数变化会怎样影响预测与损失。"
+          }
+        ],
+        "pitfalls": [
+          "把“看懂”误认为“会用”；只记结论而忽略前提；在没有明确变量、结构或证据时直接套公式。"
+        ],
+        "takeaway": "先建立 线性回归 的问题框架，再学习细节。",
+        "citations": [
+          {
+            "sourceId": "src-islr",
+            "locator": "Linear regression"
+          }
+        ]
+      }
+    },
+    {
+      "id": "S2",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "一条直线如何通过损失函数被“学”出来",
+      "objectiveIds": [
+        "O1",
+        "O2"
+      ],
+      "knowledge": {
+        "title": "模型给预测，损失给方向",
+        "summary": "线性回归用参数定义预测函数，再用损失衡量预测与观测之间的差距。",
+        "prerequisites": [
+          "坐标系和直线斜率。",
+          "平均数与平方。"
+        ],
+        "mentalModel": "把一条候选直线想成一个“预测尺子”。对每个样本，它给出一个预测值；观测点到这条直线在竖直方向的差叫残差。均方误差把所有残差平方后平均：平方使正负误差不会互相抵消，同时更重罚大的偏差。训练过程就是寻找让总体损失更小的参数。",
+        "mechanism": [
+          {
+            "text": "一元线性回归用两个参数决定候选直线：",
+            "formula": {
+              "tex": "\\hat y=\\beta_0+\\beta_1x",
+              "spoken": "预测 y 帽等于 beta 零加 beta 一乘 x",
+              "mathml": "<math display=\"block\"><mover><mi>y</mi><mo>^</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>x</mi></math>"
+            }
+          },
+          {
+            "text": "给定样本后，用均方误差汇总预测与观测之间的差距：",
+            "formula": {
+              "tex": "\\mathrm{MSE}=\\frac1n\\sum_{i=1}^{n}(y_i-\\hat y_i)^2",
+              "spoken": "均方误差等于每个真实值与预测值差的平方的平均",
+              "mathml": "<math display=\"block\"><mtext>MSE</mtext><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msup><mrow><mo>(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><msub><mover><mi>y</mi><mo>^</mo></mover><mi>i</mi></msub><mo>)</mo></mrow><mn>2</mn></msup></math>"
+            }
+          },
+          {
+            "text": "截距参数控制整条直线的上下平移，斜率参数控制倾斜程度。你可以在实践区连续调节二者，直接观察拟合线和损失如何一起变化。实际训练算法的任务，就是系统寻找损失更小的参数组合。"
+          }
+        ],
+        "semanticBlocks": [
+          {
+            "id": "def-linear-model",
+            "kind": "definition",
+            "title": "一元线性预测函数",
+            "statement": "使用截距 β0 与斜率 β1，根据输入 x 产生预测值。",
+            "formula": {
+              "id": "eq-linear-pred",
+              "tex": "\\hat y=\\beta_0+\\beta_1x",
+              "spoken": "预测 y 帽等于 beta 零加 beta 一乘 x",
+              "mathml": "<math display=\"block\"><mover><mi>y</mi><mo>^</mo></mover><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>x</mi></math>"
+            },
+            "citations": [
+              {
+                "sourceId": "src-islr",
+                "locator": "Simple linear regression"
+              }
+            ]
+          },
+          {
+            "id": "def-mse",
+            "kind": "definition",
+            "title": "均方误差",
+            "statement": "把所有样本的预测误差平方后求平均。",
+            "formula": {
+              "id": "eq-mse",
+              "tex": "MSE=\\frac1n\\sum_i(y_i-\\hat y_i)^2",
+              "spoken": "均方误差等于 n 分之一乘误差平方和",
+              "mathml": "<math display=\"block\"><mi>MSE</mi><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><munder><mo>∑</mo><mi>i</mi></munder><msup><mrow><mo>(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><msub><mover><mi>y</mi><mo>^</mo></mover><mi>i</mi></msub><mo>)</mo></mrow><mn>2</mn></msup></math>"
+            },
+            "references": [
+              "def-linear-model"
+            ],
+            "citations": [
+              {
+                "sourceId": "src-islr",
+                "locator": "Least squares"
+              }
+            ]
+          },
+          {
+            "id": "ex-residual",
+            "kind": "example",
+            "title": "残差为何要平方",
+            "prompt": "若两个样本误差分别为 +2 与 -2，直接平均会发生什么？",
+            "steps": [
+              {
+                "text": "直接平均得到 0，看起来像“没有误差”。"
+              },
+              {
+                "text": "平方后得到 4 和 4，平均为 4，能反映预测确实偏离观测。"
+              }
+            ],
+            "result": "平方避免正负残差相互抵消。",
+            "references": [
+              "def-mse"
+            ]
+          }
+        ],
+        "sections": [
+          {
+            "title": "拟合关系不是因果证明",
+            "body": "如果 x 与 y 同时受第三个变量影响，回归仍可能得到明显斜率。因此 β1 可以描述样本中的线性关联和预测关系，但要声称“改变 x 会导致 y 改变”，还需要更强的研究设计、假设或因果模型。"
+          }
+        ],
+        "pitfalls": [
+          "只看训练误差会低估过拟合风险。",
+          "线性模型表达能力有限，关系明显非线性时需要扩展特征或模型。",
+          "预测关系不自动等价于因果效应。"
+        ],
+        "connections": [
+          "理解线性回归后，可以自然进入梯度下降、正则化、模型评估和偏差—方差权衡。"
+        ],
+        "takeaway": "模型定义预测，损失衡量偏差；训练寻找更小损失，但解释边界必须另外判断。",
+        "citations": [
+          {
+            "sourceId": "src-islr",
+            "locator": "Linear regression and model assessment"
+          }
+        ],
+        "workedExamples": [
+          {
+            "id": "ex-s2",
+            "title": "同一数据上的两条候选直线",
+            "variantType": "standard",
+            "text": "先固定同一批样本，比较两组参数产生的预测线。逐点观察残差，再比较整体损失；学习者应看到“某几个点更接近”并不保证总体损失更小，参数评价必须依据统一的损失标准。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "data-lab",
+        "widgetConfig": {
+          "title": "学习时长与测验分数（合成数据）",
+          "provenance": "为课堂解释构造的合成数据，不代表真实因果研究。",
+          "columns": [
+            "hours",
+            "score"
+          ],
+          "rows": [
+            {
+              "hours": 1,
+              "score": 52
+            },
+            {
+              "hours": 2,
+              "score": 57
+            },
+            {
+              "hours": 3,
+              "score": 64
+            },
+            {
+              "hours": 4,
+              "score": 66
+            },
+            {
+              "hours": 5,
+              "score": 74
+            },
+            {
+              "hours": 6,
+              "score": 78
+            }
+          ],
+          "xKey": "hours",
+          "yKey": "score",
+          "chart": "scatter",
+          "prompt": "先把斜率调得很小，再逐步增大；比较拟合线与 MSE 的变化。然后固定斜率，只改变截距，观察两类参数的作用差异。",
+          "experimentRequired": true,
+          "model": {
+            "kind": "linear-regression"
+          },
+          "parameters": [
+            {
+              "id": "beta0",
+              "label": "截距 β₀",
+              "min": 35,
+              "max": 65,
+              "step": 1,
+              "initial": 47
+            },
+            {
+              "id": "beta1",
+              "label": "斜率 β₁",
+              "min": 0,
+              "max": 10,
+              "step": 0.25,
+              "initial": 5.25
+            }
+          ],
+          "xDomain": [
+            0,
+            7
+          ],
+          "yDomain": [
+            35,
+            105
+          ]
+        }
+      },
+      "actions": []
+    },
+    {
+      "id": "S3",
+      "stageId": "ST2",
+      "type": "quiz",
+      "title": "理解检测与迁移",
+      "objectiveIds": [
+        "O1",
+        "O2"
+      ],
+      "content": {
+        "items": [
+          {
+            "id": "q1",
+            "kind": "single",
+            "prompt": "MSE 中平方残差的一个作用是：",
+            "options": [
+              {
+                "id": "a",
+                "text": "让正负误差相互抵消"
+              },
+              {
+                "id": "b",
+                "text": "避免正负误差抵消并更重罚大误差"
+              },
+              {
+                "id": "c",
+                "text": "自动证明因果"
+              }
+            ],
+            "answer": [
+              "b"
+            ],
+            "feedback": {
+              "correct": "这是平方损失的两个重要结果。",
+              "incorrect": "回想 +2 和 -2 的例子。"
+            },
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "guided",
+            "gapTags": [
+              "loss-meaning"
+            ]
+          },
+          {
+            "id": "q2",
+            "kind": "single",
+            "prompt": "样本中 x 与 y 线性相关，可以直接推出 x 导致 y 吗？",
+            "options": [
+              {
+                "id": "a",
+                "text": "可以"
+              },
+              {
+                "id": "b",
+                "text": "不可以，还需要额外因果识别条件"
+              }
+            ],
+            "answer": [
+              "b"
+            ],
+            "feedback": {
+              "correct": "预测关联和因果效应需要区分。",
+              "incorrect": "第三变量、选择偏差等都可能造成关联。"
+            },
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "guided",
+            "gapTags": [
+              "correlation-causation"
+            ]
+          },
+          {
+            "id": "q3",
+            "objectiveIds": [
+              "O1"
+            ],
+            "practiceLevel": "transfer",
+            "gapTags": [
+              "objective-consistency"
+            ],
+            "kind": "single",
+            "prompt": "两组参数都能画出直线时，怎样判断哪组在当前训练集上更符合既定平方损失？",
+            "options": [
+              {
+                "id": "a",
+                "text": "用同一损失定义比较所有样本的总体误差"
+              },
+              {
+                "id": "b",
+                "text": "只挑一个最靠近直线的点比较"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "判断依据与本节机制一致。",
+              "incorrect": "回到知识解释，先识别对象、条件和因果链，再重新判断。"
+            }
+          },
+          {
+            "id": "q4",
+            "objectiveIds": [
+              "O2"
+            ],
+            "practiceLevel": "retrieval",
+            "gapTags": [
+              "prediction-vs-intervention"
+            ],
+            "kind": "single",
+            "prompt": "模型在观察数据上预测准确，能否单独据此证明改变输入会导致输出变化？",
+            "options": [
+              {
+                "id": "a",
+                "text": "不能，还需要适当的因果识别设计或假设"
+              },
+              {
+                "id": "b",
+                "text": "能，预测准确本身就是因果证明"
+              }
+            ],
+            "answer": [
+              "a"
+            ],
+            "feedback": {
+              "correct": "判断依据与本节机制一致。",
+              "incorrect": "回到知识解释，先识别对象、条件和因果链，再重新判断。"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

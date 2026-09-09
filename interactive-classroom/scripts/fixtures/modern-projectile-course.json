@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "id": "modern-projectile-course-fixture",
+    "title": "抛体运动：从共同时间到抛物线",
+    "subtitle": "Modern runtime 发布回归夹具",
+    "language": "zh-CN",
+    "level": "senior-high",
+    "offline": true,
+    "runtimeProfile": "modern-react",
+    "depthProfile": "overview",
+    "disciplinePack": "physics",
+    "sourcePolicy": "illustrative",
+    "experimentPolicy": "adjustable-when-applicable",
+    "experimentDedupPolicy": "stable-key",
+    "figurePolicy": {"mode": "direct-first", "preferDirectFigures": true, "requireWorkedExampleFigure": true, "maxMindMapLikeDiagrams": 1}
+  },
+  "sources": [],
+  "objectives": [
+    {"id": "o-time", "text": "用同一时间参数连接位置、速度和轨迹。"},
+    {"id": "o-model", "text": "在声明假设下比较平抛与斜抛模型。"}
+  ],
+  "scenes": [
+    {
+      "id": "modern-p0",
+      "type": "orientation",
+      "title": "先建立时间链",
+      "intro": "这组页面把现象、方程、图像和实验放在同一条可复核的物理链中。",
+      "objectiveIds": ["o-time"],
+      "knowledge": {
+        "title": "抛体运动的学习入口",
+        "summary": "抛体运动不是一条凭直觉画出的曲线，而是两个方向的运动在同一时刻的合成。水平方向可以保持匀速，竖直方向在重力作用下改变速度；共同时间把位置、速度、轨迹和落地条件连起来。",
+        "prerequisites": ["匀速直线运动的位置—时间关系", "加速度与速度变化", "坐标轴和单位"],
+        "mentalModel": "先问同一时刻物体在哪，再问两个方向各自怎样变化，最后把两个坐标合成为平面轨迹。",
+        "definition": "在忽略空气阻力、重力近似恒定且物体可视作质点的条件下，抛体运动可分解为水平方向和竖直方向的独立运动。",
+        "mechanism": "分解不是把一个物体复制成两个物体，而是用两条坐标方程描述同一个物体。水平分量决定横向推进，竖直分量决定高度变化；两者在同一 t 上取值，才得到同一个位置。",
+        "sections": [
+          {"title": "观察顺序", "body": "先读初始条件，再观察速度分量如何变化，然后比较相邻时间片的位移增量，最后检查公式在哪个边界停止适用。"},
+          {"title": "变量的角色", "body": "初速度和发射角决定初始分量，重力决定竖直速度的变化，高度决定落地所需时间。改变参数时应一次只改变一个因素，才能解释比较结果。"}
+        ],
+        "workedExamples": [{"id": "ex-entry", "title": "一个可检验的问题", "visualNeed": "mechanical", "figureRef": "fig-entry-motion", "text": "若只增大水平初速度，理想平抛的落地时间不由水平速度决定，但同一落地时间内的水平位移会增加。", "result": "时间和射程的影响来源不同。"}],
+        "pedagogicalFigures": [{"id": "fig-entry-motion", "figureKind": "concept", "title": "共同时间下的分量", "learningPurpose": "把同一时刻的水平与竖直位置放到一个可观察图形中。", "caption": "先读同一时刻的两个坐标；轨迹只是这些位置的集合。", "template": "motion-components", "variant": "horizontal", "after": "examples", "highlights": ["水平推进", "竖直变化"]}],
+        "boundaries": ["轨迹线不是额外的一条受力方向。", "落地碰撞后的运动需要另一个模型。"],
+        "checkYourself": ["我能指出共同时间在两个方向中的位置吗？", "我能说出至少一个模型假设吗？"]
+      },
+      "content": {"text": "建议按顺序阅读：时间参数 → 状态动画 → 可调实验 → 公式与边界。"}
+    },
+    {
+      "id": "modern-p1",
+      "type": "concept",
+      "title": "两个方向、一个物体",
+      "intro": "把水平和竖直变化分开说清楚，轨迹才不会变成没有来源的装饰。",
+      "objectiveIds": ["o-time", "o-model"],
+      "knowledge": {
+        "title": "分解与合成",
+        "summary": "同一个小球同时拥有水平位置和竖直位置。水平位置随时间推进，竖直位置受重力影响；平面图上的每一个点都对应同一个时刻的两个坐标。",
+        "prerequisites": ["位置是带坐标的物理量", "速度方向和分量", "平方函数的基本图像"],
+        "mentalModel": "把时间想成一条同步指针：它每前进一点，水平坐标和竖直坐标都更新一次。",
+        "definition": "平抛的理想模型是初速度水平、竖直初速度为零的抛体；斜抛则具有非零的竖直初速度，二者都在竖直方向受重力加速度影响。",
+        "mechanism": "水平方向若无水平力，速度分量保持不变；竖直方向的速度按重力加速度变化。将 x(t) 与 y(t) 同时代入平面坐标，就会得到随时间变化的轨迹，而不是先画轨迹再倒推物理。",
+        "sections": [
+          {"title": "为什么曲线会弯", "body": "等时间间隔内，水平位移近似相等，而竖直位移增量逐渐改变；坐标点因此不能落在一条直线上。"},
+          {"title": "如何避免误读", "body": "箭头长度是示意量时不能直接当成精确比例；必须结合坐标、单位和模型边界解释图形。"}
+        ],
+        "workedExamples": [{"id": "ex-components", "title": "先读分量", "visualNeed": "mechanical", "figureRef": "fig-components-motion", "text": "在任一时刻，先分别读 vₓ 和 vᵧ，再合成速度大小和方向；不要把轨迹切线、受力方向和速度分量混为一谈。"}],
+        "pedagogicalFigures": [{"id": "fig-components-motion", "figureKind": "compare", "title": "轨迹与速度分量", "learningPurpose": "把轨迹、水平分量和竖直分量区分为不同的教学对象。", "caption": "轨迹表示位置集合，分量箭头表示同一时刻的速度信息；三者不能互相替代。", "template": "motion-components", "variant": "horizontal", "after": "examples", "highlights": ["轨迹不是力", "分量共享时间"]}],
+        "boundaries": ["独立分解依赖模型假设，不等于方向之间没有共同时间。", "真实空气阻力、旋转和风会改变理想结果。"],
+        "checkYourself": ["我能解释为什么竖直速度会变化吗？", "我能指出哪个量决定同步更新吗？"]
+      }
+    },
+    {
+      "id": "modern-p2",
+      "type": "interactive",
+      "title": "状态链：看见共同时间",
+      "intro": "动画只在状态发生变化时推进：球的位置和两个速度分量共同更新。",
+      "objectiveIds": ["o-time"],
+      "knowledge": {
+        "title": "过程动画的知识边界",
+        "summary": "这里的动态对象是小球、预测轨迹和两个速度分量。每一步都对应一段共同时间，学习重点是比较位置变化与竖直速度变化，而不是观看颜色或装饰。",
+        "prerequisites": ["读坐标和向量", "理解速度分量"],
+        "mentalModel": "每个动画状态都是一个可检查的时间切片；相邻切片之间的变化必须能回到方程或定义。",
+        "definition": "过程动画的一个 step 是状态声明，不是页面翻页；它应同时说明观察重点、发生的变化和该变化为什么支持当前结论。",
+        "mechanism": "球的 x 持续增加，y 逐步下降；vₓ 保持而 vᵧ 的向下分量增加。将这些变化绑定到同一时间轴，才能把抛物线的弯曲与竖直加速度联系起来。",
+        "sections": [{"title": "阅读提示", "body": "先看球和向量，再读本步语义说明；如果动画暂停，仍应能凭离散状态解释物理关系。"}],
+        "workedExamples": [{"id": "ex-animation", "title": "关键证据", "visualNeed": "process", "figureRef": "fig-animation-motion", "text": "相邻时间片的水平推进近似稳定而竖直变化增大，这两条可观察证据共同支持竖直方向存在加速度。"}],
+        "pedagogicalFigures": [{"id": "fig-animation-motion", "figureKind": "reasoning", "title": "从状态变化读出加速度", "learningPurpose": "把相邻时间片的位移变化与竖直加速度的解释连接起来。", "caption": "观察同一时间轴上的位置变化，再用模型解释竖直位移增量为何改变。", "template": "motion-components", "variant": "horizontal", "after": "examples", "highlights": ["相邻时间片", "位移增量"]}],
+        "boundaries": ["轨迹是位置集合的示意，不是额外的力。", "动画在落地边界停止，不外推碰撞后的状态。"],
+        "checkYourself": ["我能指出哪一步显示竖直增量变大吗？", "我能说出动画没有证明什么吗？"]
+      },
+      "content": {
+        "widgetType": "process-animation",
+        "widgetConfig": {
+          "title": "平抛状态链",
+          "principle": "水平位移持续增加而水平速度保持，竖直下落越来越快；两者共享同一时间。",
+          "principleCheck": {"prompt": "动画中的哪些状态变化支持“共同时间下的两个方向运动”这一原理？", "expectedIdeas": ["水平位置持续推进", "竖直位置变化与速度分量共同更新"]},
+          "autoplay": true,
+          "actors": [{"id": "ball", "type": "projectile", "primitive": "particle", "x": 100, "y": 70, "r": 18, "label": "小球"}],
+          "steps": [
+            {"id": "s0", "title": "释放", "caption": "初始时刻建立参照。", "semanticAction": "release", "focus": "初始位置与速度", "changeSummary": "小球位于高处，竖直速度从零开始。", "whyItMatters": "初始条件决定后续比较的参照。", "states": {"ball": {"x": 100, "y": 70}}},
+            {"id": "s1", "title": "共同时间推进", "caption": "球向右移动并下降。", "semanticAction": "advance-time", "focus": "同一时刻的位置变化", "changeSummary": "x 增加、y 下降，水平推进仍连续。", "whyItMatters": "把两个方向绑定到同一时间参数。", "states": {"ball": {"x": 300, "y": 140}}},
+            {"id": "s2", "title": "竖直增量变大", "caption": "相邻时间片中竖直下降更多。", "semanticAction": "accelerate-vertical", "focus": "相邻时间片的位移增量", "changeSummary": "小球进一步下降，轨迹弯曲更明显。", "whyItMatters": "说明竖直加速度是曲线弯曲的来源。", "states": {"ball": {"x": 520, "y": 270}}}
+          ]
+        }
+      }
+    },
+    {
+      "id": "modern-p3",
+      "type": "interactive",
+      "title": "平抛运动实验室",
+      "intro": "同一组参数驱动轨迹、速度分量、时间图和试次记录。",
+      "objectiveIds": ["o-time", "o-model"],
+      "knowledge": {
+        "title": "参数比较",
+        "summary": "平抛实验的价值在于改变一个参数后追踪同一模型的全部派生量。固定坐标范围避免把每次结果自动缩放成看似相同的图形。",
+        "prerequisites": ["平方根和比例", "单位换算", "变量控制"],
+        "mentalModel": "参数 → 状态方程 → 图像与派生量；改变参数时沿这条链检查结果。",
+        "definition": "在理想平抛模型中，飞行时间由高度与重力决定，水平初速度主要改变同一飞行时间内的水平射程。",
+        "mechanism": "实验控件改变 v₀、h 或 g 后，位置、速度和时间图必须来自同一 projectileState 计算。记录试次用于比较参数条件，而不是记录某一帧的动画外观。",
+        "sections": [{"title": "控制变量", "body": "保持 h 与 g 不变只改变 v₀，再保持 v₀ 与 g 不变只改变 h；分别预测飞行时间、射程和竖直速度的变化。"}],
+        "workedExamples": [{"id": "ex-trial", "title": "试次比较", "visualNeed": "mechanical", "figureRef": "fig-trial-motion", "text": "保持释放高度和重力条件不变，只提高水平初速度；理想飞行时间保持不变，而同一落地时刻的水平射程增大。"}],
+        "pedagogicalFigures": [{"id": "fig-trial-motion", "figureKind": "compare", "title": "控制变量看射程", "learningPurpose": "用固定尺度的直接图示辅助比较只改变水平初速度的两组试次。", "caption": "比较时保持高度与重力条件不变；射程变化不能被误读成飞行时间变化。", "template": "motion-components", "variant": "horizontal", "after": "examples", "highlights": ["固定高度", "比较射程"]}],
+        "boundaries": ["模型忽略空气阻力和旋转。", "落地后的碰撞不在本实验模型内。"],
+        "checkYourself": ["我能预测只改变 v₀ 时哪一个量不变吗？", "我能用一组试次支持这个预测吗？"]
+      },
+      "content": {
+        "widgetType": "motion-lab",
+        "widgetConfig": {
+          "model": {"kind": "horizontal-projectile"},
+          "parameters": [
+            {"id": "v0", "label": "水平初速度", "initial": 8, "min": 2, "max": 20, "step": 1, "unit": "m/s", "dimension": "L T^-1"},
+            {"id": "h", "label": "释放高度", "initial": 12, "min": 4, "max": 24, "step": 1, "unit": "m", "dimension": "L"},
+            {"id": "g", "label": "重力加速度", "initial": 9.8, "min": 4.9, "max": 14.7, "step": 0.1, "unit": "m/s^2", "dimension": "L T^-2"}
+          ],
+          "fixedComparisonScale": true,
+          "timeControl": true,
+          "trialLogging": true,
+          "experimentRequired": true,
+          "experiments": [{"experimentKey": "horizontal-speed-range", "experimentRole": "control-variable", "prompt": "保持 h 与 g 不变，只改变 v₀，比较飞行时间和射程。", "controlledVariables": ["h", "g"], "changedVariables": ["v0"], "evidenceQuestion": "哪一个派生量改变，哪一个保持不变？"}, {"experimentKey": "height-flight-time", "experimentRole": "control-variable", "prompt": "保持 v₀ 与 g 不变，只改变 h，解释 y–t 图。", "controlledVariables": ["v0", "g"], "changedVariables": ["h"], "evidenceQuestion": "高度变化如何影响飞行时间？"}],
+          "assumptions": ["物体视作质点，释放后只受重力。", "忽略空气阻力和旋转，地面是固定边界。"]
+        }
+      }
+    },
+    {
+      "id": "modern-p4",
+      "type": "interactive",
+      "title": "斜抛：比较曲线而不是猜曲线",
+      "intro": "选择斜抛模型并改变发射角，观察确定性曲线和模型假设。",
+      "objectiveIds": ["o-model"],
+      "knowledge": {
+        "title": "斜抛模型",
+        "summary": "斜抛的初速度同时含有水平和竖直分量。发射角改变分量的分配，重力继续改变竖直速度；曲线应由参数模型计算，而不是由图形装饰决定。",
+        "prerequisites": ["三角函数分量", "二次函数", "模型假设"],
+        "mentalModel": "先把速度投影到两个方向，再让同一个时间变量推进位置；曲线只是这些位置的集合。",
+        "definition": "理想斜抛在初始高度 h、速度 v、角度 θ 和重力 g 给定时，水平位置与竖直位置由同一 t 决定。",
+        "mechanism": "水平初速度为 v cosθ，竖直初速度为 v sinθ；竖直位置还包含重力项。改变 θ 会同时改变两个分量，因此必须同时观察峰值、飞行时间和水平展开。",
+        "sections": [{"title": "比较策略", "body": "保持 v 与 g 不变，逐步改变 θ；记录曲线的峰值和结束时刻，再解释这些变化来自哪个速度分量。"}],
+        "workedExamples": [{"id": "ex-angle", "title": "角度的双重作用", "visualNeed": "mechanical", "figureRef": "fig-angle-motion", "text": "增大角度通常提高初始竖直分量，但会降低水平分量；结论不能只根据峰高判断。"}],
+        "pedagogicalFigures": [{"id": "fig-angle-motion", "figureKind": "compare", "title": "发射角的双重作用", "learningPurpose": "直接观察角度同时改变水平和竖直初始分量。", "caption": "提高角度可能抬高轨迹，却也会减少水平分量；比较不能只看峰值。", "template": "motion-components", "variant": "oblique", "after": "examples", "highlights": ["竖直分量增加", "水平分量减少"]}],
+        "boundaries": ["忽略空气阻力、风和自旋。", "曲线坐标范围用于比较趋势，不代表实物比例。"],
+        "checkYourself": ["我能分别指出 v cosθ 和 v sinθ 的作用吗？", "我能说明图像没有覆盖哪些真实因素吗？"]
+      },
+      "content": {
+        "widgetType": "simulation",
+        "widgetConfig": {
+          "title": "斜抛参数模拟",
+          "model": {"kind": "projectile", "title": "理想斜抛", "assumptions": ["无空气阻力、匀强重力、质点模型。", "图像用于比较参数趋势，坐标比例不是实物比例。"]},
+          "parameters": [
+            {"id": "v", "label": "初速度", "initial": 14, "min": 6, "max": 22, "step": 1, "unit": "m/s"},
+            {"id": "theta", "label": "发射角", "initial": 45, "min": 15, "max": 75, "step": 5, "unit": "°"},
+            {"id": "g", "label": "重力加速度", "initial": 9.8, "min": 4.9, "max": 14.7, "step": 0.1, "unit": "m/s²"},
+            {"id": "h", "label": "初始高度", "initial": 0, "min": 0, "max": 4, "step": 1, "unit": "m"}
+          ],
+          "xDomain": [0, 3.2],
+          "yDomain": [0, 14],
+          "experiments": [{"experimentKey": "angle-peak-range", "experimentRole": "control-variable", "prompt": "保持 v 与 g 不变，逐步改变 θ，比较峰值和水平展开。", "controlledVariables": ["v", "g"], "changedVariables": ["theta"], "evidenceQuestion": "峰值与水平展开是否同向变化？"}, {"experimentKey": "gravity-curve", "experimentRole": "model-sensitivity", "prompt": "保持 v 与 θ 不变，改变 g，解释曲线变化。", "controlledVariables": ["v", "theta"], "changedVariables": ["g"], "evidenceQuestion": "重力变化如何改变竖直时间尺度？"}],
+          "boundary": "这是确定性理想模型；真实空气阻力等因素未被建模。"
+        }
+      }
+    },
+    {
+      "id": "modern-p5",
+      "type": "interactive",
+      "title": "把公式与图像互相校验",
+      "intro": "公式页只呈现有来源的表达式，并明确变量、假设和边界。",
+      "objectiveIds": ["o-time", "o-model"],
+      "knowledge": {
+        "title": "方程的可检验表达",
+        "summary": "公式不是脱离语境的符号串。每个变量有物理对象和单位，每一步推导有理由，适用边界也必须写出来。",
+        "prerequisites": ["代数变形", "函数与变量", "物理量单位"],
+        "mentalModel": "目标公式、推导理由、变量含义和边界组成一个完整的公式解释。",
+        "definition": "结构化公式应同时提供可渲染的 MathML 和可读 fallback，避免只在视觉上显示一个不可访问的符号图。",
+        "mechanism": "位置方程给出坐标随时间的变化，速度方程是位置对时间变化的对应描述；落地条件来自竖直坐标达到边界。不同表达式必须能由同一模型相互校验。",
+        "sections": [{"title": "如何校验", "body": "检查单位、初始时刻和边界条件；再把参数代入实验或图像，确认公式与可观察结果一致。"}],
+        "workedExamples": [{"id": "ex-formula", "title": "落地时间", "visualNeed": "reasoning", "figureRef": "fig-formula-motion", "text": "令落地时的竖直位置达到地面边界可以得到飞行时间；这个推导不依赖水平初速度，但射程还需要结合水平速度。"}],
+        "pedagogicalFigures": [{"id": "fig-formula-motion", "figureKind": "reasoning", "title": "从边界条件回看公式", "learningPurpose": "把落地边界、竖直位置和飞行时间的推理关系直接画出来。", "caption": "先锁定竖直边界，再沿共同时间回到水平位置；不要从轨迹外观猜公式。", "template": "motion-components", "variant": "horizontal", "after": "examples", "highlights": ["先用竖直边界", "再回到水平位置"]}],
+        "boundaries": ["公式只在声明的理想模型和时间范围内成立。", "MathML fallback 只保证可读，不替代物理含义说明。"],
+        "checkYourself": ["我能解释每个变量的对象和单位吗？", "我能指出公式停止适用的边界吗？"]
+      },
+      "content": {
+        "widgetType": "equation",
+        "widgetConfig": {
+          "title": "平抛位置与落地条件",
+          "prompt": "从位置方程出发，说明共同时间如何连接水平位置和竖直位置。",
+          "formula": {"id": "modern-f-target", "tex": "x(t)=v_0t,\\quad y(t)=h-\\frac{1}{2}gt^2", "spoken": "水平位置等于初速度乘时间，竖直位置含有重力造成的时间平方项。", "mathml": "<math display=\"block\"><mrow><mi>x</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msub><mi>v</mi><mn>0</mn></msub><mi>t</mi><mo>,</mo><mspace width=\"1em\"/><mi>y</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi>h</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>g</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></math>"},
+          "nextStepPrediction": {"prompt": "要得到落地时间，下一步先使用哪个条件？", "options": [{"id": "ground", "label": "令竖直位置达到地面边界"}, {"id": "horizontal", "label": "先改变水平初速度"}], "correctId": "ground"},
+          "steps": [
+            {"id": "modern-f-step-1", "formula": {"id": "modern-f-position", "tex": "x(t)=v_0t,\\quad y(t)=h-\\frac{1}{2}gt^2", "spoken": "位置方程同时给出两个坐标。", "mathml": "<math><mrow><mi>x</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msub><mi>v</mi><mn>0</mn></msub><mi>t</mi><mo>,</mo><mi>y</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow></math>"}, "reason": "两个方向共享同一时间，因此它们描述同一个物体。"},
+            {"id": "modern-f-step-2", "formula": {"id": "modern-f-step-time", "tex": "T=\\sqrt{2h/g}", "spoken": "令落地时的竖直位置为零，得到飞行时间。", "mathml": "<math><mrow><mi>T</mi><mo>=</mo><msqrt><mfrac><mn>2</mn><mi>h</mi></mfrac><mi>g</mi></msqrt></mrow></math>"}, "reason": "落地条件只使用竖直位置边界，所以理想飞行时间不含水平初速度。"}
+          ],
+          "variables": [{"id": "v0", "symbol": "v₀", "meaning": "水平初速度，单位 m/s"}, {"id": "h", "symbol": "h", "meaning": "初始高度，单位 m"}, {"id": "g", "symbol": "g", "meaning": "重力加速度大小，单位 m/s²"}, {"id": "t", "symbol": "t", "meaning": "从释放开始计时的时间，单位 s"}],
+          "assumptions": ["忽略空气阻力，重力加速度恒定。"],
+          "boundary": "到达地面后，碰撞和反弹不由这组方程描述。"
+        }
+      }
+    }
+  ]
+}

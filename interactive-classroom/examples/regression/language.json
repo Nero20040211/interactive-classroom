@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "id": "language-regression",
+    "title": "English Conditionals: meaning, form and use",
+    "disciplinePack": "language",
+    "secondaryPacks": [],
+    "discipline": {
+      "primary": "language-communication"
+    },
+    "depthProfile": "overview",
+    "sourcePolicy": "recommended",
+    "experimentPolicy": "adjustable-when-applicable",
+    "autoNumbering": true,
+    "subtitle": "validated-native regression"
+  },
+  "roles": [
+    {
+      "id": "teacher",
+      "name": "教师",
+      "tone": "teacher",
+      "avatar": "师",
+      "function": "组织知识"
+    },
+    {
+      "id": "specialist",
+      "name": "学科助教",
+      "tone": "specialist",
+      "avatar": "专",
+      "function": "检查学科规则"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ST1",
+      "title": "理解与构建",
+      "roster": [
+        "teacher",
+        "specialist"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S1",
+      "stageId": "ST1",
+      "type": "orientation",
+      "title": "条件句不是只背公式",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "先看意义，再看形式",
+        "summary": "英语条件句把一个条件与其结果联系起来，但不同结构表达的不是同一种现实关系。学习时如果只记 if 后面跟什么时态，很容易在真实语境中选错。",
+        "mentalModel": "先问说话者把条件看成真实可能、一般规律，还是与当前事实相反的假设；意义判断完成后，再选择形式。",
+        "mechanism": "先问说话者把条件看成真实可能、一般规律，还是与当前事实相反的假设；意义判断完成后，再选择形式。",
+        "keyPoints": [
+          "第一条件句常用于仍有现实可能性的未来条件。",
+          "第二条件句常用于假设、低可能或与当前事实相反的情形。",
+          "形式选择必须与语境和说话者立场一起判断。"
+        ],
+        "pitfalls": [
+          "不要把 every if-clause 都机械套同一种时态。",
+          "不要把 would 随意放进普通 if 条件从句。"
+        ],
+        "connections": [
+          "下一页先在语境中补全，再把句子拆成结构。"
+        ],
+        "checkYourself": [
+          "先不用看答案，用自己的话说出本页核心关系。",
+          "指出一个容易混淆的替代解释，并说明为什么不成立或何时成立。"
+        ]
+      },
+      "content": {
+        "html": "<p>本课程不做发音评分；严格离线模式只训练阅读、语法与结构表达。</p>"
+      }
+    },
+    {
+      "id": "S2",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "在语境中选择形式",
+      "objectiveIds": [
+        "O1"
+      ],
+      "knowledge": {
+        "title": "先判断现实关系",
+        "summary": "句子 If I ___ you, I would ask for more evidence. 不是在描述真实身份，而是在构造与事实相反的假设视角，因此形式选择来自意义，而不是“看到 if 就套过去式”这么简单。",
+        "mentalModel": "把句子拆成条件从句和结果主句。结果中的 would 表明说话者在讨论假设结果；条件从句用 were 把当前事实暂时放入一个反事实空间。",
+        "mechanism": "把句子拆成条件从句和结果主句。结果中的 would 表明说话者在讨论假设结果；条件从句用 were 把当前事实暂时放入一个反事实空间。",
+        "keyPoints": [
+          "先判断条件的现实性。",
+          "再找主句情态标记。",
+          "最后检查整句是否表达一致的时间与假设关系。"
+        ],
+        "pitfalls": [
+          "口语中有时会遇到 was，但正式教学需要解释规范形式与使用变体，而不是把差异抹掉。"
+        ],
+        "connections": [
+          "下一页用词块重建句子，检验你是否真正理解结构。"
+        ],
+        "checkYourself": [
+          "先不用看答案，用自己的话说出本页核心关系。",
+          "指出一个容易混淆的替代解释，并说明为什么不成立或何时成立。"
+        ],
+        "workedExamples": [
+          {
+            "id": "lang-ex-2",
+            "variantType": "standard",
+            "title": "反事实建议",
+            "text": "If I were you, I would ask for more evidence. 主句 would 标记假设结果，从句 were 与当前事实不一致的身份假设相配合；形式选择来自整句意义。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "cloze-lab",
+        "widgetConfig": {
+          "title": "反事实建议",
+          "prompt": "根据语义与结构填写空格。",
+          "segments": [
+            {
+              "text": "If I "
+            },
+            {
+              "blank": {
+                "id": "b1",
+                "label": "be 的形式",
+                "answers": [
+                  "were"
+                ]
+              }
+            },
+            {
+              "text": " you, I would ask for more evidence."
+            }
+          ],
+          "strategies": [
+            "先判断是否与当前事实相反。",
+            "观察主句 would 所提示的假设语气。"
+          ],
+          "feedback": "正确后不要停在记忆 were；说出它为什么与整句语义一致。",
+          "boundary": "本实验采用正式教学中的 were 形式；真实语料中的变体需要结合语域说明。"
+        }
+      }
+    },
+    {
+      "id": "S3",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "重建主句与 if 从句",
+      "objectiveIds": [
+        "O2"
+      ],
+      "knowledge": {
+        "title": "结构来自信息组织",
+        "summary": "条件句通常由条件从句和结果主句组成。词序实验的目的不是训练机械排列，而是让你识别哪个部分建立条件，哪个部分给出结果，以及逗号、从句位置和语义焦点如何配合。",
+        "mentalModel": "先找到完整的结果主句 would ask for more evidence，再识别 if 从句 If I were you。当前置 if 从句出现时，书面英语通常用逗号分隔；如果从句后置，逗号规则会变化。",
+        "mechanism": "先找到完整的结果主句 would ask for more evidence，再识别 if 从句 If I were you。当前置 if 从句出现时，书面英语通常用逗号分隔；如果从句后置，逗号规则会变化。",
+        "keyPoints": [
+          "先组主句骨架。",
+          "再把条件从句作为一个完整单位加入。",
+          "最后检查标点与语义焦点。"
+        ],
+        "pitfalls": [
+          "正确顺序不等于只有一种可表达方式；某些句子可以从句后置，但语篇焦点会变化。"
+        ],
+        "connections": [
+          "下一页用语法树检查 constituent 的功能。"
+        ],
+        "checkYourself": [
+          "先不用看答案，用自己的话说出本页核心关系。",
+          "指出一个容易混淆的替代解释，并说明为什么不成立或何时成立。"
+        ],
+        "workedExamples": [
+          {
+            "id": "lang-ex-3",
+            "variantType": "contrast",
+            "title": "前置与后置条件从句",
+            "text": "If I were you, I would ask for more evidence. 与 I would ask for more evidence if I were you. 都能表达条件关系，但前置从句通常用逗号分隔，并改变信息焦点。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "sentence-builder-lab",
+        "widgetConfig": {
+          "prompt": "先构建一个自然的前置 if 条件句。",
+          "tokens": [
+            {
+              "id": "t1",
+              "label": "If"
+            },
+            {
+              "id": "t2",
+              "label": "I"
+            },
+            {
+              "id": "t3",
+              "label": "were"
+            },
+            {
+              "id": "t4",
+              "label": "you,"
+            },
+            {
+              "id": "t5",
+              "label": "I"
+            },
+            {
+              "id": "t6",
+              "label": "would ask"
+            },
+            {
+              "id": "t7",
+              "label": "for more evidence."
+            }
+          ],
+          "targetOrder": [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t6",
+            "t7"
+          ],
+          "correctFeedback": "现在指出 if 从句和结果主句各自的边界。",
+          "incorrectFeedback": "先找结果主句 I would ask for more evidence，再把完整 if 从句放到前面。"
+        }
+      }
+    },
+    {
+      "id": "S4",
+      "stageId": "ST1",
+      "type": "interactive",
+      "title": "语法树：结构为什么成立",
+      "objectiveIds": [
+        "O2"
+      ],
+      "knowledge": {
+        "title": "结构解释比标签更重要",
+        "summary": "语法树的价值不是让学习者背 NP、VP 等缩写，而是把句子中的层级关系变得可见：整个条件从句作为一个成分修饰结果主句，而从句内部又包含主语与谓语。",
+        "mentalModel": "层级结构解释了为什么某些词块应该一起移动、为什么标点出现在从句边界，以及为什么不能把 would 误当成 if 从句内部的普通过去时标记。",
+        "mechanism": "层级结构解释了为什么某些词块应该一起移动、为什么标点出现在从句边界，以及为什么不能把 would 误当成 if 从句内部的普通过去时标记。",
+        "keyPoints": [
+          "树节点表示成分而不是单个词的颜色分类。",
+          "父子关系表示组成关系。",
+          "结构分析必须回到意义与使用。"
+        ],
+        "pitfalls": [
+          "不同语法理论可能采用不同标签；本树是教学模型，不宣称唯一理论分析。"
+        ],
+        "connections": [
+          "完成后尝试自己解释整个句子的 meaning-form-use 链条。"
+        ],
+        "checkYourself": [
+          "先不用看答案，用自己的话说出本页核心关系。",
+          "指出一个容易混淆的替代解释，并说明为什么不成立或何时成立。"
+        ],
+        "workedExamples": [
+          {
+            "id": "lang-ex-4",
+            "variantType": "standard",
+            "title": "用层级解释词块移动",
+            "text": "把 If I were you 作为完整条件从句看待，就能解释它为什么可以整体后置，而不能把 were you 随意拆散到主句内部。语法树把这种成分关系显式化。"
+          }
+        ]
+      },
+      "content": {
+        "widgetType": "grammar-tree-lab",
+        "widgetConfig": {
+          "title": "If I were you, I would ask for more evidence.",
+          "nodes": [
+            {
+              "id": "root",
+              "label": "Conditional sentence",
+              "role": "整句",
+              "explanation": "由条件从句与结果主句构成。"
+            },
+            {
+              "id": "ifc",
+              "parentId": "root",
+              "label": "If I were you",
+              "role": "条件从句",
+              "explanation": "建立反事实条件空间。"
+            },
+            {
+              "id": "main",
+              "parentId": "root",
+              "label": "I would ask for more evidence",
+              "role": "结果主句",
+              "explanation": "表达在该假设条件下的结果。"
+            },
+            {
+              "id": "subj",
+              "parentId": "ifc",
+              "label": "I",
+              "role": "从句主语",
+              "explanation": "假设中的说话者。"
+            },
+            {
+              "id": "pred",
+              "parentId": "ifc",
+              "label": "were you",
+              "role": "从句谓语",
+              "explanation": "用 were 构造与事实相反的身份假设。"
+            }
+          ],
+          "boundary": "这是教学用成分结构，不代表所有句法理论必须使用同一节点标签。"
+        }
+      }
+    }
+  ]
+}
