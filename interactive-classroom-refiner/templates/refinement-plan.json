@@ -1,0 +1,25 @@
+{
+  "schema": "interactive-classroom-refinement-plan",
+  "classification": "pack-candidate",
+  "decision": "accept",
+  "disciplinePack": "language",
+  "dryRun": true,
+  "explicitDeletionApproval": false,
+  "rationale": "Repeated validated feedback indicates a reusable language-learning interaction rule rather than a one-course preference.",
+  "targetChanges": [
+    {
+      "operation": "modify",
+      "path": "discipline-packs/language/PACK.md",
+      "rationale": "Clarify the reusable accepted-variant rule."
+    },
+    {
+      "operation": "modify",
+      "path": "examples/regression/language.json",
+      "rationale": "Add regression evidence for the rule."
+    }
+  ],
+  "regressionTests": [
+    "python ../interactive-classroom/scripts/run_regression.py",
+    "python ../interactive-classroom/scripts/test_negative_gates.py"
+  ]
+}

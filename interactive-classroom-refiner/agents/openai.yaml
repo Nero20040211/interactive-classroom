@@ -1,0 +1,4 @@
+interface:
+  display_name: Interactive Classroom Refiner
+  short_description: Review learning feedback and iteratively improve interactive-classroom.
+  default_prompt: Use $interactive-classroom-refiner to review the supplied feedback or stress-test evidence, update the sibling interactive-classroom Skill only where justified, and run regressions.

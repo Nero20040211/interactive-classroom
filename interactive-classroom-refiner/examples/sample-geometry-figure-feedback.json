@@ -1,0 +1,33 @@
+{
+  "schema": "interactive-classroom-refinement-bundle",
+  "explicitUserExport": true,
+  "exportedAt": "2026-09-07T00:00:00Z",
+  "course": {
+    "title": "第八章·立体几何初步",
+    "courseId": "textbook-ch8-solid-geometry",
+    "disciplinePack": "mathematics",
+    "secondaryPacks": []
+  },
+  "policy": {
+    "telemetry": "explicit-user-entered-only",
+    "autoMutation": false,
+    "classificationRequired": true,
+    "regressionRequired": true
+  },
+  "observations": [
+    {
+      "sceneId": "S85C",
+      "sceneTitle": "8.5 平行证明的核心：用面内桥线把空间问题降维",
+      "objectiveIds": [
+        "O5"
+      ],
+      "types": [
+        "figure-helpful"
+      ],
+      "rating": 5,
+      "note": "桥线推理图让我先看懂目标直线、面内桥线和判定条件之间的关系，再读正式论证时更容易跟上。",
+      "scopeHint": "pack",
+      "recordedAt": "2026-09-07T00:00:00Z"
+    }
+  ]
+}

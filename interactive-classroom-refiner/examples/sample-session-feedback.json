@@ -1,0 +1,31 @@
+{
+  "schema": "interactive-classroom-session-feedback",
+  "explicitUserExport": true,
+  "exportedAt": "2026-09-07T00:00:00Z",
+  "course": {
+    "title": "第十章·概率",
+    "courseId": "textbook-ch10-probability",
+    "disciplinePack": "mathematics",
+    "secondaryPacks": []
+  },
+  "policy": {
+    "telemetry": "explicit-user-entered-only",
+    "automaticSkillChange": false
+  },
+  "observations": [
+    {
+      "sceneId": "A1011",
+      "sceneTitle": "过程动画：从一次掷骰子到样本空间",
+      "objectiveIds": [
+        "O101"
+      ],
+      "types": [
+        "worked-well"
+      ],
+      "rating": 5,
+      "note": "先看到骰子运动，再看到样本点展开，最后把偶数归入事件区域，比直接看集合图更容易理解。",
+      "scopeHint": "pack",
+      "recordedAt": "2026-09-07T00:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "interactive-classroom-refinement-bundle",
+  "explicitUserExport": true,
+  "exportedAt": "2026-09-07T00:00:00Z",
+  "course": {
+    "title": "英语条件句",
+    "courseId": "language-conditional-demo",
+    "disciplinePack": "language",
+    "secondaryPacks": []
+  },
+  "policy": {
+    "telemetry": "explicit-user-entered-only",
+    "autoMutation": false,
+    "classificationRequired": true,
+    "regressionRequired": true
+  },
+  "observations": [
+    {
+      "sceneId": "S2",
+      "sceneTitle": "虚拟条件句",
+      "objectiveIds": [
+        "O2"
+      ],
+      "types": [
+        "worked-well"
+      ],
+      "rating": 5,
+      "note": "先找主句骨架，再组装 if 从句的提示很有效。",
+      "scopeHint": "pack",
+      "recordedAt": "2026-09-07T00:00:00Z"
+    }
+  ]
+}
